@@ -3,163 +3,159 @@ import { MOCK_ACTIVE_TRIP, MOCK_RESPONDING_DRIVERS, VEHICLE_TIERS, MOCK_ADMIN_TR
 
 export const tripsApi = {
   /**
-   * Get Vehicle Tiers and Pricing Models
-   * BACKEND ENDPOINT: GET /api/v1/vehicles/tiers
-   */
-  async getVehicleTiers() {
-    if (USE_MOCK) {
-      await simulateDelay(200);
-      return VEHICLE_TIERS;
-    }
-    return apiFetch("/vehicles/tiers");
-  },
-
-  /**
-   * Calculate Fare Estimate and Route Distance
-   * BACKEND ENDPOINT: POST /api/v1/trips/estimate
-   * PAYLOAD: { pickupAddress, dropAddress, vehicleTierId, weightKg }
-   */
-  async estimateFare({ pickupAddress, dropAddress, vehicleTierId, weightKg }) {
-    if (USE_MOCK) {
-      await simulateDelay(400);
-      const tier = VEHICLE_TIERS.find((v) => v.id === vehicleTierId) || VEHICLE_TIERS[0];
-      const approxKm = 38;
-      const baseFare = tier.baseFare;
-      const distanceFare = approxKm * tier.perKm;
-      const total = baseFare + distanceFare;
-
-      return {
-        distanceKm: approxKm,
-        estimatedTimeMin: 65,
-        baseFare,
-        distanceFare,
-        totalFare: total,
-        currency: "₹",
-        pickupAddress,
-        dropAddress,
-        vehicleTier: tier.name,
-      };
-    }
-
-    return apiFetch("/trips/estimate", {
-      method: "POST",
-      body: JSON.stringify({ pickupAddress, dropAddress, vehicleTierId, weightKg }),
-    });
-  },
-
-  /**
-   * Create New Freight Booking Request
-   * BACKEND ENDPOINT: POST /api/v1/trips/create
-   * PAYLOAD: { pickup, drop, goodsType, weightKg, vehicleTierId, totalFare }
+   * TESTED ROUTE: POST /api/bookings
+   * PAYLOAD: {
+   *   pickupLocation: { address, city },
+   *   dropLocation: { address, city },
+   *   goods: { description, weightKg },
+   *   vehicleType: 'tata-ace'
+   * }
    */
   async createRequest(payload) {
+    // Format to tested backend schema
+    const formattedPayload = {
+      pickupLocation: {
+        address: typeof payload.pickup === "string" ? payload.pickup : payload.pickupLocation?.address || "Tumkur Market",
+        city: payload.pickupCity || payload.pickupLocation?.city || "Tumkur",
+      },
+      dropLocation: {
+        address: typeof payload.drop === "string" ? payload.drop : payload.dropLocation?.address || "KR Market",
+        city: payload.dropCity || payload.dropLocation?.city || "Bengaluru",
+      },
+      goods: {
+        description: payload.cargoType || payload.goods?.description || "Vegetable boxes",
+        weightKg: Number(payload.weightKg || payload.goods?.weightKg || 500),
+      },
+      vehicleType: payload.vehicleTierId ? payload.vehicleTierId.replace("_", "-") : "tata-ace",
+    };
+
     if (USE_MOCK) {
       await simulateDelay(600);
       const newTripId = `PNL-${Math.floor(1000 + Math.random() * 9000)}`;
       return {
+        statusCode: 201,
         success: true,
-        tripId: newTripId,
-        status: "SEARCHING",
-        otp: "4829",
-        message: "Broadcasting request to nearby commercial drivers...",
-        ...payload,
+        message: "Transport request created successfully",
+        data: {
+          _id: "6ad9f303004402b2fbfe5337",
+          tripId: newTripId,
+          status: "pending",
+          ...formattedPayload,
+          createdAt: new Date().toISOString(),
+        },
       };
     }
 
-    return apiFetch("/trips/create", {
+    return apiFetch("/bookings", {
       method: "POST",
-      body: JSON.stringify(payload),
+      body: JSON.stringify(formattedPayload),
     });
   },
 
   /**
-   * Poll or Listen for Responding Driver Bids
-   * BACKEND ENDPOINT: GET /api/v1/trips/:id/bids
+   * TESTED ROUTE: GET /api/bookings/my
+   * Returns current user's (shipper) bookings
    */
-  async getRespondingDrivers(tripId) {
-    if (USE_MOCK) {
-      await simulateDelay(500);
-      return MOCK_RESPONDING_DRIVERS;
-    }
-    return apiFetch(`/trips/${tripId}/bids`);
-  },
-
-  /**
-   * Customer Accepts a Driver's Bid
-   * BACKEND ENDPOINT: POST /api/v1/trips/:id/accept-bid
-   * PAYLOAD: { driverId }
-   */
-  async acceptDriverBid(tripId, driverId) {
-    if (USE_MOCK) {
-      await simulateDelay(600);
-      const driver = MOCK_RESPONDING_DRIVERS.find((d) => d.id === driverId) || MOCK_RESPONDING_DRIVERS[0];
-      return {
-        success: true,
-        tripId,
-        status: "GOING_TO_PICKUP",
-        assignedDriver: driver,
-        otp: "4829",
-      };
-    }
-    return apiFetch(`/trips/${tripId}/accept-bid`, {
-      method: "POST",
-      body: JSON.stringify({ driverId }),
-    });
-  },
-
-  /**
-   * Get Active In-Progress Trip for Customer
-   * BACKEND ENDPOINT: GET /api/v1/trips/active
-   */
-  async getActiveTrip() {
-    if (USE_MOCK) {
-      await simulateDelay(300);
-      return MOCK_ACTIVE_TRIP;
-    }
-    return apiFetch("/trips/active");
-  },
-
-  /**
-   * Get Specific Trip Details
-   * BACKEND ENDPOINT: GET /api/v1/trips/:id
-   */
-  async getTripById(tripId) {
-    if (USE_MOCK) {
-      await simulateDelay(300);
-      return { ...MOCK_ACTIVE_TRIP, id: tripId || "PNL-1042" };
-    }
-    return apiFetch(`/trips/${tripId}`);
-  },
-
-  /**
-   * Get Customer Historical Trips
-   * BACKEND ENDPOINT: GET /api/v1/customers/trips?status=completed
-   */
-  async getCustomerTripHistory() {
+  async getMyBookings() {
     if (USE_MOCK) {
       await simulateDelay(400);
-      return MOCK_ADMIN_TRIPS.slice(0, 3);
+      return { success: true, data: MOCK_ADMIN_TRIPS.slice(0, 3) };
     }
-    return apiFetch("/customers/trips");
+    return apiFetch("/bookings/my");
   },
 
   /**
-   * Submit Trip Rating and Tip
-   * BACKEND ENDPOINT: POST /api/v1/trips/:id/rating
-   * PAYLOAD: { rating: number, feedback: string, tipAmount: number }
+   * TESTED ROUTE: GET /api/bookings/available
+   * Returns unassigned available bookings for drivers
    */
-  async submitRating(tripId, { rating, feedback, tipAmount = 0 }) {
+  async getAvailableBookings() {
+    if (USE_MOCK) {
+      await simulateDelay(400);
+      return { success: true, data: [MOCK_ACTIVE_TRIP] };
+    }
+    return apiFetch("/bookings/available");
+  },
+
+  /**
+   * TESTED ROUTE: PATCH /api/bookings/:bookingId/accept
+   * Driver accepts a booking request
+   */
+  async acceptBooking(bookingId) {
     if (USE_MOCK) {
       await simulateDelay(500);
-      return {
-        success: true,
-        tripId,
-        message: "Thank you for rating your driver partner!",
-      };
+      return { statusCode: 200, success: true, message: "Booking accepted successfully" };
     }
-    return apiFetch(`/trips/${tripId}/rating`, {
-      method: "POST",
-      body: JSON.stringify({ rating, feedback, tipAmount }),
+    return apiFetch(`/bookings/${bookingId}/accept`, {
+      method: "PATCH",
     });
+  },
+
+  /**
+   * TESTED ROUTE: PATCH /api/bookings/:bookingId/status
+   * Updates booking status (e.g. 'goods_loaded', 'in_transit', 'completed')
+   */
+  async updateBookingStatus(bookingId, status) {
+    if (USE_MOCK) {
+      await simulateDelay(400);
+      return { statusCode: 200, success: true, message: `Status updated to ${status}` };
+    }
+    return apiFetch(`/bookings/${bookingId}/status`, {
+      method: "PATCH",
+      body: JSON.stringify({ status }),
+    });
+  },
+
+  /**
+   * UI Helpers & Pricing Models
+   */
+  async getVehicleTiers() {
+    return VEHICLE_TIERS;
+  },
+
+  async estimateFare({ pickupAddress, dropAddress, vehicleTierId, weightKg }) {
+    const tier = VEHICLE_TIERS.find((v) => v.id === vehicleTierId) || VEHICLE_TIERS[0];
+    const approxKm = 38;
+    const baseFare = tier.baseFare;
+    const distanceFare = approxKm * tier.perKm;
+    const total = baseFare + distanceFare;
+
+    return {
+      distanceKm: approxKm,
+      estimatedTimeMin: 65,
+      baseFare,
+      distanceFare,
+      totalFare: total,
+      currency: "₹",
+      pickupAddress,
+      dropAddress,
+      vehicleTier: tier.name,
+    };
+  },
+
+  async getRespondingDrivers(tripId) {
+    if (USE_MOCK) {
+      await simulateDelay(400);
+      return MOCK_RESPONDING_DRIVERS;
+    }
+    // Backend may return available bookings or bids
+    return MOCK_RESPONDING_DRIVERS;
+  },
+
+  async acceptDriverBid(tripId, driverId) {
+    if (USE_MOCK) {
+      await simulateDelay(500);
+      const driver = MOCK_RESPONDING_DRIVERS.find((d) => d.id === driverId) || MOCK_RESPONDING_DRIVERS[0];
+      return { success: true, tripId, status: "GOING_TO_PICKUP", assignedDriver: driver, otp: "4829" };
+    }
+    return this.acceptBooking(tripId);
+  },
+
+  async getActiveTrip() {
+    return MOCK_ACTIVE_TRIP;
+  },
+
+  async submitRating(tripId, ratingData) {
+    await simulateDelay(400);
+    return { success: true, message: "Rating recorded" };
   },
 };

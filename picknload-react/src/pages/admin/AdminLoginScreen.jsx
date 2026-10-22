@@ -8,7 +8,7 @@ import { Input } from "../../components/common/Input";
 export const AdminLoginScreen = () => {
   const navigate = useNavigate();
   const { setUser, setRole } = useAuth();
-  const [email, setEmail] = useState("admin@picknload.com");
+  const [email, setEmail] = useState("admin@gmail.com");
   const [password, setPassword] = useState("admin123");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -19,11 +19,13 @@ export const AdminLoginScreen = () => {
     setError("");
 
     try {
-      // BACKEND PLACEHOLDER: POST /api/v1/admin/auth/login
-      const res = await authApi.adminLogin(email, password);
-      setUser(res.user);
-      setRole("admin");
-      navigate("/admin/dashboard");
+      // TESTED ROUTE: POST /api/auth/login
+      const res = await authApi.login(email, password);
+      if (res?.data?.user) {
+        setUser(res.data.user);
+        setRole("admin");
+        navigate("/admin/dashboard");
+      }
     } catch (err) {
       setError(err.message || "Invalid administrator credentials");
     } finally {
@@ -48,7 +50,7 @@ export const AdminLoginScreen = () => {
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <Input
-            label="Administrator Email"
+            label="Administrator Email (Tested in HAR)"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -80,12 +82,12 @@ export const AdminLoginScreen = () => {
             icon="login"
             className="mt-2"
           >
-            Sign In to Operations Portal
+            Sign In (POST /api/auth/login)
           </Button>
         </form>
 
         <div className="text-center pt-2 border-t border-outline-variant/30 text-xs text-secondary">
-          <span>Protected logistics portal • 256-bit encryption</span>
+          <span>Tested backend endpoint: <code>http://localhost:5000/api/auth/login</code></span>
         </div>
       </div>
     </div>

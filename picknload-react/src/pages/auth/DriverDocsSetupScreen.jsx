@@ -1,38 +1,38 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MobileHeader } from "../../components/layout/MobileHeader";
+import { Input } from "../../components/common/Input";
 import { Button } from "../../components/common/Button";
 import { authApi } from "../../api/authApi";
 
 export const DriverDocsSetupScreen = () => {
   const navigate = useNavigate();
+  const [licenseNumber, setLicenseNumber] = useState("KA0120261234567");
+  const [licenseExpiry, setLicenseExpiry] = useState("2030-12-31");
+  const [experienceYears, setExperienceYears] = useState(3);
+  const [city, setCity] = useState("Tumkur");
+  const [state, setState] = useState("Karnataka");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  // Document states
-  const [docs, setDocs] = useState({
-    dl: { name: "driving_license_front.jpg", uploaded: true },
-    rc: { name: "rc_smart_card.pdf", uploaded: true },
-    insurance: { name: "vehicle_insurance_2026.pdf", uploaded: true },
-  });
-
-  const handleFakeUpload = (key) => {
-    setDocs((prev) => ({
-      ...prev,
-      [key]: { name: `${key}_uploaded.jpg`, uploaded: true },
-    }));
-  };
-
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     setLoading(true);
+    setError("");
+
     try {
-      // BACKEND PLACEHOLDER: Calls POST /api/v1/drivers/documents with multipart FormData
-      const formData = new FormData();
-      formData.append("license", docs.dl.name);
-      formData.append("rc", docs.rc.name);
-      formData.append("insurance", docs.insurance.name);
-      await authApi.uploadDriverDocuments(formData);
+      // TESTED ROUTE: POST /api/driver/profile
+      await authApi.createDriverProfile({
+        licenseNumber,
+        licenseExpiry,
+        experienceYears,
+        city,
+        state,
+      });
 
       navigate("/driver/verification-pending");
+    } catch (err) {
+      setError(err.message || "Failed to submit driver profile.");
     } finally {
       setLoading(false);
     }
@@ -40,119 +40,80 @@ export const DriverDocsSetupScreen = () => {
 
   return (
     <div className="flex-1 flex flex-col justify-between px-margin pt-20 pb-8 min-h-[780px] bg-surface-container-lowest">
-      <MobileHeader title="Document Upload" showBack />
+      <MobileHeader title="Driver License & Profile" showBack />
 
-      <div className="flex flex-col gap-4 mt-2">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-2 pb-6">
         <div>
           <span className="font-label-sm text-secondary">Step 2 of 2</span>
           <h2 className="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight mt-1">
-            Upload your documents
+            Driver Compliance Profile
           </h2>
           <p className="font-body-md text-secondary mt-1">
-            Required by Karnataka Transport Department for commercial goods hauling.
+            Registered via <code>POST /api/driver/profile</code> with Driving License credentials.
           </p>
         </div>
 
-        {/* Document Upload Cards */}
-        <div className="flex flex-col gap-3 mt-2">
-          {/* 1. Commercial Driving License */}
-          <div className="p-4 rounded-2xl border border-outline-variant/60 bg-surface-container-low/30 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-on-surface">
-                <span className="material-symbols-outlined text-[22px]">badge</span>
-              </div>
-              <div>
-                <p className="text-[14px] font-semibold text-on-surface">Driving License (DL)</p>
-                <p className="text-[12px] text-secondary">
-                  {docs.dl.uploaded ? docs.dl.name : "Front & back photo"}
-                </p>
-              </div>
-            </div>
+        <div className="flex flex-col gap-3 mt-1">
+          <Input
+            label="Commercial Driving License (DL) Number *"
+            placeholder="e.g. KA0120261234567"
+            value={licenseNumber}
+            onChange={(e) => setLicenseNumber(e.target.value.toUpperCase())}
+            leadingIcon="badge"
+            required
+          />
 
-            {docs.dl.uploaded ? (
-              <span className="inline-flex items-center gap-1 text-[12px] font-semibold text-tertiary bg-tertiary-container/20 px-2.5 py-1 rounded-full">
-                <span className="material-symbols-outlined text-[14px]">check_circle</span>
-                Attached
-              </span>
-            ) : (
-              <Button size="sm" variant="secondary" onClick={() => handleFakeUpload("dl")}>
-                Upload
-              </Button>
-            )}
+          <Input
+            label="License Expiry Date *"
+            type="date"
+            value={licenseExpiry}
+            onChange={(e) => setLicenseExpiry(e.target.value)}
+            leadingIcon="calendar_today"
+            required
+          />
+
+          <div className="grid grid-cols-2 gap-3">
+            <Input
+              label="Experience (Years) *"
+              type="number"
+              value={experienceYears}
+              onChange={(e) => setExperienceYears(e.target.value)}
+              required
+            />
+            <Input
+              label="Operating City *"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              required
+            />
           </div>
 
-          {/* 2. Vehicle Registration Certificate (RC) */}
-          <div className="p-4 rounded-2xl border border-outline-variant/60 bg-surface-container-low/30 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-on-surface">
-                <span className="material-symbols-outlined text-[22px]">description</span>
-              </div>
-              <div>
-                <p className="text-[14px] font-semibold text-on-surface">Vehicle RC Book</p>
-                <p className="text-[12px] text-secondary">
-                  {docs.rc.uploaded ? docs.rc.name : "Commercial permit copy"}
-                </p>
-              </div>
+          <Input
+            label="State *"
+            value={state}
+            onChange={(e) => setState(e.target.value)}
+            required
+          />
+
+          {error && (
+            <div className="p-3 rounded-xl bg-error-container/40 border border-error/30 text-on-error-container text-xs flex items-center gap-2">
+              <span className="material-symbols-outlined text-[16px] text-error">error</span>
+              <span>{error}</span>
             </div>
-
-            {docs.rc.uploaded ? (
-              <span className="inline-flex items-center gap-1 text-[12px] font-semibold text-tertiary bg-tertiary-container/20 px-2.5 py-1 rounded-full">
-                <span className="material-symbols-outlined text-[14px]">check_circle</span>
-                Attached
-              </span>
-            ) : (
-              <Button size="sm" variant="secondary" onClick={() => handleFakeUpload("rc")}>
-                Upload
-              </Button>
-            )}
-          </div>
-
-          {/* 3. Commercial Vehicle Insurance */}
-          <div className="p-4 rounded-2xl border border-outline-variant/60 bg-surface-container-low/30 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-on-surface">
-                <span className="material-symbols-outlined text-[22px]">verified_user</span>
-              </div>
-              <div>
-                <p className="text-[14px] font-semibold text-on-surface">Vehicle Insurance</p>
-                <p className="text-[12px] text-secondary">
-                  {docs.insurance.uploaded ? docs.insurance.name : "Active policy document"}
-                </p>
-              </div>
-            </div>
-
-            {docs.insurance.uploaded ? (
-              <span className="inline-flex items-center gap-1 text-[12px] font-semibold text-tertiary bg-tertiary-container/20 px-2.5 py-1 rounded-full">
-                <span className="material-symbols-outlined text-[14px]">check_circle</span>
-                Attached
-              </span>
-            ) : (
-              <Button size="sm" variant="secondary" onClick={() => handleFakeUpload("insurance")}>
-                Upload
-              </Button>
-            )}
-          </div>
+          )}
         </div>
+      </form>
 
-        {/* Security assurance note */}
-        <div className="p-3 rounded-xl bg-surface-container-low border border-outline-variant/30 flex items-center gap-2.5 mt-2">
-          <span className="material-symbols-outlined text-[20px] text-primary">security</span>
-          <p className="text-[12px] text-secondary leading-snug">
-            Your documents are securely encrypted and verified solely for regulatory dispatch compliance.
-          </p>
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-3 pt-6 pb-2">
+      <div className="flex flex-col gap-3 pt-4 pb-2">
         <Button
           fullWidth
           size="lg"
           onClick={handleSubmit}
           loading={loading}
-          disabled={!docs.dl.uploaded || !docs.rc.uploaded}
+          disabled={!licenseNumber.trim()}
           icon="upload_file"
         >
-          Submit for Hub Verification
+          Submit Profile (POST /api/driver/profile)
         </Button>
       </div>
     </div>

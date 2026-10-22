@@ -3,23 +3,50 @@ import { useNavigate } from "react-router-dom";
 import { useTrip } from "../../context/TripContext";
 import { MobileHeader } from "../../components/layout/MobileHeader";
 import { Button } from "../../components/common/Button";
+import { tripsApi } from "../../api/tripsApi";
 
 export const ReviewRequestScreen = () => {
   const navigate = useNavigate();
-  const { draftTrip, createRequest, loading } = useTrip();
+  const { draftTrip, setActiveTrip } = useTrip();
   const [paymentMethod, setPaymentMethod] = useState("Cash on Delivery");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const fareTotal = draftTrip.estimatedFare || 950;
   const baseFare = 350;
   const distanceFare = fareTotal - baseFare;
 
   const handleConfirmBooking = async () => {
-    // BACKEND PLACEHOLDER: POST /api/v1/trips/create
-    await createRequest({
-      ...draftTrip,
-      paymentMethod,
-    });
-    navigate("/customer/finding-drivers");
+    setLoading(true);
+    setError("");
+
+    try {
+      // TESTED ROUTE: POST /api/bookings
+      const res = await tripsApi.createRequest({
+        pickup: draftTrip.pickup || "Tumkur Market",
+        pickupCity: "Tumkur",
+        drop: draftTrip.drop || "KR Market",
+        dropCity: "Bengaluru",
+        cargoType: draftTrip.cargoType || "Vegetable boxes",
+        weightKg: draftTrip.weightKg || 500,
+        vehicleTierId: draftTrip.vehicleTierId || "tata-ace",
+      });
+
+      if (res?.data?._id) {
+        setActiveTrip((prev) => ({
+          ...prev,
+          id: res.data._id,
+          status: res.data.status || "SEARCHING",
+          vehicleType: res.data.vehicleType,
+        }));
+      }
+
+      navigate("/customer/finding-drivers");
+    } catch (err) {
+      setError(err.message || "Failed to create booking. Check backend connection.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -28,7 +55,7 @@ export const ReviewRequestScreen = () => {
 
       <div className="flex flex-col gap-4 mt-2 pb-6">
         <div>
-          <span className="font-label-sm text-secondary">Summary & Fare</span>
+          <span className="font-label-sm text-secondary">POST /api/bookings</span>
           <h2 className="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight mt-1">
             Review your request
           </h2>
@@ -39,8 +66,8 @@ export const ReviewRequestScreen = () => {
           <div className="flex items-start gap-3">
             <span className="w-2.5 h-2.5 rounded-full bg-tertiary mt-1.5 shrink-0"></span>
             <div>
-              <p className="text-[11px] font-semibold text-secondary uppercase">Pickup</p>
-              <p className="text-[14px] font-bold text-on-surface">{draftTrip.pickup}</p>
+              <p className="text-[11px] font-semibold text-secondary uppercase">Pickup Location</p>
+              <p className="text-[14px] font-bold text-on-surface">{draftTrip.pickup || "Tumkur Market"}</p>
             </div>
           </div>
 
@@ -51,27 +78,27 @@ export const ReviewRequestScreen = () => {
           <div className="flex items-start gap-3">
             <span className="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">location_on</span>
             <div>
-              <p className="text-[11px] font-semibold text-secondary uppercase">Drop</p>
-              <p className="text-[14px] font-bold text-on-surface">{draftTrip.drop}</p>
+              <p className="text-[11px] font-semibold text-secondary uppercase">Drop Location</p>
+              <p className="text-[14px] font-bold text-on-surface">{draftTrip.drop || "KR Market, Bengaluru"}</p>
             </div>
           </div>
 
           <div className="pt-2 border-t border-outline-variant/40 flex items-center justify-between text-xs text-secondary">
             <span>Route Distance: <strong>38 km</strong></span>
-            <span>Est. Transit: <strong>~65 mins</strong></span>
+            <span>Vehicle: <strong>tata-ace</strong></span>
           </div>
         </div>
 
-        {/* Cargo & Vehicle Specifications */}
+        {/* Cargo & Specs */}
         <div className="bg-surface-container-lowest rounded-2xl p-4 border border-outline-variant/60 shadow-xs flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary">
               <span className="material-symbols-outlined text-[22px]">local_shipping</span>
             </div>
             <div>
-              <p className="text-[14px] font-bold text-on-surface">{draftTrip.vehicleName || "Tata Ace"}</p>
+              <p className="text-[14px] font-bold text-on-surface">Tata Ace (tata-ace)</p>
               <p className="text-[12px] text-secondary">
-                {draftTrip.cargoType} • {draftTrip.weightKg} kg load
+                {draftTrip.cargoType || "Vegetable boxes"} • {draftTrip.weightKg || 500} kg load
               </p>
             </div>
           </div>
@@ -83,19 +110,15 @@ export const ReviewRequestScreen = () => {
         {/* Fare Breakdown Card */}
         <div className="bg-surface-container-lowest rounded-2xl p-4 border border-outline-variant/60 shadow-xs flex flex-col gap-2.5">
           <p className="text-[13px] font-bold text-on-surface border-b border-outline-variant/30 pb-2">
-            Fare Breakdown
+            Fare Estimate
           </p>
           <div className="flex justify-between text-xs text-secondary">
             <span>Base Fare (First 5 km)</span>
             <span>₹{baseFare}</span>
           </div>
           <div className="flex justify-between text-xs text-secondary">
-            <span>Distance Charges (33 km)</span>
+            <span>Distance Fare (33 km)</span>
             <span>₹{distanceFare}</span>
-          </div>
-          <div className="flex justify-between text-xs text-secondary">
-            <span>Platform GST & Insurance (5%)</span>
-            <span>Included</span>
           </div>
           <div className="pt-2 border-t border-outline-variant/40 flex justify-between items-center">
             <span className="text-[15px] font-bold text-on-surface">Total Payable</span>
@@ -103,36 +126,12 @@ export const ReviewRequestScreen = () => {
           </div>
         </div>
 
-        {/* Payment Method Selector */}
-        <div className="flex flex-col gap-2">
-          <label className="font-label-sm text-secondary font-medium">Payment Mode</label>
-          <div className="grid grid-cols-2 gap-2">
-            <button
-              type="button"
-              onClick={() => setPaymentMethod("Cash on Delivery")}
-              className={`p-3 rounded-xl border text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors ${
-                paymentMethod === "Cash on Delivery"
-                  ? "border-primary-container bg-primary-container/10 text-on-surface"
-                  : "border-outline-variant/60 bg-white text-secondary"
-              }`}
-            >
-              <span className="material-symbols-outlined text-[18px]">payments</span>
-              <span>Cash on Delivery</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setPaymentMethod("Online UPI")}
-              className={`p-3 rounded-xl border text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors ${
-                paymentMethod === "Online UPI"
-                  ? "border-primary-container bg-primary-container/10 text-on-surface"
-                  : "border-outline-variant/60 bg-white text-secondary"
-              }`}
-            >
-              <span className="material-symbols-outlined text-[18px]">qr_code_2</span>
-              <span>UPI / NetBanking</span>
-            </button>
+        {error && (
+          <div className="p-3 rounded-xl bg-error-container/40 border border-error/30 text-on-error-container text-xs flex items-center gap-2">
+            <span className="material-symbols-outlined text-[16px] text-error">error</span>
+            <span>{error}</span>
           </div>
-        </div>
+        )}
       </div>
 
       <div className="flex flex-col gap-3 pt-4 pb-2">
@@ -143,7 +142,7 @@ export const ReviewRequestScreen = () => {
           loading={loading}
           icon="broadcast_on_personal"
         >
-          Confirm & Broadcast to Drivers
+          Confirm & Create Booking (POST /api/bookings)
         </Button>
       </div>
     </div>

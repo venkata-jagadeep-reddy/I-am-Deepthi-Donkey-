@@ -4,26 +4,36 @@ import { MobileHeader } from "../../components/layout/MobileHeader";
 import { Input } from "../../components/common/Input";
 import { Button } from "../../components/common/Button";
 import { VEHICLE_TIERS } from "../../mock/mockData";
-import { authApi } from "../../api/authApi";
+import { driverApi } from "../../api/driverApi";
 
 export const DriverVehicleSetupScreen = () => {
   const navigate = useNavigate();
   const [selectedTier, setSelectedTier] = useState("tata_ace");
-  const [plateNumber, setPlateNumber] = useState("KA-06-XX-1234");
-  const [vehicleModel, setVehicleModel] = useState("Tata Ace Gold Diesel");
+  const [plateNumber, setPlateNumber] = useState("KA06AB1234");
+  const [vehicleModel, setVehicleModel] = useState("Tata Ace Gold");
+  const [payloadKg, setPayloadKg] = useState(750);
+  const [lengthFeet, setLengthFeet] = useState(7);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleNext = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setError("");
+
     try {
-      // BACKEND PLACEHOLDER: POST /api/v1/drivers/vehicle
-      await authApi.setupDriverVehicle({
-        vehicleTier: selectedTier,
-        plateNumber,
-        vehicleModel,
+      // TESTED ROUTE: POST /api/vehicles
+      await driverApi.addVehicle({
+        vehicleType: selectedTier === "tata_ace" ? "tata-ace" : selectedTier,
+        model: vehicleModel,
+        registrationNumber: plateNumber,
+        payloadCapacityKg: Number(payloadKg),
+        lengthFeet: Number(lengthFeet),
       });
+
       navigate("/driver/docs-setup");
+    } catch (err) {
+      setError(err.message || "Failed to add vehicle. Check registration details.");
     } finally {
       setLoading(false);
     }
@@ -40,12 +50,12 @@ export const DriverVehicleSetupScreen = () => {
             Add your vehicle
           </h2>
           <p className="font-body-md text-secondary mt-1">
-            Select your commercial transport category and enter registration details.
+            Registered via <code>POST /api/vehicles</code> with RC number and payload specifications.
           </p>
         </div>
 
         {/* Vehicle Selection Grid */}
-        <div className="flex flex-col gap-2 mt-2">
+        <div className="flex flex-col gap-2 mt-1">
           <label className="font-label-sm text-secondary font-medium">Select Vehicle Category *</label>
           <div className="grid grid-cols-1 gap-2.5">
             {VEHICLE_TIERS.map((v) => {
@@ -53,7 +63,22 @@ export const DriverVehicleSetupScreen = () => {
               return (
                 <div
                   key={v.id}
-                  onClick={() => setSelectedTier(v.id)}
+                  onClick={() => {
+                    setSelectedTier(v.id);
+                    if (v.id === "tata_ace") {
+                      setVehicleModel("Tata Ace Gold");
+                      setPayloadKg(750);
+                      setLengthFeet(7);
+                    } else if (v.id === "pickup_8ft") {
+                      setVehicleModel("Bolero Maxi Truck");
+                      setPayloadKg(1250);
+                      setLengthFeet(8);
+                    } else {
+                      setVehicleModel("Piaggio Ape Extra");
+                      setPayloadKg(500);
+                      setLengthFeet(5.5);
+                    }
+                  }}
                   className={`
                     p-3.5 rounded-2xl border-2 transition-all cursor-pointer flex items-center justify-between
                     ${
@@ -65,18 +90,18 @@ export const DriverVehicleSetupScreen = () => {
                 >
                   <div className="flex items-center gap-3">
                     <div
-                      className={`w-11 h-11 rounded-xl flex items-center justify-center ${
+                      className={`w-10 h-10 rounded-xl flex items-center justify-center ${
                         isSelected ? "bg-primary-container text-on-primary-container" : "bg-surface-container text-secondary"
                       }`}
                     >
-                      <span className="material-symbols-outlined text-[24px]">{v.icon}</span>
+                      <span className="material-symbols-outlined text-[22px]">{v.icon}</span>
                     </div>
                     <div>
-                      <h4 className="font-headline-md text-[15px] font-bold text-on-surface">
+                      <h4 className="font-bold text-[14px] text-on-surface">
                         {v.name} <span className="text-secondary font-normal text-xs">({v.subtitle})</span>
                       </h4>
-                      <p className="text-[12px] text-secondary">
-                        Capacity: <strong>{v.capacity}</strong> • {v.dimensions}
+                      <p className="text-[11px] text-secondary">
+                        Payload: <strong>{v.capacity}</strong> • {v.dimensions}
                       </p>
                     </div>
                   </div>
@@ -94,25 +119,49 @@ export const DriverVehicleSetupScreen = () => {
           </div>
         </div>
 
-        {/* Plate number & Model */}
-        <div className="flex flex-col gap-3 mt-1">
+        {/* Inputs */}
+        <div className="flex flex-col gap-3">
           <Input
-            label="Vehicle Registration Number (RC Plate) *"
-            placeholder="e.g. KA-06-XX-1234"
+            label="Registration Number (RC Plate) *"
+            placeholder="e.g. KA06AB1234"
             value={plateNumber}
             onChange={(e) => setPlateNumber(e.target.value.toUpperCase())}
             leadingIcon="badge"
-            helperText="State transport commercial permit number"
             required
           />
 
           <Input
-            label="Vehicle Model / Make"
-            placeholder="e.g. Tata Ace Gold / Mahindra Bolero Maxx"
+            label="Vehicle Model *"
+            placeholder="e.g. Tata Ace Gold"
             value={vehicleModel}
             onChange={(e) => setVehicleModel(e.target.value)}
             leadingIcon="directions_car"
+            required
           />
+
+          <div className="grid grid-cols-2 gap-3">
+            <Input
+              label="Payload Capacity (kg) *"
+              type="number"
+              value={payloadKg}
+              onChange={(e) => setPayloadKg(e.target.value)}
+              required
+            />
+            <Input
+              label="Cargo Length (feet) *"
+              type="number"
+              value={lengthFeet}
+              onChange={(e) => setLengthFeet(e.target.value)}
+              required
+            />
+          </div>
+
+          {error && (
+            <div className="p-3 rounded-xl bg-error-container/40 border border-error/30 text-on-error-container text-xs flex items-center gap-2">
+              <span className="material-symbols-outlined text-[16px] text-error">error</span>
+              <span>{error}</span>
+            </div>
+          )}
         </div>
       </form>
 
@@ -125,7 +174,7 @@ export const DriverVehicleSetupScreen = () => {
           disabled={!plateNumber.trim()}
           icon="arrow_forward"
         >
-          Next: Upload Documents
+          Save Vehicle & Continue
         </Button>
       </div>
     </div>

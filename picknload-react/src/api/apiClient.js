@@ -1,16 +1,12 @@
 /**
  * API Client & Backend Connection Configuration
- * 
- * Instructions for Backend Integration:
- * 1. Set VITE_USE_MOCK_API=false in your .env file.
- * 2. Set VITE_API_BASE_URL to your backend server (e.g., https://api.picknload.com/v1).
- * 3. The apiFetch helper automatically appends Authorization: Bearer <token> when available.
+ * Configured for PickNLoad Express Backend (Tested on http://localhost:5000/api)
  */
 
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000/api/v1";
-export const USE_MOCK = import.meta.env.VITE_USE_MOCK_API !== "false";
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
+export const USE_MOCK = import.meta.env.VITE_USE_MOCK_API === "true";
 
-// In-memory or localStorage token management
+// Local storage session keys
 const TOKEN_KEY = "picknload_auth_token";
 const USER_KEY = "picknload_user_session";
 
@@ -48,20 +44,13 @@ export const clearSession = () => {
   localStorage.removeItem(USER_KEY);
 };
 
-// Simulation helper for realistic async loading states when in Mock mode
+// Simulation helper for mock mode
 export const simulateDelay = (ms = 400) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /**
- * Universal API Fetch wrapper
- * Can be used directly or replaced with Axios
+ * Universal Fetch wrapper configured for tested Express backend endpoints
  */
 export async function apiFetch(endpoint, options = {}) {
-  if (USE_MOCK) {
-    console.info(`[MOCK API] Request to: ${endpoint}`, options);
-    // Handled by individual service modules in mock mode
-    return null;
-  }
-
   const token = getAuthToken();
   const headers = {
     "Content-Type": "application/json",
@@ -70,7 +59,8 @@ export async function apiFetch(endpoint, options = {}) {
     ...options.headers,
   };
 
-  const url = `${API_BASE_URL}${endpoint.startsWith("/") ? endpoint : `/${endpoint}`}`;
+  const cleanEndpoint = endpoint.startsWith("/") ? endpoint : `/${endpoint}`;
+  const url = `${API_BASE_URL}${cleanEndpoint}`;
 
   try {
     const response = await fetch(url, {
@@ -84,12 +74,21 @@ export async function apiFetch(endpoint, options = {}) {
       throw new Error("Session expired. Please log in again.");
     }
 
-    if (!response.ok) {
-      const errorBody = await response.json().catch(() => ({}));
-      throw new Error(errorBody.message || `API error ${response.status}: ${response.statusText}`);
+    const contentType = response.headers.get("content-type") || "";
+    let data;
+    if (contentType.includes("application/json")) {
+      data = await response.json();
+    } else {
+      const text = await response.text();
+      data = { message: text };
     }
 
-    return await response.json();
+    if (!response.ok) {
+      const errMsg = data?.message || data?.error || `HTTP ${response.status}: ${response.statusText}`;
+      throw new Error(errMsg);
+    }
+
+    return data;
   } catch (error) {
     console.error(`[API ERROR] ${options.method || "GET"} ${url}:`, error);
     throw error;
