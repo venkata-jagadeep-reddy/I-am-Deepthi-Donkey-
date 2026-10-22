@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-container": "#d9dff5", "surface-container": "#e7eefe", "surface-container-high": "#e2e8f8", "error": "#ba1a1a", "tertiary-container": "#4ac86a", "surface-variant": "#dce2f3", "primary-container": "#f59e0b", "primary-fixed": "#ffddb8", "tertiary": "#006e2d", "surface-dim": "#d3daea", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "on-secondary-fixed-variant": "#404758", "on-primary-fixed": "#2a1700", "inverse-primary": "#ffb95f", "on-secondary": "#ffffff", "on-tertiary-container": "#004f1f", "on-tertiary": "#ffffff", "secondary-fixed": "#dce2f7", "on-background": "#151c27", "on-error-container": "#93000a", "error-container": "#ffdad6", "on-surface": "#151c27", "primary-fixed-dim": "#ffb95f", "tertiary-fixed-dim": "#62df7d", "secondary": "#575e70", "surface-container-low": "#f0f3ff", "on-primary": "#ffffff", "on-secondary-container": "#5c6274", "on-surface-variant": "#534434", "inverse-on-surface": "#ebf1ff", "surface": "#f9f9ff", "outline": "#867461", "inverse-surface": "#2a313d", "background": "#f9f9ff", "on-primary-container": "#613b00", "surface-tint": "#855300", "surface-container-highest": "#dce2f3", "on-secondary-fixed": "#141b2b", "secondary-fixed-dim": "#c0c6db", "primary": "#855300", "surface-bright": "#f9f9ff", "tertiary-fixed": "#7ffc97", "on-primary-fixed-variant": "#653e00", "on-tertiary-fixed-variant": "#005320", "outline-variant": "#d8c3ad", "on-tertiary-fixed": "#002109" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xs": "0.25rem", "space-md": "1rem", "margin": "1.25rem", "space-xl": "1.5rem", "space-sm": "0.5rem", "space-lg": "1.25rem", "gutter": "1rem" }, fontFamily: { "headline-xl": ["Inter"], "headline-md": ["Inter"], "headline-lg": ["Inter"], "body-md-medium": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"], "body-lg-bold": ["Inter"] }, fontSize: { "headline-xl": ["26px", { lineHeight: "32px", fontWeight: "700" }], "headline-md": ["18px", { lineHeight: "24px", fontWeight: "600" }], "headline-lg": ["22px", { lineHeight: "28px", fontWeight: "700" }], "body-md-medium": ["14px", { lineHeight: "20px", fontWeight: "500" }], "label-md": ["13px", { lineHeight: "16px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-lg-bold": ["16px", { lineHeight: "24px", fontWeight: "600" }] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-xl bg-primary-container flex items-center justify-center text-on-primary font-headline-md text-headline-md tracking-tight">P</div><div class="flex flex-col"><span class="font-headline-md text-headline-md text-on-surface leading-tight tracking-tight">PickNLoad</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Driver Partner</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[24px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-margin py-space-md gap-space-md">
+<!-- Driver Greeting & Identity Strip -->
+<div class="flex items-center justify-between">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Good morning, Ravi</h1>
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-surface-container-high text-secondary" title="Shift Paused">
+<span class="material-symbols-outlined text-[15px]">bedtime</span>
+</span>
+</div>
+<p class="font-body-md text-body-md text-secondary truncate mt-0.5">
+        Tata Ace • KA-06-XX-1234 • <span class="text-error font-body-md-medium">Offline</span>
+</p>
+</div>
+<!-- Mini Vehicle Snapshot -->
+<div class="w-12 h-12 rounded-xl bg-surface-container-high overflow-hidden shrink-0 shadow-sm flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Compact commercial delivery mini truck Tata Ace parked neatly in morning sunlight in India, clean industrial framing, realistic lighting, warm tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo6VXBOCt0j_cxL0wRB7ScVSAmyeoDxE27OagHgEjmlU3pKq2cRzLRSGz2QxM-mvrTokwLpsv-LHWc4vVm5prIKPPe1g3-MMZCmnNPA5d1Cs9zCAtTm7z957vw0qJe1WP4LGPQpehDNk0HvpClhPMXsl5DGejS_KjX5qYPEA6NoOur3WOnHwtz4aP2ULEZEq02AJUYcekbvuTolz6Efoql8JcCGWoArfetU14kk8h0AwX3gGm30ecGqQ">
+</div>
+</div>
+<!-- Primary Offline Status Card (Tactile Switch Banner) -->
+<div class="w-full rounded-xl bg-surface-container-low shadow-sm p-space-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary">OFFLINE</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-2 py-0.5 rounded-full">Tumakuru Zone</span>
+</div>
+<!-- Toggle Interaction Area -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-space-sm rounded-xl shadow-sm">
+<div class="flex flex-col pr-space-xs">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">Go Online</span>
+<span class="font-label-sm text-label-sm text-secondary">Ready to take dispatch orders</span>
+</div>
+<!-- Custom Toggle Button -->
+<button aria-pressed="false" class="relative inline-flex h-9 w-16 shrink-0 cursor-pointer rounded-full bg-surface-variant transition-colors duration-200 ease-in-out focus:outline-none" id="duty-toggle" role="switch" type="button">
+<span class="sr-only">Toggle duty status</span>
+<span class="pointer-events-none inline-block h-7 w-7 transform rounded-full bg-surface-container-lowest shadow-md transition duration-200 ease-in-out translate-x-1 top-1 absolute" id="toggle-thumb">
+<span class="material-symbols-outlined text-[16px] text-secondary absolute inset-0 flex items-center justify-center">power_settings_new</span>
+</span>
+</button>
+</div>
+<div class="flex items-center justify-between">
+<p class="font-body-md text-body-md text-secondary">
+        Turn on to receive instant intra-city transport requests.
+      </p>
+<button class="shrink-0 font-label-md text-label-md text-primary bg-primary-fixed/40 px-3 py-1.5 rounded-lg active:scale-95 transition-transform" id="quick-connect-btn">
+        Slide to Start
+      </button>
+</div>
+</div>
+<!-- Dimmed Muted Stats Grid -->
+<div class="grid grid-cols-3 gap-space-xs">
+<!-- Card 1: Earnings -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-sm shadow-sm opacity-85">
+<div class="flex items-center justify-between text-secondary mb-1">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span class="font-label-sm text-label-sm">Today</span>
+</div>
+<span class="font-headline-md text-headline-md text-secondary font-semibold">₹1,250</span>
+<span class="font-label-sm text-label-sm text-outline mt-0.5 truncate">Net payout</span>
+</div>
+<!-- Card 2: Trips Completed -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-sm shadow-sm opacity-85">
+<div class="flex items-center justify-between text-secondary mb-1">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+<span class="font-label-sm text-label-sm">Trips done</span>
+</div>
+<span class="font-headline-md text-headline-md text-secondary font-semibold">4</span>
+<span class="font-label-sm text-label-sm text-outline mt-0.5 truncate">Completed</span>
+</div>
+<!-- Card 3: Pending Leads -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-sm shadow-sm opacity-85">
+<div class="flex items-center justify-between text-secondary mb-1">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+<span class="font-label-sm text-label-sm">Requests</span>
+</div>
+<span class="font-headline-md text-headline-md text-secondary font-semibold">—</span>
+<span class="font-label-sm text-label-sm text-outline mt-0.5 truncate">Paused status</span>
+</div>
+</div>
+<!-- Replaced "New Requests" Area: Thoughtful Muted Empty State Box -->
+<div class="w-full rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col items-center text-center gap-space-md">
+<div class="relative w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[32px]">do_not_disturb_on</span>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 max-w-[280px]">
+<h2 class="font-headline-md text-headline-md text-on-surface">You won't receive requests while offline</h2>
+<p class="font-body-md text-body-md text-secondary">
+        Turn your status to ONLINE whenever you're ready to accept commercial goods dispatch orders in Tumakuru.
+      </p>
+</div>
+<!-- Primary Action for Dispatch Handlers -->
+<button class="w-full h-[52px] rounded-xl bg-primary-container text-on-primary font-body-lg-bold text-body-lg-bold flex items-center justify-center gap-space-xs shadow-sm active:scale-[0.99] transition-transform" id="go-online-action">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+<span>Go Online Now</span>
+</button>
+</div>
+<!-- Daily Fleet Tip & Rest Banner -->
+<div class="w-full rounded-xl bg-surface-container-low p-space-md flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Indian logistics freight driver smiling comfortably, warm morning sun, commercial vehicle dashboard background, natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDptb4XluIECKN_DW_qn7rHOG5LQOtE7V67jofX2jPanO6utsZx6AyPpNJ1rleo7bio48SfX35uBTBLrKVxFMwC25bA5BiK1dVBxQ66cyBOz7J0Y8uszCAujqNkG8YJVI2gr-g0py7WL3OjzWsxW1q0LQ_wsmJcFbD9gLcnYd5sB1ccTUeAQDZI96rl9EnlDxbvBSIgDDJqJ_MLnO0xLwqBsrygzicMqbIvUQE4cSFhxc_FwyCx5Ad13A">
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Taking a break?</span>
+<span class="font-label-sm text-label-sm text-secondary">Keep your phone charged. Peak afternoon load rates kick in at 1:30 PM.</span>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    const dutyToggle = document.getElementById('duty-toggle');
+    const toggleThumb = document.getElementById('toggle-thumb');
+    const goOnlineAction = document.getElementById('go-online-action');
+    const quickConnectBtn = document.getElementById('quick-connect-btn');
+
+    let isOnline = false;
+
+    function setDutyState(online) {
+      isOnline = online;
+      if (isOnline) {
+        dutyToggle.classList.remove('bg-surface-variant');
+        dutyToggle.classList.add('bg-tertiary-container');
+        toggleThumb.classList.remove('translate-x-1');
+        toggleThumb.classList.add('translate-x-8');
+        goOnlineAction.textContent = 'Shift Active • Go Offline';
+        goOnlineAction.classList.remove('bg-primary-container');
+        goOnlineAction.classList.add('bg-secondary');
+      } else {
+        dutyToggle.classList.add('bg-surface-variant');
+        dutyToggle.classList.remove('bg-tertiary-container');
+        toggleThumb.classList.add('translate-x-1');
+        toggleThumb.classList.remove('translate-x-8');
+        goOnlineAction.innerHTML = '<span class="material-symbols-outlined text-[20px]">bolt</span><span>Go Online Now</span>';
+        goOnlineAction.classList.add('bg-primary-container');
+        goOnlineAction.classList.remove('bg-secondary');
+      }
+    }
+
+    if (dutyToggle) {
+      dutyToggle.addEventListener('click', function () {
+        setDutyState(!isOnline);
+      });
+    }
+
+    if (goOnlineAction) {
+      goOnlineAction.addEventListener('click', function () {
+        setDutyState(!isOnline);
+      });
+    }
+
+    if (quickConnectBtn) {
+      quickConnectBtn.addEventListener('click', function () {
+        setDutyState(true);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary-container font-body-md-medium"><div class="flex justify-around items-center h-16 px-space-sm"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] transition-colors text-primary-container font-body-md-medium" data-path="home" href="#"><span class="material-symbols-outlined text-[24px]">local_shipping</span><span class="font-label-sm text-label-sm mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors hover:text-on-surface" data-path="requests" href="#"><span class="material-symbols-outlined text-[24px]">inventory_2</span><span class="font-label-sm text-label-sm mt-0.5">Requests</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors hover:text-on-surface" data-path="earnings" href="#"><span class="material-symbols-outlined text-[24px]">account_balance_wallet</span><span class="font-label-sm text-label-sm mt-0.5">Earnings</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors hover:text-on-surface" data-path="profile" href="#"><span class="material-symbols-outlined text-[24px]">person</span><span class="font-label-sm text-label-sm mt-0.5">Profile</span></a></div></nav></body></html>

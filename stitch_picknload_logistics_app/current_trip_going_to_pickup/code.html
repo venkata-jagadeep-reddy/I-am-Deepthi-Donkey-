@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed": "#ffddb8", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "surface-dim": "#d3daea", "surface-container-high": "#e2e8f8", "surface-variant": "#dce2f3", "error": "#ba1a1a", "on-tertiary-fixed": "#002109", "on-primary-fixed-variant": "#653e00", "on-secondary-container": "#5c6274", "primary-container": "#f59e0b", "on-surface-variant": "#534434", "on-background": "#151c27", "surface": "#f9f9ff", "primary-fixed-dim": "#ffb95f", "inverse-primary": "#ffb95f", "on-secondary-fixed-variant": "#404758", "inverse-on-surface": "#ebf1ff", "on-primary-fixed": "#2a1700", "secondary-fixed-dim": "#c0c6db", "secondary": "#575e70", "tertiary-fixed-dim": "#62df7d", "secondary-fixed": "#dce2f7", "on-primary-container": "#613b00", "tertiary": "#006e2d", "surface-container-low": "#f0f3ff", "surface-container-lowest": "#ffffff", "tertiary-container": "#4ac86a", "on-secondary-fixed": "#141b2b", "surface-container-highest": "#dce2f3", "on-tertiary-container": "#004f1f", "on-surface": "#151c27", "tertiary-fixed": "#7ffc97", "on-tertiary-fixed-variant": "#005320", "outline": "#867461", "background": "#f9f9ff", "primary": "#855300", "on-secondary": "#ffffff", "on-error-container": "#93000a", "outline-variant": "#d8c3ad", "surface-bright": "#f9f9ff", "secondary-container": "#d9dff5", "inverse-surface": "#2a313d", "surface-container": "#e7eefe", "surface-tint": "#855300", "on-error": "#ffffff", "error-container": "#ffdad6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-lg": "1.25rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-xl": "1.5rem", "gutter": "1rem", "margin": "1.25rem" }, fontFamily: { "body-lg": ["Inter"], "body-md-medium": ["Inter"], "headline-xl": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"], "body-lg-bold": ["Inter"], "headline-lg": ["Inter"] }, fontSize: { "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-md-medium": ["14px", { lineHeight: "20px", fontWeight: "500" }], "headline-xl": ["26px", { lineHeight: "32px", fontWeight: "700" }], "headline-md": ["18px", { lineHeight: "24px", fontWeight: "600" }], "label-md": ["13px", { lineHeight: "16px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }], "body-lg-bold": ["16px", { lineHeight: "24px", fontWeight: "600" }], "headline-lg": ["22px", { lineHeight: "28px", fontWeight: "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Navigate back" class="w-11 h-11 flex items-center justify-center rounded-xl text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-md text-headline-md text-on-surface tracking-tight select-none">Current Trip</h1></div><div class="flex items-center gap-space-sm"><button aria-label="Emergency or trip support" class="w-11 h-11 flex items-center justify-center rounded-xl text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">support_agent</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface"><div class="flex flex-col w-full pb-safe">
+<!-- Interactive Toast Notification container -->
+<div class="fixed top-20 left-4 right-4 z-50 flex items-center gap-space-sm p-space-md rounded-xl bg-inverse-surface text-inverse-on-surface shadow-xl transform -translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toastNotification">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed">check_circle</span>
+<span class="font-body-md text-body-md font-medium flex-1" id="toastMessage">Status updated successfully</span>
+</div>
+<!-- Live Trip Header Bar / Trip Summary -->
+<div class="px-margin pt-space-md pb-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface">#PNL-8902</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-2 py-0.5 rounded-full">Tata Ace</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container text-on-primary">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-surface-container-lowest opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-surface-container-lowest"></span>
+</span>
+<span class="font-label-md text-label-md tracking-wide uppercase">Going to Pickup</span>
+</div>
+</div>
+<!-- Main View Container -->
+<div class="px-margin flex flex-col gap-space-md">
+<!-- Interactive Live Mini Map Visual Container -->
+<div class="relative w-full h-44 rounded-xl overflow-hidden shadow-sm bg-surface-container">
+<div class="w-full h-full bg-cover bg-center" data-location="Tumakuru Market Yard, Karnataka" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCc6LvoEb7tzXI4CqdZUBW23miGJVyhijqZYuXqUuErWSFDHmwyLMwFNMUT8FOwKY0x4VRhkvyjeCB9MMeJQMbZJZMAyFxzpTLg20HiHEAIyRXwCK1YDyIxilpPdD0e-0PgJweo-TLsebUt6Z1eGlodxPjXOgETxVKIE0qvMH4o009k3HrygPXheEopD3RhnUXiWJg6rzdX7mJLMlDV_N0S2l0wrz-yDPanwLVhfJSAVpT6sTFkyE0hoQ')"></div>
+<!-- Overlay badges & Route telemetry -->
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent pointer-events-none"></div>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/95 backdrop-blur-md px-2.5 py-1.5 rounded-lg flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary-container" style="font-variation-settings: 'FILL' 1;">near_me</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface leading-none">2.4 km</span>
+<span class="text-[10px] text-secondary leading-tight">6 mins ETA</span>
+</div>
+</div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-inverse-on-surface pointer-events-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">traffic</span>
+<span class="font-label-sm text-label-sm font-medium">NH 48 Bypass • Normal Traffic</span>
+</div>
+<button class="pointer-events-auto h-8 px-2.5 bg-surface-container-lowest text-on-surface rounded-lg font-label-sm text-label-sm flex items-center gap-1 shadow-sm active:scale-95 transition-transform" onclick="centerLocation()" type="button">
+<span class="material-symbols-outlined text-[16px]">my_location</span>
+<span>Center</span>
+</button>
+</div>
+</div>
+<!-- 4-Step Trip Lifecycle Tracker -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Trip Progress</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Stage 1 of 4</span>
+</div>
+<!-- Stepper Graphic -->
+<div class="relative flex items-center justify-between pt-1 pb-1">
+<!-- Connecting Line Background -->
+<div class="absolute left-4 right-4 top-1/2 -translate-y-1/2 h-1 bg-surface-container-high rounded-full -z-0"></div>
+<div class="absolute left-4 w-1/4 top-1/2 -translate-y-1/2 h-1 bg-primary-container rounded-full -z-0 transition-all duration-500" id="progressTrack"></div>
+<!-- Step 1: Pickup / Arrived -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-sm ring-4 ring-primary-fixed" id="step1Circle">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-on-surface mt-1.5">Pickup</span>
+</div>
+<!-- Step 2: Loaded -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-secondary flex items-center justify-center" id="step2Circle">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+</div>
+<span class="font-label-sm text-label-sm font-medium text-secondary mt-1.5">Loaded</span>
+</div>
+<!-- Step 3: In Transit -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-secondary flex items-center justify-center" id="step3Circle">
+<span class="material-symbols-outlined text-[18px]">route</span>
+</div>
+<span class="font-label-sm text-label-sm font-medium text-secondary mt-1.5">Transit</span>
+</div>
+<!-- Step 4: Delivered -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-secondary flex items-center justify-center" id="step4Circle">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+</div>
+<span class="font-label-sm text-label-sm font-medium text-secondary mt-1.5">Delivered</span>
+</div>
+</div>
+</div>
+<!-- Customer Card -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative flex-shrink-0">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Close up professional portrait of an Indian woman client Keerthana smiling warmly, neutral urban lighting, crisp sharp business casual attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCjAHd8Db0Q3_0DcsVR9BUs6df2ooakgyV-_MYNzavkXGWguhz3YpKSihH80KXOm7NFn6K0ypDJDBNS3ZGAX9l-0PknYIuz31hs5y3jF3OC7UtrDD_hQKEg53C9afdkaTeGMkkvnDvIqYzAxvudVFMCvo1q-nW9gRk1syxCsjfmvbPRm0D64agtpekZ2tlNtAe38rGcVWuNK35SYiABvASttj82hBAqnGVeYdq0hlvHwdij05iRLz1JQ">
+<span class="absolute -bottom-1 -right-1 w-4 h-4 bg-tertiary rounded-full flex items-center justify-center ring-2 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-[10px] text-on-tertiary">check</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-md text-headline-md text-on-surface truncate">Keerthana M L</span>
+<span class="flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-surface-container text-on-surface text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[12px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+              4.9
+            </span>
+</div>
+<span class="font-body-md text-body-md text-secondary truncate">Verified Consignor • Frequent Shipper</span>
+</div>
+</div>
+<!-- Customer Action Buttons -->
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<button aria-label="Message Customer" class="w-11 h-11 rounded-full bg-surface-container text-on-surface flex items-center justify-center active:scale-90 transition-transform" onclick="openChat()" type="button">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</button>
+<button aria-label="Call Customer" class="w-11 h-11 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center active:scale-90 transition-transform shadow-sm" onclick="callCustomer()" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">call</span>
+</button>
+</div>
+</div>
+<!-- Route & Shipment Payload Details Card -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-md">
+<!-- Route Nodes -->
+<div class="relative flex flex-col gap-space-md">
+<!-- Connecting Route Line -->
+<div class="absolute left-[9px] top-3.5 bottom-3.5 w-0.5 bg-surface-container-high"></div>
+<!-- Pickup Point -->
+<div class="flex items-start gap-3">
+<span class="w-5 h-5 rounded-full bg-tertiary-container flex items-center justify-center flex-shrink-0 mt-0.5 ring-4 ring-surface-container-lowest z-10">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+</span>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold uppercase text-tertiary">Pickup Point</span>
+<span class="font-label-sm text-label-sm text-secondary">Gate 2</span>
+</div>
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">Tumakuru Market Yard</span>
+<span class="font-body-md text-body-md text-secondary truncate">Mandi Section, APMC Yard Gate 2, Tumakuru</span>
+</div>
+</div>
+<!-- Drop Point -->
+<div class="flex items-start gap-3">
+<span class="w-5 h-5 rounded-full bg-error-container flex items-center justify-center flex-shrink-0 mt-0.5 ring-4 ring-surface-container-lowest z-10">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+</span>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold uppercase text-error">Drop Destination</span>
+<span class="font-label-sm text-label-sm text-secondary">Main Road</span>
+</div>
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">Kunigal APMC Main Road</span>
+<span class="font-body-md text-body-md text-secondary truncate">Wholesale Stall 14, Near Syndicate Bank</span>
+</div>
+</div>
+</div>
+<!-- Consignment Metadata Strip -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">eco</span>
+<span class="font-label-sm text-label-sm uppercase font-medium">Consignment</span>
+</div>
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface mt-1">Vegetables</span>
+<span class="font-label-sm text-label-sm text-secondary">400 kg • Crates</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">payments</span>
+<span class="font-label-sm text-label-sm uppercase font-medium">Trip Fare</span>
+</div>
+<span class="font-body-lg-bold text-body-lg-bold text-tertiary mt-1">₹450</span>
+<span class="font-label-sm text-label-sm text-secondary truncate">Cash / UPI at Drop</span>
+</div>
+</div>
+<!-- Quick Instructions Note -->
+<div class="p-3 rounded-lg bg-surface-container-high/60 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-primary flex-shrink-0 mt-0.5">info</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Consignor Instructions</span>
+<p class="font-body-md text-body-md text-secondary leading-snug">Bring 2 heavy cargo straps. Helper will be waiting directly beside the weighing bridge.</p>
+</div>
+</div>
+</div>
+<!-- Operational Sticky Action Footer Section -->
+<div class="flex flex-col gap-space-sm pt-2 pb-6">
+<!-- Auxiliary Action: Turn-by-Turn External Navigation -->
+<button class="w-full h-[52px] rounded-xl bg-surface-container-lowest text-on-surface shadow-sm active:bg-surface-container flex items-center justify-center gap-2 font-body-lg-bold text-body-lg-bold transition-all" onclick="startNavigation()" type="button">
+<span class="material-symbols-outlined text-[22px] text-primary">navigation</span>
+<span>Navigate to Pickup (Google Maps)</span>
+</button>
+<!-- Primary Action: "I've Arrived" Milestone Dispatch CTA -->
+<button class="w-full h-[54px] rounded-xl bg-primary-container text-on-primary shadow-md active:scale-[0.99] flex items-center justify-center gap-2 font-headline-md text-headline-md transition-all" id="arrivedBtn" onclick="handleArrived()" type="button">
+<span class="material-symbols-outlined text-[24px]">pin_drop</span>
+<span id="arrivedBtnText">I've Arrived at Pickup</span>
+</button>
+<!-- Subtle Support / Problem reporting link -->
+<button class="w-full text-center py-1 text-secondary hover:text-on-surface font-label-sm text-label-sm transition-colors" onclick="reportIssue()" type="button">
+        Can't find pickup location? Tap to report delay
+      </button>
+</div>
+</div>
+</div>
+<script>
+  function showToast(message) {
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    if (!toast || !toastMsg) return;
+    toastMsg.textContent = message;
+    toast.classList.remove('-translate-y-24', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    setTimeout(() => {
+      toast.classList.remove('translate-y-0', 'opacity-100');
+      toast.classList.add('-translate-y-24', 'opacity-0');
+    }, 2800);
+  }
+
+  function callCustomer() {
+    showToast('Calling Keerthana M L (+91 98801-XXXXX)...');
+  }
+
+  function openChat() {
+    showToast('Opening shipper chat window...');
+  }
+
+  function startNavigation() {
+    showToast('Launching GPS Navigation route to Gate 2...');
+  }
+
+  function centerLocation() {
+    showToast('Centered GPS coordinate on Tumakuru Yard');
+  }
+
+  function reportIssue() {
+    showToast('Support prompt opened: Informing Keerthana of delay');
+  }
+
+  let arrivedState = false;
+  function handleArrived() {
+    const btn = document.getElementById('arrivedBtn');
+    const btnText = document.getElementById('arrivedBtnText');
+    const step1 = document.getElementById('step1Circle');
+    const step2 = document.getElementById('step2Circle');
+    const progressTrack = document.getElementById('progressTrack');
+
+    if (!arrivedState) {
+      arrivedState = true;
+      btnText.textContent = "Start Loading Cargo";
+      btn.classList.remove('bg-primary-container');
+      btn.classList.add('bg-tertiary', 'text-on-tertiary');
+      
+      step1.classList.remove('ring-primary-fixed');
+      step1.classList.add('bg-tertiary');
+      step1.innerHTML = '<span class="material-symbols-outlined text-[18px]">done</span>';
+      
+      if (progressTrack) progressTrack.style.width = '33%';
+      
+      step2.classList.remove('bg-surface-container-high', 'text-secondary');
+      step2.classList.add('bg-primary-container', 'text-on-primary', 'ring-4', 'ring-primary-fixed');
+      
+      showToast('Arrival logged! OTP prompt sent to Keerthana.');
+    } else {
+      showToast('Proceeding to cargo loading checklist...');
+    }
+  }
+</script></main></body></html>

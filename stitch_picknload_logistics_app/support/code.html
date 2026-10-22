@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed":"#7ffc97","surface-container":"#e7eefe","tertiary-container":"#4ac86a","surface-container-low":"#f0f3ff","secondary":"#575e70","surface-bright":"#f9f9ff","on-surface-variant":"#534434","inverse-primary":"#ffb95f","on-background":"#151c27","on-primary-container":"#613b00","error":"#ba1a1a","primary-container":"#f59e0b","surface-dim":"#d3daea","outline-variant":"#d8c3ad","on-primary":"#ffffff","error-container":"#ffdad6","on-secondary-container":"#5c6274","on-secondary":"#ffffff","surface-container-lowest":"#ffffff","surface":"#f9f9ff","outline":"#867461","on-tertiary-fixed-variant":"#005320","background":"#f9f9ff","primary-fixed-dim":"#ffb95f","surface-container-highest":"#dce2f3","on-secondary-fixed":"#141b2b","primary-fixed":"#ffddb8","on-error":"#ffffff","on-tertiary-container":"#004f1f","primary":"#855300","on-primary-fixed":"#2a1700","on-primary-fixed-variant":"#653e00","tertiary":"#006e2d","surface-container-high":"#e2e8f8","surface-variant":"#dce2f3","secondary-fixed-dim":"#c0c6db","on-tertiary":"#ffffff","on-surface":"#151c27","surface-tint":"#855300","on-secondary-fixed-variant":"#404758","inverse-on-surface":"#ebf1ff","on-error-container":"#93000a","on-tertiary-fixed":"#002109","secondary-fixed":"#dce2f7","tertiary-fixed-dim":"#62df7d","secondary-container":"#d9dff5","inverse-surface":"#2a313d"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-lg":"1.25rem","space-xl":"1.5rem","margin":"1.25rem","space-xs":"0.25rem","space-md":"1rem","gutter":"1rem","space-sm":"0.5rem"},fontFamily:{"headline-md":["Inter"],"body-md-medium":["Inter"],"body-lg":["Inter"],"headline-xl":["Inter"],"label-sm":["Inter"],"label-md":["Inter"],"body-md":["Inter"],"body-lg-bold":["Inter"],"headline-lg":["Inter"]},fontSize:{"headline-md":["18px",{lineHeight:"24px",fontWeight:"600"}],"body-md-medium":["14px",{lineHeight:"20px",fontWeight:"500"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-xl":["26px",{lineHeight:"32px",fontWeight:"700"}],"label-sm":["12px",{lineHeight:"16px",fontWeight:"500"}],"label-md":["13px",{lineHeight:"16px",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-lg-bold":["16px",{lineHeight:"24px",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"28px",fontWeight:"700"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container shadow-[0_1px_3px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-[20px]">local_shipping</span></div><span class="font-headline-md text-headline-md text-on-surface">PickNLoad</span></div><span class="px-space-xs py-0.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Admin</span></div><nav class="flex flex-col gap-space-xs px-space-sm mt-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-body-md-medium"><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dashboard" href="#">Dashboard</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="drivers" href="#">Drivers</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="customers" href="#">Customers</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="trips" href="#">Trips</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="verifications" href="#">Verifications</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="reports" href="#">Reports</a><a aria-current="page" class="px-space-sm py-2.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-body-md-medium" data-path="support" href="#">Support</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings" href="#">Settings</a></nav></div><div class="p-space-md bg-surface-container-low flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container"><span class="material-symbols-outlined text-[18px]">badge</span></div><div class="flex flex-col min-w-0"><span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Admin Ops</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">admin@picknload.com</span></div></div><a class="flex items-center justify-center w-full py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-colors shadow-[0_1px_3px_rgba(0,0,0,0.04)] font-label-md text-label-md" data-path="admin-login" href="#">Sign Out</a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md"><span class="text-on-surface-variant">Admin Portal</span><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="text-on-surface font-body-md-medium text-body-md-medium">Overview</span></div><div class="h-4 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container text-on-surface"><span class="material-symbols-outlined text-[16px] text-tertiary">hub</span><span class="font-label-sm text-label-sm font-semibold">Tumakuru Fleet Hub</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[18px]">search</span><input class="h-10 pl-9 pr-space-md bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface placeholder-on-surface-variant shadow-[0_1px_3px_rgba(0,0,0,0.04)] focus:outline-none" placeholder="Search driver, trip ID, RC..." type="text"/></div><button class="relative w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface shadow-[0_1px_3px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 px-space-xl bg-surface min-h-screen"><div class="flex flex-col w-full pb-12 gap-y-6">
+<!-- Top Utility Header & Page Stats Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-2">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Support</h1>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md">
+          45 Total Tickets
+        </span>
+</div>
+<div class="hidden sm:flex items-center gap-1.5 px-2 py-0.5 rounded bg-tertiary-container/20 text-tertiary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+        Live Dispatch Desk
+      </div>
+</div>
+<!-- Actions & Universal Search -->
+<div class="flex items-center gap-3 flex-wrap">
+<div class="relative flex items-center min-w-[280px] lg:min-w-[340px]">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[20px] pointer-events-none">search</span>
+<input class="w-full h-11 pl-10 pr-4 bg-surface-container-lowest text-on-surface placeholder:text-secondary rounded-xl text-body-md-medium font-body-md-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-container" placeholder="Search by ticket ID, user or trip..." type="text"/>
+<kbd class="hidden xl:inline-block absolute right-3 px-1.5 py-0.5 rounded bg-surface-container text-secondary text-[11px] font-label-sm">⌘K</kbd>
+</div>
+<button class="h-11 px-4 rounded-xl bg-surface-container-lowest text-on-surface hover:bg-surface-container-low transition-colors shadow-sm flex items-center gap-2 font-body-md-medium text-body-md-medium cursor-pointer">
+<span class="material-symbols-outlined text-[18px] text-secondary">file_download</span>
+        Export Tickets
+      </button>
+<button class="h-11 px-4 rounded-xl bg-primary-container text-on-primary-container hover:brightness-95 transition-all shadow-sm flex items-center gap-2 font-body-md-medium text-body-md-medium cursor-pointer">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+        Create Ticket
+      </button>
+</div>
+</div>
+<!-- Filter Tabs & Batch Stats Bar -->
+<div class="flex items-center justify-between border-b border-surface-container-highest">
+<div class="flex items-center gap-2 sm:gap-4 overflow-x-auto">
+<!-- Tab: Open (Active) -->
+<button class="relative pb-3 pt-1 px-3 flex items-center gap-2 font-body-md-medium text-body-md-medium text-on-surface cursor-pointer">
+<span>Open</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm">3</span>
+<span class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-container rounded-full"></span>
+</button>
+<!-- Tab: In Progress -->
+<button class="relative pb-3 pt-1 px-3 flex items-center gap-2 font-body-md text-body-md text-secondary hover:text-on-surface transition-colors cursor-pointer">
+<span>In progress</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">2</span>
+</button>
+<!-- Tab: Resolved -->
+<button class="relative pb-3 pt-1 px-3 flex items-center gap-2 font-body-md text-body-md text-secondary hover:text-on-surface transition-colors cursor-pointer">
+<span>Resolved</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm">40</span>
+</button>
+</div>
+<!-- Quick filter chips / SLA metrics -->
+<div class="hidden lg:flex items-center gap-3 pb-3">
+<span class="font-label-sm text-label-sm text-secondary">SLA Adherence:</span>
+<span class="font-body-md-medium text-body-md-medium text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> 97.4% on-target
+      </span>
+<span class="text-surface-container-highest">|</span>
+<span class="font-label-sm text-label-sm text-secondary">Avg Response: <strong>14m</strong></span>
+</div>
+</div>
+<!-- Split View Workspace: Master Table + Detail Drawer -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-5 items-start">
+<!-- LEFT COLUMN: Ticket Master Table (8 cols on XL, or 12 full if drawer closed) -->
+<div class="xl:col-span-7 flex flex-col gap-4">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-secondary font-label-md text-label-md">
+<th class="py-3 px-3.5 pl-4 font-semibold">Ticket ID</th>
+<th class="py-3 px-3.5 font-semibold">Raised by</th>
+<th class="py-3 px-3.5 font-semibold">Trip ID</th>
+<th class="py-3 px-3.5 font-semibold">Issue Type</th>
+<th class="py-3 px-3.5 font-semibold">Reported</th>
+<th class="py-3 px-3.5 font-semibold">Status</th>
+<th class="py-3 px-3.5 pr-4 font-semibold text-right">Priority</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Row 1: Selected / Highlighted -->
+<tr class="bg-primary-fixed/20 hover:bg-primary-fixed/30 cursor-pointer transition-colors relative" id="ticket-row-4092">
+<td class="py-3.5 px-3.5 pl-4 font-body-md-medium text-body-md-medium text-on-surface whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-6 bg-primary-container rounded-full -ml-3 mr-1"></span>
+<span class="font-semibold text-primary">#TK-4092</span>
+</div>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface font-medium truncate max-w-[140px]">Agro Cold Storage</span>
+<span class="inline-flex items-center gap-1 w-max px-1.5 py-0.2 rounded text-[11px] font-label-sm bg-secondary-container text-on-secondary-container mt-0.5">
+<span class="material-symbols-outlined text-[12px]">storefront</span> Customer
+                    </span>
+</div>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="font-body-md text-body-md text-secondary hover:text-on-surface transition-colors underline decoration-dotted">#PNL-8898</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Fare dispute</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="font-label-sm text-label-sm text-secondary">Today, 10:15 AM</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">Open</span>
+</td>
+<td class="py-3.5 px-3.5 pr-4 text-right whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-error text-on-error">High</span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors">
+<td class="py-3.5 px-3.5 pl-4 font-body-md-medium text-body-md-medium text-on-surface whitespace-nowrap">
+<span class="font-semibold">#TK-4089</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface font-medium truncate max-w-[140px]">Suresh Naik</span>
+<span class="inline-flex items-center gap-1 w-max px-1.5 py-0.2 rounded text-[11px] font-label-sm bg-primary-fixed text-on-primary-fixed-variant mt-0.5">
+<span class="material-symbols-outlined text-[12px]">local_shipping</span> Driver
+                    </span>
+</div>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="font-body-md text-body-md text-secondary hover:text-on-surface underline decoration-dotted">#PNL-8896</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface">Late arrival</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="font-label-sm text-label-sm text-secondary">Today, 09:40 AM</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">Open</span>
+</td>
+<td class="py-3.5 px-3.5 pr-4 text-right whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-error text-on-error">High</span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors">
+<td class="py-3.5 px-3.5 pl-4 font-body-md-medium text-body-md-medium text-on-surface whitespace-nowrap">
+<span class="font-semibold">#TK-4085</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface font-medium truncate max-w-[140px]">Keerthana R.</span>
+<span class="inline-flex items-center gap-1 w-max px-1.5 py-0.2 rounded text-[11px] font-label-sm bg-secondary-container text-on-secondary-container mt-0.5">
+<span class="material-symbols-outlined text-[12px]">storefront</span> Customer
+                    </span>
+</div>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="font-body-md text-body-md text-secondary hover:text-on-surface underline decoration-dotted">#PNL-8902</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface">Damaged goods</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="font-label-sm text-label-sm text-secondary">Today, 08:20 AM</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">Open</span>
+</td>
+<td class="py-3.5 px-3.5 pr-4 text-right whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-primary-container text-on-primary-container">Medium</span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors">
+<td class="py-3.5 px-3.5 pl-4 font-body-md-medium text-body-md-medium text-on-surface whitespace-nowrap">
+<span class="font-semibold">#TK-4081</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface font-medium truncate max-w-[140px]">Ramesh Agro</span>
+<span class="inline-flex items-center gap-1 w-max px-1.5 py-0.2 rounded text-[11px] font-label-sm bg-secondary-container text-on-secondary-container mt-0.5">
+<span class="material-symbols-outlined text-[12px]">storefront</span> Customer
+                    </span>
+</div>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="font-body-md text-body-md text-secondary hover:text-on-surface underline decoration-dotted">#PNL-8840</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface">Rude behaviour</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="font-label-sm text-label-sm text-secondary">Yesterday, 05:15 PM</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm font-semibold">In progress</span>
+</td>
+<td class="py-3.5 px-3.5 pr-4 text-right whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-primary-container text-on-primary-container">Medium</span>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors">
+<td class="py-3.5 px-3.5 pl-4 font-body-md-medium text-body-md-medium text-on-surface whitespace-nowrap">
+<span class="font-semibold">#TK-4078</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface font-medium truncate max-w-[140px]">Manjunath S.</span>
+<span class="inline-flex items-center gap-1 w-max px-1.5 py-0.2 rounded text-[11px] font-label-sm bg-primary-fixed text-on-primary-fixed-variant mt-0.5">
+<span class="material-symbols-outlined text-[12px]">local_shipping</span> Driver
+                    </span>
+</div>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="font-body-md text-body-md text-secondary hover:text-on-surface underline decoration-dotted">#PNL-8812</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface">Fare dispute</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="font-label-sm text-label-sm text-secondary">Yesterday, 02:30 PM</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm font-semibold">In progress</span>
+</td>
+<td class="py-3.5 px-3.5 pr-4 text-right whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-surface-container text-secondary">Low</span>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors">
+<td class="py-3.5 px-3.5 pl-4 font-body-md-medium text-body-md-medium text-on-surface whitespace-nowrap">
+<span class="font-semibold">#TK-4072</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface font-medium truncate max-w-[140px]">Vinod Kumar</span>
+<span class="inline-flex items-center gap-1 w-max px-1.5 py-0.2 rounded text-[11px] font-label-sm bg-secondary-container text-on-secondary-container mt-0.5">
+<span class="material-symbols-outlined text-[12px]">storefront</span> Customer
+                    </span>
+</div>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="font-body-md text-body-md text-secondary hover:text-on-surface underline decoration-dotted">#PNL-8799</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface">Other</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="font-label-sm text-label-sm text-secondary">08 Oct, 11:00 AM</span>
+</td>
+<td class="py-3.5 px-3.5 whitespace-nowrap">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">Resolved</span>
+</td>
+<td class="py-3.5 px-3.5 pr-4 text-right whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-surface-container text-secondary">Low</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Footer -->
+<div class="p-3.5 px-4 bg-surface-container-lowest flex items-center justify-between border-t border-surface-container">
+<span class="font-label-sm text-label-sm text-secondary">
+            Showing <strong class="text-on-surface">1 - 6</strong> of 45 tickets
+          </span>
+<div class="flex items-center gap-1.5">
+<button class="p-1.5 rounded-lg bg-surface-container-low text-secondary hover:text-on-surface disabled:opacity-40 cursor-pointer" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-2.5 py-1 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold">1</span>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container text-on-surface font-label-sm text-label-sm">2</button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container text-on-surface font-label-sm text-label-sm">3</button>
+<button class="p-1.5 rounded-lg bg-surface-container-low text-secondary hover:text-on-surface cursor-pointer">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Escalation Protocol Banner -->
+<div class="p-4 rounded-xl bg-surface-container-low flex items-start gap-3.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">shield_person</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Tumakuru Regional Escalation Protocol Active</span>
+<p class="font-body-md text-body-md text-secondary">
+            Any unassigned High priority tickets exceeding 30 minutes trigger automatic SMS alerts to Fleet Lead Rajesh V.
+          </p>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Interactive Detail Drawer / Inspection Panel (5 cols on XL) -->
+<div class="xl:col-span-5 flex flex-col gap-4">
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-5 flex flex-col gap-5 sticky top-20">
+<!-- Drawer Header -->
+<div class="flex items-start justify-between pb-3.5 border-b border-surface-container">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight">#TK-4092</span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-error text-on-error">High Priority</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">Open</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Opened 1 hr 12m ago • Tumakuru Mandi Sector 2</span>
+</div>
+<button class="p-1.5 rounded-lg text-secondary hover:bg-surface-container-low hover:text-on-surface transition-colors cursor-pointer" title="Collapse Panel">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Section 1: User Info Card -->
+<div class="bg-surface-container-low rounded-xl p-3.5 flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]">business</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface font-semibold">Agro Cold Storage</span>
+<span class="font-label-sm text-label-sm text-secondary">Consignor • Tier 1 Merchant</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">Verified KYC</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 border-t border-surface-container text-secondary font-label-md text-label-md">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[16px]">call</span>
+<span class="text-on-surface font-medium">+91 98980 11429</span>
+</div>
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[16px]">mail</span>
+<span class="text-on-surface font-medium">dispatch@agrocold.in</span>
+</div>
+</div>
+</div>
+<!-- Section 2: Related Trip Summary Card -->
+<div class="bg-surface-container-low rounded-xl p-3.5 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">local_shipping</span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface font-semibold">Trip #PNL-8898</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Today, Oct 10, 2024</span>
+</div>
+<!-- Trip Waypoints -->
+<div class="flex flex-col gap-1.5 pl-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary shrink-0"></span>
+<span class="font-body-md text-body-md text-on-surface truncate">Mandi Gate 2, APMC Yard</span>
+</div>
+<div class="w-0.5 h-3 bg-secondary-container ml-0.5"></div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container shrink-0"></span>
+<span class="font-body-md text-body-md text-on-surface truncate">Kunigal Highway Warehouses (28 km)</span>
+</div>
+</div>
+<!-- Driver & Vehicle Details -->
+<div class="bg-surface-container-lowest rounded-lg p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[16px]">person</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface font-medium">Prakash N.</span>
+<span class="font-label-sm text-label-sm text-secondary">Tata Ace • KA-06-B-8114</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-secondary">Quoted: ₹420</span>
+<span class="font-label-md text-label-md text-error font-semibold">+₹120 disputed</span>
+</div>
+</div>
+</div>
+<!-- Section 3: Full Complaint Quotation Box -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider">Customer Statement</span>
+<span class="font-label-sm text-label-sm text-secondary">10:15 AM</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low/70 border-l-4 border-primary-container text-on-surface font-body-md text-body-md leading-relaxed">
+            “Driver arrived 40 mins late and demanded an additional ₹120 in cash citing unpaved interior road near unloading bay, which was already factored into the app booking quote. Refused to release goods until helper intervention.”
+          </div>
+</div>
+<!-- Section 4: Management Controls Form -->
+<div class="flex flex-col gap-3 pt-2">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<!-- Status Dropdown -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-secondary">Status</label>
+<div class="relative">
+<select class="w-full h-10 px-3 bg-surface-container-low text-on-surface rounded-lg font-body-md-medium text-body-md-medium appearance-none focus:outline-none focus:ring-1 focus:ring-primary-container cursor-pointer">
+<option selected="">Open</option>
+<option>In Progress</option>
+<option>Resolved</option>
+<option>Closed</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-secondary text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Assign To Dropdown -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-secondary">Assign To</label>
+<div class="relative">
+<select class="w-full h-10 px-3 bg-surface-container-low text-on-surface rounded-lg font-body-md-medium text-body-md-medium appearance-none focus:outline-none focus:ring-1 focus:ring-primary-container cursor-pointer">
+<option selected="">Aditi S. (Lead)</option>
+<option>Rajesh V. (Ops)</option>
+<option>Unassigned</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-secondary text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Internal Notes Textarea -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-secondary">Internal Ops Notes</label>
+<span class="font-label-sm text-label-sm text-secondary">Staff only</span>
+</div>
+<textarea class="w-full p-2.5 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary-container resize-none placeholder:text-secondary" placeholder="Add staff notes or investigation log..." rows="3">Contacted driver Prakash N. Awaiting proof of toll receipt. Driver asserts waiting charge wasn't factored.</textarea>
+</div>
+</div>
+<!-- Section 5: Actions Footer Buttons -->
+<div class="grid grid-cols-2 gap-3 pt-2 border-t border-surface-container">
+<!-- Secondary Action Button -->
+<button class="h-12 rounded-xl bg-surface-container-lowest text-on-surface hover:bg-surface-container-low transition-colors shadow-sm font-body-md-medium text-body-md-medium flex items-center justify-center gap-1.5 cursor-pointer">
+<span class="material-symbols-outlined text-[18px] text-primary">chat</span>
+            Reply to Customer
+          </button>
+<!-- Primary Action Button (Amber) -->
+<button class="h-12 rounded-xl bg-primary-container text-on-primary-container hover:brightness-95 transition-all shadow-sm font-body-md-medium text-body-md-medium flex items-center justify-center gap-1.5 cursor-pointer font-semibold">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+            Mark resolved
+          </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Interactive row selection mock for desktop feel
+  document.querySelectorAll('tbody tr').forEach(row => {
+    row.addEventListener('click', function() {
+      // Clear highlight on other rows
+      document.querySelectorAll('tbody tr').forEach(r => {
+        r.classList.remove('bg-primary-fixed/20');
+        const bar = r.querySelector('.w-1\\.5.h-6.bg-primary-container');
+        if (bar) bar.remove();
+      });
+      // Set highlight on this row
+      this.classList.add('bg-primary-fixed/20');
+    });
+  });
+</script></main></div></body></html>

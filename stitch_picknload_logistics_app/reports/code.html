@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed":"#7ffc97","surface-container":"#e7eefe","tertiary-container":"#4ac86a","surface-container-low":"#f0f3ff","secondary":"#575e70","surface-bright":"#f9f9ff","on-surface-variant":"#534434","inverse-primary":"#ffb95f","on-background":"#151c27","on-primary-container":"#613b00","error":"#ba1a1a","primary-container":"#f59e0b","surface-dim":"#d3daea","outline-variant":"#d8c3ad","on-primary":"#ffffff","error-container":"#ffdad6","on-secondary-container":"#5c6274","on-secondary":"#ffffff","surface-container-lowest":"#ffffff","surface":"#f9f9ff","outline":"#867461","on-tertiary-fixed-variant":"#005320","background":"#f9f9ff","primary-fixed-dim":"#ffb95f","surface-container-highest":"#dce2f3","on-secondary-fixed":"#141b2b","primary-fixed":"#ffddb8","on-error":"#ffffff","on-tertiary-container":"#004f1f","primary":"#855300","on-primary-fixed":"#2a1700","on-primary-fixed-variant":"#653e00","tertiary":"#006e2d","surface-container-high":"#e2e8f8","surface-variant":"#dce2f3","secondary-fixed-dim":"#c0c6db","on-tertiary":"#ffffff","on-surface":"#151c27","surface-tint":"#855300","on-secondary-fixed-variant":"#404758","inverse-on-surface":"#ebf1ff","on-error-container":"#93000a","on-tertiary-fixed":"#002109","secondary-fixed":"#dce2f7","tertiary-fixed-dim":"#62df7d","secondary-container":"#d9dff5","inverse-surface":"#2a313d"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-lg":"1.25rem","space-xl":"1.5rem","margin":"1.25rem","space-xs":"0.25rem","space-md":"1rem","gutter":"1rem","space-sm":"0.5rem"},fontFamily:{"headline-md":["Inter"],"body-md-medium":["Inter"],"body-lg":["Inter"],"headline-xl":["Inter"],"label-sm":["Inter"],"label-md":["Inter"],"body-md":["Inter"],"body-lg-bold":["Inter"],"headline-lg":["Inter"]},fontSize:{"headline-md":["18px",{lineHeight:"24px",fontWeight:"600"}],"body-md-medium":["14px",{lineHeight:"20px",fontWeight:"500"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-xl":["26px",{lineHeight:"32px",fontWeight:"700"}],"label-sm":["12px",{lineHeight:"16px",fontWeight:"500"}],"label-md":["13px",{lineHeight:"16px",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-lg-bold":["16px",{lineHeight:"24px",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"28px",fontWeight:"700"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container shadow-[0_1px_3px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-[20px]">local_shipping</span></div><span class="font-headline-md text-headline-md text-on-surface">PickNLoad</span></div><span class="px-space-xs py-0.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Admin</span></div><nav class="flex flex-col gap-space-xs px-space-sm mt-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-body-md-medium"><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dashboard" href="#">Dashboard</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="drivers" href="#">Drivers</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="customers" href="#">Customers</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="trips" href="#">Trips</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="verifications" href="#">Verifications</a><a aria-current="page" class="px-space-sm py-2.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-body-md-medium" data-path="reports" href="#">Reports</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="support" href="#">Support</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings" href="#">Settings</a></nav></div><div class="p-space-md bg-surface-container-low flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container"><span class="material-symbols-outlined text-[18px]">badge</span></div><div class="flex flex-col min-w-0"><span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Admin Ops</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">admin@picknload.com</span></div></div><a class="flex items-center justify-center w-full py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-colors shadow-[0_1px_3px_rgba(0,0,0,0.04)] font-label-md text-label-md" data-path="admin-login" href="#">Sign Out</a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md"><span class="text-on-surface-variant">Admin Portal</span><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="text-on-surface font-body-md-medium text-body-md-medium">Overview</span></div><div class="h-4 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container text-on-surface"><span class="material-symbols-outlined text-[16px] text-tertiary">hub</span><span class="font-label-sm text-label-sm font-semibold">Tumakuru Fleet Hub</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[18px]">search</span><input class="h-10 pl-9 pr-space-md bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface placeholder-on-surface-variant shadow-[0_1px_3px_rgba(0,0,0,0.04)] focus:outline-none" placeholder="Search driver, trip ID, RC..." type="text"/></div><button class="relative w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface shadow-[0_1px_3px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 px-space-xl bg-surface min-h-screen"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Control Bar / Page Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md py-space-md">
+<div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider mb-1">
+<span>Hub Logistics Intelligence</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-tertiary font-semibold">Active Engine</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Reports</h1>
+<p class="font-body-md text-body-md text-secondary mt-0.5">Logistics network analytics and performance reports</p>
+</div>
+<!-- Actions & Filter Toolbar -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="relative inline-flex items-center">
+<button class="h-10 px-space-md bg-surface-container-lowest text-on-surface font-body-md-medium text-body-md-medium rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:bg-surface-container-low transition-colors flex items-center gap-space-xs cursor-pointer" id="dateRangeBtn">
+<span class="material-symbols-outlined text-[18px] text-primary-container">calendar_today</span>
+<span>Last 30 days</span>
+<span class="material-symbols-outlined text-[16px] text-secondary ml-1">expand_more</span>
+</button>
+</div>
+<button class="h-10 px-space-md bg-surface-container-lowest text-on-surface font-body-md-medium text-body-md-medium rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:bg-surface-container-low transition-colors flex items-center gap-space-xs cursor-pointer group">
+<span class="material-symbols-outlined text-[18px] text-secondary group-hover:text-on-surface transition-colors">file_download</span>
+<span>Export CSV</span>
+</button>
+<div class="h-8 w-px bg-surface-container-highest mx-0.5 hidden sm:block"></div>
+<button class="w-10 h-10 bg-surface-container-lowest text-secondary hover:text-on-surface rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex items-center justify-center transition-colors" title="Refresh metrics">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+</button>
+</div>
+</div>
+<!-- KPI Stat Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mt-space-sm">
+<!-- Stat 1: Total Trips -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col justify-between transition-all hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary">Total trips</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">1,240</div>
+<div class="flex items-center gap-space-xs mt-1.5 flex-wrap">
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+            +14.2%
+          </span>
+<span class="font-label-sm text-label-sm text-secondary">vs previous period</span>
+</div>
+</div>
+</div>
+<!-- Stat 2: Completion Rate -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col justify-between transition-all hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary">Completion rate</span>
+<div class="w-8 h-8 rounded-lg bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">91%</div>
+<div class="flex items-center gap-space-xs mt-1.5 flex-wrap">
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+            Optimal
+          </span>
+<span class="font-label-sm text-label-sm text-secondary">1,128 completed orders</span>
+</div>
+</div>
+</div>
+<!-- Stat 3: Cancellation Rate -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col justify-between transition-all hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary">Cancellation rate</span>
+<div class="w-8 h-8 rounded-lg bg-error-container/30 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">6%</div>
+<div class="flex items-center gap-space-xs mt-1.5 flex-wrap">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-lg bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+            Caution
+          </span>
+<span class="font-label-sm text-label-sm text-secondary">74 unfulfilled / cancelled</span>
+</div>
+</div>
+</div>
+<!-- Stat 4: Average Fare -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col justify-between transition-all hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary">Average fare</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">currency_rupee</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">₹520</div>
+<div class="flex items-center gap-space-xs mt-1.5 flex-wrap">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-medium">
+            38.4 km avg
+          </span>
+<span class="font-label-sm text-label-sm text-secondary">Per order haul</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Visual Grid: 2x2 Bento Panel Analytics -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-md mt-space-md">
+<!-- Chart 1: Trips Over Time (Line Chart) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs pb-space-sm">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Trips over time</h2>
+<p class="font-label-sm text-label-sm text-secondary mt-0.5">Daily volume cadence vs. projected haul benchmark</p>
+</div>
+<div class="flex items-center gap-space-md self-start sm:self-auto">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-1 rounded bg-[#f59e0b]"></span>
+<span class="font-label-sm text-label-sm text-secondary">Completed</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-0.5 border-t border-dashed border-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary">Target (45/d)</span>
+</div>
+</div>
+</div>
+<!-- Line Graph SVG Container -->
+<div class="relative w-full mt-space-sm pt-2">
+<div class="w-full h-64 select-none relative">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 540 220">
+<defs>
+<lineargradient id="amberGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#f59e0b" stop-opacity="0.28"></stop>
+<stop offset="100%" stop-color="#f59e0b" stop-opacity="0.00"></stop>
+</lineargradient>
+</defs>
+<!-- Horizontal Background Guide Lines -->
+<line stroke="#f0f3ff" stroke-width="1" x1="30" x2="520" y1="20" y2="20"></line>
+<line stroke="#f0f3ff" stroke-width="1" x1="30" x2="520" y1="65" y2="65"></line>
+<line stroke="#f0f3ff" stroke-width="1" x1="30" x2="520" y1="110" y2="110"></line>
+<line stroke="#f0f3ff" stroke-width="1" x1="30" x2="520" y1="155" y2="155"></line>
+<line stroke="#dce2f3" stroke-width="1" x1="30" x2="520" y1="195" y2="195"></line>
+<!-- Y-Axis Labels -->
+<text fill="#575e70" font-family="Inter" font-size="10" text-anchor="end" x="20" y="24">80</text>
+<text fill="#575e70" font-family="Inter" font-size="10" text-anchor="end" x="20" y="69">60</text>
+<text fill="#575e70" font-family="Inter" font-size="10" text-anchor="end" x="20" y="114">40</text>
+<text fill="#575e70" font-family="Inter" font-size="10" text-anchor="end" x="20" y="159">20</text>
+<text fill="#575e70" font-family="Inter" font-size="10" text-anchor="end" x="20" y="198">0</text>
+<!-- Target Benchmark Dashed Line (Target = 45 trips ~ y=100) -->
+<line opacity="0.65" stroke="#575e70" stroke-dasharray="4,4" stroke-width="1.5" x1="30" x2="520" y1="100" y2="100"></line>
+<!-- Area Fill -->
+<path d="M 40,150 
+                     C 70,140 100,125 130,120 
+                     C 160,115 190,135 220,105 
+                     C 250,75 280,95 310,80 
+                     C 340,65 370,110 400,90 
+                     C 430,70 450,55 470,68 
+                     C 490,80 505,75 515,65
+                     L 515,195 L 40,195 Z" fill="url(#amberGradient)"></path>
+<!-- Stroke Line -->
+<path d="M 40,150 
+                     C 70,140 100,125 130,120 
+                     C 160,115 190,135 220,105 
+                     C 250,75 280,95 310,80 
+                     C 340,65 370,110 400,90 
+                     C 430,70 450,55 470,68 
+                     C 490,80 505,75 515,65" fill="none" stroke="#f59e0b" stroke-linecap="round" stroke-width="3"></path>
+<!-- Data Points -->
+<circle cx="40" cy="150" fill="#ffffff" r="3.5" stroke="#f59e0b" stroke-width="2.5"></circle>
+<circle cx="130" cy="120" fill="#ffffff" r="3.5" stroke="#f59e0b" stroke-width="2.5"></circle>
+<circle cx="220" cy="105" fill="#ffffff" r="3.5" stroke="#f59e0b" stroke-width="2.5"></circle>
+<circle cx="310" cy="80" fill="#ffffff" r="3.5" stroke="#f59e0b" stroke-width="2.5"></circle>
+<circle cx="400" cy="90" fill="#ffffff" r="3.5" stroke="#f59e0b" stroke-width="2.5"></circle>
+<circle cx="470" cy="68" fill="#f59e0b" r="5" stroke="#ffffff" stroke-width="2.5"></circle>
+<circle cx="515" cy="65" fill="#ffffff" r="3.5" stroke="#f59e0b" stroke-width="2.5"></circle>
+<!-- X-Axis Labels -->
+<text fill="#575e70" font-family="Inter" font-size="11" text-anchor="middle" x="40" y="214">Sep 10</text>
+<text fill="#575e70" font-family="Inter" font-size="11" text-anchor="middle" x="130" y="214">Sep 17</text>
+<text fill="#575e70" font-family="Inter" font-size="11" text-anchor="middle" x="220" y="214">Sep 24</text>
+<text fill="#575e70" font-family="Inter" font-size="11" text-anchor="middle" x="310" y="214">Oct 01</text>
+<text fill="#575e70" font-family="Inter" font-size="11" text-anchor="middle" x="400" y="214">Oct 08</text>
+<text fill="#575e70" font-family="Inter" font-size="11" text-anchor="middle" x="490" y="214">Current</text>
+</svg>
+<!-- Floating Interactive Callout Tooltip -->
+<div class="absolute top-7 right-14 bg-on-background text-surface-container-lowest px-space-sm py-1.5 rounded-lg shadow-md flex flex-col pointer-events-none transform -translate-x-1/2">
+<span class="font-label-sm text-[11px] text-surface-dim font-medium">Oct 06</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-body-md-medium text-body-md-medium font-bold text-surface-container-lowest">58 trips</span>
+</div>
+<span class="font-label-sm text-[10px] text-tertiary-fixed mt-0.5">+28% vs tgt</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Chart 2: Trips By Vehicle Type (Bar Chart) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-sm">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Trips by vehicle type</h2>
+<p class="font-label-sm text-label-sm text-secondary mt-0.5">Breakdown of operational capacity across fleet classes</p>
+</div>
+<div class="px-space-xs py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">
+          4 Classes
+        </div>
+</div>
+<!-- Bar Chart Visualization -->
+<div class="w-full flex flex-col justify-end mt-space-md pt-2">
+<div class="h-56 w-full flex items-end justify-between gap-space-sm sm:gap-space-md px-space-xs">
+<!-- Category 1: Tata Ace -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="font-label-md text-label-md text-on-surface font-bold mb-1">640</span>
+<span class="font-label-sm text-[11px] text-secondary mb-1.5">52%</span>
+<div class="w-full max-w-[68px] bg-primary-container rounded-t-lg transition-all group-hover:opacity-90 relative" style="height: 78%;">
+<div class="absolute inset-x-0 top-1 flex justify-center">
+<span class="w-4 h-0.5 rounded bg-on-primary-container opacity-40"></span>
+</div>
+</div>
+<div class="flex flex-col items-center mt-2.5">
+<span class="material-symbols-outlined text-[18px] text-on-surface">local_shipping</span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface mt-0.5 text-center truncate max-w-full">Tata Ace</span>
+<span class="font-label-sm text-[11px] text-secondary">0.75-1 Ton</span>
+</div>
+</div>
+<!-- Category 2: Pickup Truck -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="font-label-md text-label-md text-on-surface font-bold mb-1">310</span>
+<span class="font-label-sm text-[11px] text-secondary mb-1.5">25%</span>
+<div class="w-full max-w-[68px] bg-[#fbbf24] rounded-t-lg transition-all group-hover:opacity-90 relative" style="height: 48%;"></div>
+<div class="flex flex-col items-center mt-2.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">rv_hookup</span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface mt-0.5 text-center truncate max-w-full">Pickup</span>
+<span class="font-label-sm text-[11px] text-secondary">1.5-2 Ton</span>
+</div>
+</div>
+<!-- Category 3: Mini Truck -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="font-label-md text-label-md text-on-surface font-bold mb-1">210</span>
+<span class="font-label-sm text-[11px] text-secondary mb-1.5">17%</span>
+<div class="w-full max-w-[68px] bg-[#94a3b8] rounded-t-lg transition-all group-hover:opacity-90 relative" style="height: 33%;"></div>
+<div class="flex flex-col items-center mt-2.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">front_loader</span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface mt-0.5 text-center truncate max-w-full">Mini Truck</span>
+<span class="font-label-sm text-[11px] text-secondary">3.5 Ton</span>
+</div>
+</div>
+<!-- Category 4: Other -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="font-label-md text-label-md text-on-surface font-bold mb-1">80</span>
+<span class="font-label-sm text-[11px] text-secondary mb-1.5">6%</span>
+<div class="w-full max-w-[68px] bg-[#cbd5e1] rounded-t-lg transition-all group-hover:opacity-90 relative" style="height: 14%;"></div>
+<div class="flex flex-col items-center mt-2.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">category</span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface mt-0.5 text-center truncate max-w-full">Other</span>
+<span class="font-label-sm text-[11px] text-secondary">Custom/3W</span>
+</div>
+</div>
+</div>
+<div class="w-full h-px bg-surface-container-highest mt-1"></div>
+</div>
+</div>
+<!-- Chart 3: Request Response Rate (Donut Chart) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-sm">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Request response rate</h2>
+<p class="font-label-sm text-label-sm text-secondary mt-0.5">Driver acceptance behavior &amp; network fulfillment velocity</p>
+</div>
+<div class="flex items-center gap-1 text-tertiary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>84% SLA</span>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-around gap-space-lg my-auto py-space-sm">
+<!-- SVG Donut Chart with Centered Metric -->
+<div class="relative w-48 h-48 flex-shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<!-- Background track -->
+<circle cx="50" cy="50" fill="none" r="38" stroke="#f0f3ff" stroke-width="12"></circle>
+<!-- Segment 3: No Response (8%) -> dasharray = 19.1, dashoffset = 0 (tail) -->
+<circle cx="50" cy="50" fill="none" r="38" stroke="#cbd5e1" stroke-dasharray="19.1 238.7" stroke-dashoffset="-219.6" stroke-width="12"></circle>
+<!-- Segment 2: Rejected (16%) -> dasharray = 38.2, dashoffset = starts after Accepted -->
+<circle cx="50" cy="50" fill="none" r="38" stroke="#64748b" stroke-dasharray="38.2 238.7" stroke-dashoffset="-181.4" stroke-width="12"></circle>
+<!-- Segment 1: Accepted (76%) -> circumference = 238.76, 76% = 181.45 -->
+<circle cx="50" cy="50" fill="none" r="38" stroke="#f59e0b" stroke-dasharray="181.4 238.7" stroke-dashoffset="0" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<!-- Centered Data Focus -->
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold leading-none">84%</span>
+<span class="font-label-sm text-[11px] text-secondary mt-1 font-medium">Fulfillment rate</span>
+<span class="w-6 h-0.5 bg-primary-container rounded mt-1"></span>
+</div>
+</div>
+<!-- Legend Panel -->
+<div class="flex flex-col gap-space-sm w-full max-w-xs">
+<!-- Item 1: Accepted -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-[#f59e0b]"></span>
+<div>
+<div class="font-body-md-medium text-body-md-medium text-on-surface">Accepted</div>
+<div class="font-label-sm text-[11px] text-secondary">Fast auto-match</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">76%</span>
+<div class="font-label-sm text-[11px] text-secondary">942 trips</div>
+</div>
+</div>
+<!-- Item 2: Rejected -->
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-[#64748b]"></span>
+<div>
+<div class="font-body-md-medium text-body-md-medium text-on-surface">Rejected</div>
+<div class="font-label-sm text-[11px] text-secondary">Manual decline</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">16%</span>
+<div class="font-label-sm text-[11px] text-secondary">198 trips</div>
+</div>
+</div>
+<!-- Item 3: No response -->
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-[#cbd5e1]"></span>
+<div>
+<div class="font-body-md-medium text-body-md-medium text-on-surface">No response</div>
+<div class="font-label-sm text-[11px] text-secondary">Timed out (45s)</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">8%</span>
+<div class="font-label-sm text-[11px] text-secondary">100 trips</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Chart 4: Top Routes (Horizontal Progress List) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-xs">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Top routes</h2>
+<p class="font-label-sm text-label-sm text-secondary mt-0.5">High-volume intra-district industrial freight corridors</p>
+</div>
+<button class="text-primary hover:text-on-primary-fixed-variant font-label-md text-label-md flex items-center gap-0.5 transition-colors">
+<span>View All</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Route Flow List -->
+<div class="flex flex-col gap-space-sm mt-space-sm">
+<!-- Route 1 -->
+<div class="flex flex-col gap-1.5 p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-[11px] font-bold">1</span>
+<div class="flex items-center gap-1 font-body-md-medium text-body-md-medium text-on-surface truncate">
+<span class="truncate">Tumakuru Market Yard</span>
+<span class="material-symbols-outlined text-[14px] text-secondary flex-shrink-0">arrow_right_alt</span>
+<span class="truncate text-secondary">Kunigal APMC</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<span class="font-label-sm text-label-sm text-secondary hidden sm:inline">~42 min</span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface font-bold">342 trips <span class="text-secondary font-normal">(28%)</span></span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<!-- Route 2 -->
+<div class="flex flex-col gap-1.5 p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-[11px] font-bold">2</span>
+<div class="flex items-center gap-1 font-body-md-medium text-body-md-medium text-on-surface truncate">
+<span class="truncate">Antarasanahalli Ind.</span>
+<span class="material-symbols-outlined text-[14px] text-secondary flex-shrink-0">arrow_right_alt</span>
+<span class="truncate text-secondary">Sira Town</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<span class="font-label-sm text-label-sm text-secondary hidden sm:inline">~58 min</span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface font-bold">264 trips <span class="text-secondary font-normal">(21%)</span></span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 77%;"></div>
+</div>
+</div>
+<!-- Route 3 -->
+<div class="flex flex-col gap-1.5 p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-[11px] font-bold">3</span>
+<div class="flex items-center gap-1 font-body-md-medium text-body-md-medium text-on-surface truncate">
+<span class="truncate">Tumakuru Mandi</span>
+<span class="material-symbols-outlined text-[14px] text-secondary flex-shrink-0">arrow_right_alt</span>
+<span class="truncate text-secondary">Gubbi Gate</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<span class="font-label-sm text-label-sm text-secondary hidden sm:inline">~25 min</span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface font-bold">198 trips <span class="text-secondary font-normal">(16%)</span></span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 58%;"></div>
+</div>
+</div>
+<!-- Route 4 -->
+<div class="flex flex-col gap-1.5 p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-[11px] font-bold">4</span>
+<div class="flex items-center gap-1 font-body-md-medium text-body-md-medium text-on-surface truncate">
+<span class="truncate">Batawadi Bypass</span>
+<span class="material-symbols-outlined text-[14px] text-secondary flex-shrink-0">arrow_right_alt</span>
+<span class="truncate text-secondary">Kyathsandra</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<span class="font-label-sm text-label-sm text-secondary hidden sm:inline">~32 min</span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface font-bold">146 trips <span class="text-secondary font-normal">(12%)</span></span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed-dim h-full rounded-full" style="width: 42%;"></div>
+</div>
+</div>
+<!-- Route 5 -->
+<div class="flex flex-col gap-1.5 p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-[11px] font-bold">5</span>
+<div class="flex items-center gap-1 font-body-md-medium text-body-md-medium text-on-surface truncate">
+<span class="truncate">Melekote Ind. Area</span>
+<span class="material-symbols-outlined text-[14px] text-secondary flex-shrink-0">arrow_right_alt</span>
+<span class="truncate text-secondary">Kestur</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<span class="font-label-sm text-label-sm text-secondary hidden sm:inline">~48 min</span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface font-bold">92 trips <span class="text-secondary font-normal">(7%)</span></span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed-dim h-full rounded-full" style="width: 27%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Operational Footer Note -->
+<div class="mt-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">info</span>
+</div>
+<div>
+<span class="font-body-md-medium text-body-md-medium text-on-surface block">Automated report synchronization</span>
+<span class="font-label-sm text-label-sm text-secondary">Data refreshed 8 minutes ago. Next scheduled aggregate run at 00:00 IST.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-end sm:self-center">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Cluster Sync Active</span>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for active period toggle / export feedback
+  document.addEventListener('DOMContentLoaded', () => {
+    const dateBtn = document.getElementById('dateRangeBtn');
+    if (dateBtn) {
+      dateBtn.addEventListener('click', () => {
+        const currentText = dateBtn.querySelector('span:nth-child(2)');
+        if (currentText.innerText.includes('30 days')) {
+          currentText.innerText = 'Last 7 days';
+        } else {
+          currentText.innerText = 'Last 30 days';
+        }
+      });
+    }
+  });
+</script></main></div></body></html>

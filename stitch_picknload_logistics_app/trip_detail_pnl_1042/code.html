@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed":"#7ffc97","surface-container":"#e7eefe","tertiary-container":"#4ac86a","surface-container-low":"#f0f3ff","secondary":"#575e70","surface-bright":"#f9f9ff","on-surface-variant":"#534434","inverse-primary":"#ffb95f","on-background":"#151c27","on-primary-container":"#613b00","error":"#ba1a1a","primary-container":"#f59e0b","surface-dim":"#d3daea","outline-variant":"#d8c3ad","on-primary":"#ffffff","error-container":"#ffdad6","on-secondary-container":"#5c6274","on-secondary":"#ffffff","surface-container-lowest":"#ffffff","surface":"#f9f9ff","outline":"#867461","on-tertiary-fixed-variant":"#005320","background":"#f9f9ff","primary-fixed-dim":"#ffb95f","surface-container-highest":"#dce2f3","on-secondary-fixed":"#141b2b","primary-fixed":"#ffddb8","on-error":"#ffffff","on-tertiary-container":"#004f1f","primary":"#855300","on-primary-fixed":"#2a1700","on-primary-fixed-variant":"#653e00","tertiary":"#006e2d","surface-container-high":"#e2e8f8","surface-variant":"#dce2f3","secondary-fixed-dim":"#c0c6db","on-tertiary":"#ffffff","on-surface":"#151c27","surface-tint":"#855300","on-secondary-fixed-variant":"#404758","inverse-on-surface":"#ebf1ff","on-error-container":"#93000a","on-tertiary-fixed":"#002109","secondary-fixed":"#dce2f7","tertiary-fixed-dim":"#62df7d","secondary-container":"#d9dff5","inverse-surface":"#2a313d"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-lg":"1.25rem","space-xl":"1.5rem","margin":"1.25rem","space-xs":"0.25rem","space-md":"1rem","gutter":"1rem","space-sm":"0.5rem"},fontFamily:{"headline-md":["Inter"],"body-md-medium":["Inter"],"body-lg":["Inter"],"headline-xl":["Inter"],"label-sm":["Inter"],"label-md":["Inter"],"body-md":["Inter"],"body-lg-bold":["Inter"],"headline-lg":["Inter"]},fontSize:{"headline-md":["18px",{lineHeight:"24px",fontWeight:"600"}],"body-md-medium":["14px",{lineHeight:"20px",fontWeight:"500"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-xl":["26px",{lineHeight:"32px",fontWeight:"700"}],"label-sm":["12px",{lineHeight:"16px",fontWeight:"500"}],"label-md":["13px",{lineHeight:"16px",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-lg-bold":["16px",{lineHeight:"24px",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"28px",fontWeight:"700"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container shadow-[0_1px_3px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-[20px]">local_shipping</span></div><span class="font-headline-md text-headline-md text-on-surface">PickNLoad</span></div><span class="px-space-xs py-0.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Admin</span></div><nav class="flex flex-col gap-space-xs px-space-sm mt-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-body-md-medium"><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="admin-dashboard" href="#">Dashboard</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="drivers-directory" href="#">Drivers</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="driver-detail" href="#">Driver Detail</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="customers" href="#">Customers</a><a aria-current="page" class="px-space-sm py-2.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-body-md-medium" data-path="trips" href="#">Trips</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="verifications" href="#">Verifications</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="reports" href="#">Reports</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings" href="#">Settings</a></nav></div><div class="p-space-md bg-surface-container-low flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container"><span class="material-symbols-outlined text-[18px]">badge</span></div><div class="flex flex-col min-w-0"><span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Admin Ops</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">admin@picknload.com</span></div></div><a class="flex items-center justify-center w-full py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-colors shadow-[0_1px_3px_rgba(0,0,0,0.04)] font-label-md text-label-md" data-path="admin-login" href="#">Sign Out</a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md"><span class="text-on-surface-variant">Admin Portal</span><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="text-on-surface font-body-md-medium text-body-md-medium">Overview</span></div><div class="h-4 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container text-on-surface"><span class="material-symbols-outlined text-[16px] text-tertiary">hub</span><span class="font-label-sm text-label-sm font-semibold">Tumakuru Fleet Hub</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[18px]">search</span><input class="h-10 pl-9 pr-space-md bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface placeholder-on-surface-variant shadow-[0_1px_3px_rgba(0,0,0,0.04)] focus:outline-none" placeholder="Search driver, trip ID, RC..." type="text"/></div><button class="relative w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface shadow-[0_1px_3px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 px-space-xl bg-surface min-h-screen"><div class="flex flex-col w-full pb-16">
+<!-- Top Navigation & Breadcrumbs Bar -->
+<div class="flex items-center justify-between py-space-sm mb-space-md">
+<div class="flex items-center gap-space-sm">
+<a class="w-9 h-9 rounded-lg bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-sm hover:bg-surface-container transition-colors" data-path="trips" href="#">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</a>
+<div class="flex items-center gap-space-xs font-label-md text-label-md">
+<span class="text-on-surface-variant">Admin Portal</span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">chevron_right</span>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="trips" href="#">Trips</a>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">chevron_right</span>
+<span class="text-primary font-bold">#PNL-1042</span>
+</div>
+</div>
+<!-- Live Telemetry Sync Pill -->
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-lowest shadow-sm text-secondary font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Ledger Closed &amp; Reconciled</span>
+<span class="text-on-surface-variant ml-1 font-mono text-[11px]">POD-HASH: #88F4-A9</span>
+</div>
+</div>
+<!-- Primary Trip Header Dossier -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm mb-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Trip #PNL-1042</h1>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            Completed
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+            APMC Intradistrict Corridor
+          </span>
+</div>
+<div class="flex items-center gap-space-md text-on-surface-variant font-body-md text-body-md flex-wrap mt-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>10 Oct 2024, 09:15 AM – 10:28 AM</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+<span>UPI / Direct Settlement (Auto-settled)</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+<span>Perishable Agri Cargo</span>
+</div>
+</div>
+</div>
+<!-- Financial Highlight & Primary Print / Export Actions -->
+<div class="flex items-center gap-space-md flex-wrap lg:flex-nowrap">
+<div class="bg-surface-container-low px-space-md py-2.5 rounded-lg flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Contract Fare</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-xl text-headline-xl text-primary font-bold">₹450</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Paid</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="h-[50px] px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md-medium text-body-md-medium shadow-sm hover:bg-surface-container transition-colors flex items-center gap-2" onclick="window.print()">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Print Slip</span>
+</button>
+<button class="h-[50px] px-space-md rounded-lg bg-primary-container text-on-primary-container font-body-md-medium text-body-md-medium shadow-sm hover:bg-primary-fixed-dim transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Waybill / Tax Invoice</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Asymmetric Workspace Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Logistics, Freight & Driver Bidding (60% / 7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- 1. Route & Waypoint Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col">
+<div class="flex items-center justify-between pb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">alt_route</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Route &amp; Transit Details</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">GPS Ping Log: Tumakuru Yard to Kunigal APMC Hub</p>
+</div>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">near_me</span>
+            38 km • 1h 13m duration
+          </span>
+</div>
+<!-- Interactive Map Preview Anchor -->
+<div class="relative w-full h-44 rounded-lg overflow-hidden bg-surface-container shadow-inner mb-space-md">
+<div class="w-full h-full bg-cover bg-center" data-location="Tumakuru to Kunigal, Karnataka, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHez2K47hEBnd_LoP1nS0pJMsMsbB79_saG-Rf4dAT6Av2P4HOC0z5iG5qjI5XTJ5TX4b0I02DmZvzBy36u0bstIKeR-Tjgc8fHDaMAwu9KmIkY7_vml3xLd_722OmaApR93LKGOyS-Sc6llDk4yofT317DtZ6-OUp2NDpm3kU_XMoZpHOf9WF7mppqPCzht_esbUvtvx_8H6mBzyfqqRsM4DeGmJq81L0Mwi90yvylNZ5Nvs3zTZ3-Q')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-space-md">
+<div class="flex items-center justify-between w-full text-white">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary-container">route</span>
+<span class="font-body-md-medium text-body-md-medium">Corridor: SH 47 State Highway / Kunigal Bypass</span>
+</div>
+<span class="font-label-sm text-label-sm bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm text-primary-fixed">Average 32 km/h</span>
+</div>
+</div>
+</div>
+<!-- Detailed Waypoint Nodes -->
+<div class="flex flex-col gap-space-md relative pl-2">
+<!-- Waypoint 1: Pickup -->
+<div class="flex items-start gap-space-md relative">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container z-10 shadow-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">trip_origin</span>
+</div>
+<div class="w-0.5 h-16 bg-surface-container-highest mt-1"></div>
+</div>
+<div class="flex-1 min-w-0 pb-2">
+<div class="flex items-center justify-between flex-wrap">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-tertiary font-bold uppercase">Pickup Node (Gate 02)</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">• Loaded at 09:30 AM</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Geo-fence cleared</span>
+</div>
+<p class="font-body-lg-bold text-body-lg-bold text-on-surface mt-0.5">Tumakuru Market Yard, Gate 2, Wholesale Mandi</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Wholesale Block C, Loading Bay 4 • Dispatch Lead: K. Narayana</p>
+</div>
+</div>
+<!-- Waypoint 2: Delivery -->
+<div class="flex items-start gap-space-md relative">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded-full bg-error flex items-center justify-center text-on-error z-10 shadow-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between flex-wrap">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-error font-bold uppercase">Final Consignment Drop</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">• Delivered at 10:28 AM</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> E-Sign Confirmed
+                </span>
+</div>
+<p class="font-body-lg-bold text-body-lg-bold text-on-surface mt-0.5">Kunigal APMC Main Road, Shed B, Near Weighbridge</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Unloading Berth 2, Kunigal Agro Clearing Dock</p>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. Goods & Vehicle Requirements Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col">
+<div class="flex items-center justify-between pb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">inventory</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Goods &amp; Vehicle Requirements</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Verified Load Specifications &amp; Transport Tier</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-label-md text-label-md font-mono">
+            RC: KA-06-XX-1234
+          </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Goods Details Module -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">agriculture</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wide">Produce Category</span>
+</div>
+<div>
+<h3 class="font-body-lg-bold text-body-lg-bold text-on-surface">Fresh Farm Vegetables</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Hybrid Tomato &amp; Coriander Greens</p>
+</div>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest font-label-md text-label-md text-on-surface shadow-sm">
+                400 kg Total Tare
+              </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest font-label-md text-label-md text-on-surface shadow-sm">
+                16 Plastic Crates
+              </span>
+</div>
+</div>
+<!-- Vehicle Allocation Module -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wide">Allocated Fleet Tier</span>
+</div>
+<div>
+<h3 class="font-body-lg-bold text-body-lg-bold text-on-surface">Tata Ace Gold (Chota Hathi)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Mini Truck • Open Deck Payload: 750 kg</p>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm mt-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span>Fitness Valid till Nov 2026</span>
+</div>
+</div>
+</div>
+<!-- Mandatory Operational Handling Chips -->
+<div class="mt-space-md pt-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide block mb-2">Special Transit Endorsements</span>
+<div class="flex items-center gap-space-xs flex-wrap">
+<div class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary">umbrella</span>
+<span>Covered Vehicle (Tarpaulin Tied)</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary">front_loader</span>
+<span>Helper Assisted Loading</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary">scale</span>
+<span>Verified Tare Weight (Slip #4910)</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary">speed</span>
+<span>Direct Transit / Zero Transshipment</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Driver Responses & Bidding Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Driver Responses &amp; Bidding</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Bids received for broadcast request #PNL-1042 (3 drivers notified)</p>
+</div>
+</div>
+<span class="font-mono text-label-sm text-label-sm text-on-surface-variant">Zone: Tumakuru Mandi Radius (4 km)</span>
+</div>
+<div class="flex flex-col gap-space-sm mt-space-sm">
+<!-- Bid 1: Selected / Winner -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Close up professional portrait of Indian commercial truck driver Ravi Kumar in clean beige uniform looking confident against morning logistics terminal lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuD52Ta4wCqYQ9giVShkSPPqBmuPaUokL-QVk-8A1XCf8O_605j-Dr6P1S0olebGPNJ3cWph2zNg8TdzZ-wBKpP_-LzMGCHTYDJlQkseXyE9Jfm6mtURJO63zbccgdpmAI5RVSswBsRddDsGobHqw5nXalmAsKOl51JiOWhXQAOsB4wAtpQ1FdqN8DrvU3vcBSEq-JkF1M6VDLDWWRBeNIzED0kMuw08bEea72P45GP_Stu_Kbu1MW9w"/>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-tertiary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[12px]">done</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">Ravi Kumar</span>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-bold">Assigned</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm mt-0.5">
+<span>Tata Ace Gold (Open Deck)</span>
+<span>•</span>
+<span class="text-tertiary font-medium">42s response speed</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg self-end md:self-center">
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Offered Quote</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold text-primary">₹450</span>
+</div>
+<span class="px-space-sm py-1.5 rounded-lg bg-tertiary text-on-tertiary font-label-md text-label-md flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+                Selected
+              </span>
+</div>
+</div>
+<!-- Bid 2: Accepted / Higher Quote -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Portrait of South Indian delivery driver Manjunath S. smiling near his Mahindra Bolero pickup truck in natural sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBH0WY_FXBGqXyM5Ib9otONrgOMXbmdI1wxAobBm1PZ6C-JdGeWdU7WBAidiCMl_2wN74RREev2BxIjc7xPsxLjn-qYEQP34a-0cO2cVFRLytlzYKCQQdDGtDoYkpwQoT3iqyg_0Gp-KzlE12ijxtNjfHIgTlY5_mJgQWrE1vU8An_1-Ov8-WCXFRmwx_kmlyhRixpzpA_gbRBNGkJVH9nWgBozp6sN4yAMxy7o_YXAP25gjNgVtQHQg"/>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">Manjunath S.</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Backup Offer</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm mt-0.5">
+<span>Bolero Maxi Truck Plus</span>
+<span>•</span>
+<span>1m 15s response speed</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg self-end md:self-center">
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Offered Quote</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">₹480</span>
+</div>
+<span class="px-space-sm py-1.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">archive</span>
+                Not Picked
+              </span>
+</div>
+</div>
+<!-- Bid 3: Rejected / Declined -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest opacity-70 flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-12 rounded-full object-cover grayscale" data-alt="Neutral portrait headshot of truck driver Suresh Naik against warehouse gate background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG6CWDBVnkJhjcjpBSQy2YryQyQrx-2EcUDmIAfEBGwPdae8ITPrRA0n0eR92ZIXmnLTdmuWBGTFVKLLZBX5dPGuZs_84YfvE57p9F9hcT2KS0HVSbTB-VHZrW7dRv6cHfyO8mPJnfAM1pIBnT02YfmEWIOnhXW2PTWX6rOurzPFk1R7iE8iqOvsOVszVbLfrG6BePgkCviWm_e7Mo6-KiuYruIueJAfzCa_FRYM1dGx2rCDB2ijQvBg"/>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">Suresh Naik</span>
+<span class="px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm">Declined</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm mt-0.5">
+<span>Ashok Leyland Dost</span>
+<span>•</span>
+<span>Outside Target Radius</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg self-end md:self-center">
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Offered Quote</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant font-bold">—</span>
+</div>
+<span class="px-space-sm py-1.5 rounded-lg bg-error-container text-on-error-container font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+                Rejected
+              </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Lifecycle Timeline & Stakeholder Intelligence (40% / 5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- 1. Status Timeline (Vertical Stepper) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col">
+<div class="flex items-center justify-between pb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">history</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Trip Lifecycle Timeline</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Immutable Audit Log</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-bold">100% On-Time</span>
+</div>
+<div class="relative pl-1 pr-1 flex flex-col">
+<!-- Step 1 -->
+<div class="flex gap-space-md items-start relative pb-6">
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-tertiary flex items-center justify-center text-white shadow-sm z-10">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="w-0.5 h-full bg-tertiary-fixed absolute top-7"></div>
+</div>
+<div class="flex-1 -mt-0.5">
+<div class="flex items-center justify-between">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">Request created</span>
+<span class="font-mono font-label-sm text-label-sm text-on-surface-variant">09:15 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Order generated via PickNLoad Shipper Portal</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex gap-space-md items-start relative pb-6">
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-tertiary flex items-center justify-center text-white shadow-sm z-10">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="w-0.5 h-full bg-tertiary-fixed absolute top-7"></div>
+</div>
+<div class="flex-1 -mt-0.5">
+<div class="flex items-center justify-between">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">Drivers matched</span>
+<span class="font-mono font-label-sm text-label-sm text-on-surface-variant">09:16 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Broadcast sent to 4 nearby fleet partners in Mandi perimeter</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex gap-space-md items-start relative pb-6">
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-tertiary flex items-center justify-center text-white shadow-sm z-10">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="w-0.5 h-full bg-tertiary-fixed absolute top-7"></div>
+</div>
+<div class="flex-1 -mt-0.5">
+<div class="flex items-center justify-between">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">Driver accepted</span>
+<span class="font-mono font-label-sm text-label-sm text-on-surface-variant">09:18 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Ravi Kumar locked standard fare quote ₹450</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex gap-space-md items-start relative pb-6">
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-tertiary flex items-center justify-center text-white shadow-sm z-10">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="w-0.5 h-full bg-tertiary-fixed absolute top-7"></div>
+</div>
+<div class="flex-1 -mt-0.5">
+<div class="flex items-center justify-between">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">Booking confirmed</span>
+<span class="font-mono font-label-sm text-label-sm text-on-surface-variant">09:20 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Shipper selected Ravi Kumar; Security deposit settled</p>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="flex gap-space-md items-start relative pb-6">
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-tertiary flex items-center justify-center text-white shadow-sm z-10">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="w-0.5 h-full bg-tertiary-fixed absolute top-7"></div>
+</div>
+<div class="flex-1 -mt-0.5">
+<div class="flex items-center justify-between">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">Goods picked up</span>
+<span class="font-mono font-label-sm text-label-sm text-on-surface-variant">09:35 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Loaded &amp; verified at Tumakuru Market Gate 2</p>
+</div>
+</div>
+<!-- Step 6 -->
+<div class="flex gap-space-md items-start relative pb-6">
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-tertiary flex items-center justify-center text-white shadow-sm z-10">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="w-0.5 h-full bg-tertiary-fixed absolute top-7"></div>
+</div>
+<div class="flex-1 -mt-0.5">
+<div class="flex items-center justify-between">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">In transit</span>
+<span class="font-mono font-label-sm text-label-sm text-on-surface-variant">09:42 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Waybill dispatch logged, transit on SH 47 Highway</p>
+</div>
+</div>
+<!-- Step 7 -->
+<div class="flex gap-space-md items-start relative">
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-tertiary flex items-center justify-center text-white shadow-sm z-10">
+<span class="material-symbols-outlined text-[16px]">done_all</span>
+</div>
+</div>
+<div class="flex-1 -mt-0.5">
+<div class="flex items-center justify-between">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">Delivered</span>
+<span class="font-mono font-label-sm text-label-sm text-tertiary font-bold">10:28 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Consignee OTP 4892 verified at Kunigal Bay 3</p>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. Stakeholder Mini-Cards (Shipper & Transporter) -->
+<div class="flex flex-col gap-space-md">
+<!-- Customer / Shipper -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Consignor / Shipper</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">KYC Verified</span>
+</div>
+<div class="flex items-center gap-space-md">
+<img class="w-11 h-11 rounded-full object-cover shadow-sm" data-alt="Portrait photo of Keerthana R., Indian agribusiness owner wearing an ethnic kurti with wholesale market background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSrY6KfGDdneqZRnoEdTd49O6MqXsaWCes-wdnR6fDGcXceVlAZJPR6wUsZmoE65rKwC2xbnwbv156jKUbKHrjjeukj9XrpNd8g1RGuGNzWOF_6g7wJUoHa2NMymcu_fzjeuD2_PNgPXdcdrsEk5YJg53XZRpHPzw4leLFbJBVZNidL_YNLaZQkJKa5r0I6zBidwI1YRhE7bb8Mw8-AAbrEZfK6l0geEgMnqL1yY0E0gqtEBuijoxraQ"/>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface truncate">Keerthana R.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Tumakuru Greens Produce Ltd.</span>
+</div>
+<a class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" href="tel:+919876543210">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">+91 98765 43210</span>
+<a class="font-body-md-medium text-body-md-medium text-primary hover:underline flex items-center gap-1" href="#">
+<span>View Shipper Profile</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Driver / Transporter -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Allocated Driver Partner</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">Gold Tier Partner</span>
+</div>
+<div class="flex items-center gap-space-md">
+<img class="w-11 h-11 rounded-full object-cover shadow-sm" data-alt="Professional profile photo of commercial driver partner Ravi Kumar in clean formal work wear with truck cab visible in soft natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi8VrBapVGWxJiHEuga7VnPMPFGtFX0ZiPmqq-LnLT1_r2RvWNtg0pWovP7shlZ2f2uxSgwjJ4HOCfs6CTkr0NBzpsz6eHLqmXsufVS1Y3TKOUe0X1GO6SaqLuutnb8ve7GvNwKrxDknarzmE9ugYOPnjNCUOLtM36iip-hn_-K_trTyHTkcBXzLkXWqLA5tPmZ0cST10NmKGHnunDTA9S8W3TaJFtgVrOE6vKywoSqHm2cQ2-gEqI9w"/>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface truncate">Ravi Kumar</span>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="text-primary font-bold">4.7 ★</span>
+<span>(1,248 completed trips)</span>
+</div>
+</div>
+<a class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" href="tel:+919876543210">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">+91 98765 43210</span>
+<a class="font-body-md-medium text-body-md-medium text-primary hover:underline flex items-center gap-1" href="#">
+<span>View Driver Dossier</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- 3. Customer Rating & Feedback Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">hotel_class</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Customer Rating</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Post-Delivery Experience Review</p>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[20px] text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px] text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px] text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px] text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px] text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface ml-1">5.0</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg mt-1 relative">
+<span class="material-symbols-outlined absolute top-2 right-2 text-[24px] text-outline-variant opacity-40">format_quote</span>
+<p class="font-body-md text-body-md text-on-surface italic pr-6 leading-relaxed">
+            “Prompt pickup at the wholesale yard, handled the vegetable crates with utmost care and delivered well before noon auction. Very polite driver!”
+          </p>
+<span class="block mt-2 font-label-sm text-label-sm text-on-surface-variant font-medium">
+            — Keerthana R., Submitted at 10:35 AM
+          </span>
+</div>
+<div class="flex items-center gap-1.5 flex-wrap pt-2">
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">bolt</span>
+            Fast Loading
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">schedule</span>
+            Punctual Delivery
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">verified_user</span>
+            Careful Handling
+          </span>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

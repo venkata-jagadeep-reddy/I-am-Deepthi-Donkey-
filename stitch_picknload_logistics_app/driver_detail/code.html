@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed":"#7ffc97","surface-container":"#e7eefe","tertiary-container":"#4ac86a","surface-container-low":"#f0f3ff","secondary":"#575e70","surface-bright":"#f9f9ff","on-surface-variant":"#534434","inverse-primary":"#ffb95f","on-background":"#151c27","on-primary-container":"#613b00","error":"#ba1a1a","primary-container":"#f59e0b","surface-dim":"#d3daea","outline-variant":"#d8c3ad","on-primary":"#ffffff","error-container":"#ffdad6","on-secondary-container":"#5c6274","on-secondary":"#ffffff","surface-container-lowest":"#ffffff","surface":"#f9f9ff","outline":"#867461","on-tertiary-fixed-variant":"#005320","background":"#f9f9ff","primary-fixed-dim":"#ffb95f","surface-container-highest":"#dce2f3","on-secondary-fixed":"#141b2b","primary-fixed":"#ffddb8","on-error":"#ffffff","on-tertiary-container":"#004f1f","primary":"#855300","on-primary-fixed":"#2a1700","on-primary-fixed-variant":"#653e00","tertiary":"#006e2d","surface-container-high":"#e2e8f8","surface-variant":"#dce2f3","secondary-fixed-dim":"#c0c6db","on-tertiary":"#ffffff","on-surface":"#151c27","surface-tint":"#855300","on-secondary-fixed-variant":"#404758","inverse-on-surface":"#ebf1ff","on-error-container":"#93000a","on-tertiary-fixed":"#002109","secondary-fixed":"#dce2f7","tertiary-fixed-dim":"#62df7d","secondary-container":"#d9dff5","inverse-surface":"#2a313d"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-lg":"1.25rem","space-xl":"1.5rem","margin":"1.25rem","space-xs":"0.25rem","space-md":"1rem","gutter":"1rem","space-sm":"0.5rem"},fontFamily:{"headline-md":["Inter"],"body-md-medium":["Inter"],"body-lg":["Inter"],"headline-xl":["Inter"],"label-sm":["Inter"],"label-md":["Inter"],"body-md":["Inter"],"body-lg-bold":["Inter"],"headline-lg":["Inter"]},fontSize:{"headline-md":["18px",{lineHeight:"24px",fontWeight:"600"}],"body-md-medium":["14px",{lineHeight:"20px",fontWeight:"500"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-xl":["26px",{lineHeight:"32px",fontWeight:"700"}],"label-sm":["12px",{lineHeight:"16px",fontWeight:"500"}],"label-md":["13px",{lineHeight:"16px",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-lg-bold":["16px",{lineHeight:"24px",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"28px",fontWeight:"700"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container shadow-[0_1px_3px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-[20px]">local_shipping</span></div><span class="font-headline-md text-headline-md text-on-surface">PickNLoad</span></div><span class="px-space-xs py-0.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Admin</span></div><nav class="flex flex-col gap-space-xs px-space-sm mt-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-body-md-medium"><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="admin-dashboard" href="#">Dashboard</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="drivers-directory" href="#">Drivers</a><a aria-current="page" class="px-space-sm py-2.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-body-md-medium" data-path="driver-detail" href="#">Driver Detail</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="customers" href="#">Customers</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="trips" href="#">Trips</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="verifications" href="#">Verifications</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="reports" href="#">Reports</a><a class="px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings" href="#">Settings</a></nav></div><div class="p-space-md bg-surface-container-low flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container"><span class="material-symbols-outlined text-[18px]">badge</span></div><div class="flex flex-col min-w-0"><span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Admin Ops</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">admin@picknload.com</span></div></div><a class="flex items-center justify-center w-full py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-colors shadow-[0_1px_3px_rgba(0,0,0,0.04)] font-label-md text-label-md" data-path="admin-login" href="#">Sign Out</a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md"><span class="text-on-surface-variant">Admin Portal</span><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="text-on-surface font-body-md-medium text-body-md-medium">Overview</span></div><div class="h-4 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container text-on-surface"><span class="material-symbols-outlined text-[16px] text-tertiary">hub</span><span class="font-label-sm text-label-sm font-semibold">Tumakuru Fleet Hub</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[18px]">search</span><input class="h-10 pl-9 pr-space-md bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface placeholder-on-surface-variant shadow-[0_1px_3px_rgba(0,0,0,0.04)] focus:outline-none" placeholder="Search driver, trip ID, RC..." type="text"/></div><button class="relative w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface shadow-[0_1px_3px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 px-space-xl bg-surface min-h-screen"><div class="flex flex-col w-full pb-12">
+<!-- Top Navigation & Action Context Bar -->
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<a class="w-9 h-9 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" data-path="drivers-directory" href="#">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</a>
+<div class="flex items-center gap-space-xs font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md-medium text-body-md-medium" data-path="drivers-directory" href="#">Drivers</a>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">chevron_right</span>
+<span class="text-on-surface font-body-lg-bold text-body-lg-bold">Ravi Kumar</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-secondary font-mono">DRV-84920</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1.5 px-space-sm py-1.5 rounded-lg bg-surface-container-lowest shadow-sm text-on-surface font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">KYC SLA:</span>
+<span class="font-mono font-semibold text-on-surface">3h 42m remaining</span>
+</div>
+<button class="w-9 h-9 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" title="Export Dossier">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="w-9 h-9 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" title="Audit Log">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</div>
+</div>
+<!-- Hero Profile Banner Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg mb-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative shrink-0">
+<img class="w-20 h-20 rounded-full object-cover shadow-sm bg-surface-container" data-alt="Close up warm professional portrait of an Indian commercial truck driver in his thirties wearing a clean collared shirt outdoors with natural daylight and logistics vehicles blurred in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqQBrKo2UR7BbGCAv5N71H5ksuO97uX6ze6Il7nzP7Gj57obQDoNCxgabFWxHJjVn8SpjXI5O3Gtd0MHmFw7GntBPxHMTogsLR3Mfeei2_k4U3JQXsxhTEaR47xi97farYyQg9uDYSQD0iPRcV6bhbtCq1su6exuxu4e_BBzsO4yWvcalOws6fq9qMUjkFdQu7k0N6aEPXql0n0NTR9otA7iFqGXILluAbXpcuPOFSWIoD9rNtxtnNYw"/>
+<span class="absolute bottom-0 right-0 w-6 h-6 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shadow-sm" title="Verification In Progress">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface truncate">Ravi Kumar</h1>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-md text-label-md">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              Pending verification
+            </span>
+</div>
+<div class="flex flex-wrap items-center gap-y-1 gap-x-space-md mt-1.5 text-on-surface-variant font-body-md text-body-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">call</span>
+<span class="font-mono text-on-surface">+91 98765 43210</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">calendar_today</span>
+<span>Joined 10 Oct 2024</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">location_on</span>
+<span>Tumakuru, Karnataka</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs mt-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm font-medium text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-primary">local_shipping</span>
+              Tata Ace Partner
+            </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm font-medium text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-tertiary">hub</span>
+              Tumakuru Rural Hub
+            </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-high font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[14px]">smartphone</span>
+              Android App v2.4.1
+            </span>
+</div>
+</div>
+</div>
+<!-- Quick Trust Indicators Metric Pod -->
+<div class="flex items-stretch gap-space-sm bg-surface-container-low p-space-sm rounded-xl shrink-0">
+<div class="px-space-md py-space-xs flex flex-col justify-center text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">OCR Match</span>
+<span class="font-headline-md text-headline-md text-tertiary font-mono">100%</span>
+</div>
+<div class="w-px bg-surface-container-highest"></div>
+<div class="px-space-md py-space-xs flex flex-col justify-center text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Docs Filed</span>
+<span class="font-headline-md text-headline-md text-on-surface font-mono">2 / 3</span>
+</div>
+<div class="w-px bg-surface-container-highest"></div>
+<div class="px-space-md py-space-xs flex flex-col justify-center text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Risk Score</span>
+<span class="font-headline-md text-headline-md text-primary font-mono">Low</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Two-Column Operational Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- LEFT COLUMN (7 Cols): Vehicle Details & Verification Documents -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Vehicle Details Module -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">directions_car</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Vehicle Details</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Intra-city logistics deployment profile</p>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-mono font-bold text-label-sm">
+            KA-06-XX-1234
+          </span>
+</div>
+<!-- Vehicle Spec Bento Layout -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-space-sm mb-space-md">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+              Make &amp; Model
+            </span>
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">Tata Ace Gold</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">2022 Model Year</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-[14px]">weight</span>
+              Payload Capacity
+            </span>
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">750 kg</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Gross Wt 1675 kg</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-[14px]">speed</span>
+              Hauling Exp.
+            </span>
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface">2 Years</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Tumakuru Sector</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-[14px]">category</span>
+              Category
+            </span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Small Comm. (SCV)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Intra-District Tier</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-[14px]">view_in_ar</span>
+              Body Type
+            </span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Open Deck</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">7.2ft Bed Length</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-[14px]">local_gas_station</span>
+              Fuel Type
+            </span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Diesel</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">BS-VI Compliant</span>
+</div>
+</div>
+<!-- Vehicle Visual Spec Banner -->
+<div class="rounded-lg bg-surface-container-low p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<img class="w-16 h-12 rounded object-cover bg-surface-container" data-alt="Studio side view clean shot of an authentic white Tata Ace mini truck against a neutral gray background tailored for delivery fleets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVjysp0WKkkDTecmK8P_oDFyOBCxt0APJIBxALWBQ5Ne2Qr0t1rJsladLtREeu7V2u5pBtM1WqMoXRv29RD4mii7QdqdtSqEj3j_ESfkMRnusWF4376DbA63IrJo2MLfseXawgXLVQZ_9Y52nIa7gYkpwZOnpbY0xkr6qZfFyowBykSGLQAqztb4WcPUsTzWKBFbh53IopRBAiU0zT9xMIb7CApAPRXrYTKcmBPfe6yn52Z1gMv61R7Q"/>
+<div>
+<p class="font-body-md-medium text-body-md-medium text-on-surface">Primary Asset Registered</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Tumakuru RTO registration confirmed via Parivahan database</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-space-xs py-1 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            Vahan Active
+          </span>
+</div>
+</div>
+<!-- Documents Verification Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">folder_shared</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Documents</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Physical credentials &amp; compliance certificates</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">3 Requirements</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Document 1: Driving Licence -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="relative shrink-0 w-16 h-12 rounded-lg overflow-hidden bg-surface-container-highest shadow-sm">
+<img class="w-full h-full object-cover" data-alt="High contrast macro close-up scan preview of a government issued commercial driving licence card with microchips and official seals on desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3cprMzVShLf4dM_3k6HvDlbBif4Lto1jT9cYBKlZAN0xgDKx94OzH4s_parHGuZ7mLRp8_BSa2CdBgUs7eGEsMsBg_YmyAfWY9zCC8oU4y5x46ihfUrcg9RHCuQrMc0iw8b39d9qJSCLfR9Z3AHCYfYXJVjoLIE-cUHrP4kUiIaK_IrBkaqUd2eDinSzL4cJUZT3wzwzNmyWIkr55dv4IIeltqqAZH5CYDfZC0nwT99RCPec_OIid5g"/>
+<span class="absolute inset-0 bg-on-surface/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-surface-container-lowest text-[18px]">badge</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-body-lg-bold text-body-lg-bold text-on-surface truncate">Driving Licence</h3>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">Pending</span>
+</div>
+<div class="flex flex-wrap items-center gap-y-0.5 gap-x-space-md text-on-surface-variant font-label-sm text-label-sm mt-1">
+<span>DL No: <strong class="text-on-surface font-mono">KA06-2019-004523</strong></span>
+<span>Issued: <strong>14 Mar 2019</strong></span>
+<span>Expires: <strong class="text-tertiary">13 Mar 2039</strong></span>
+</div>
+<div class="flex items-center gap-1 mt-1 text-tertiary font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>SARATHI portal cross-reference matched (LMV-TR class)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+<button class="h-10 px-space-md rounded-lg bg-surface-container-lowest shadow-sm text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md flex items-center gap-1.5" onclick="alert('Viewing DL high-resolution scan...')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                View
+              </button>
+</div>
+</div>
+<!-- Document 2: RC Book -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="relative shrink-0 w-16 h-12 rounded-lg overflow-hidden bg-surface-container-highest shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Official vehicle registration certificate paper card scan preview with vehicle chassis identification numbers and official stamps" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf6xuw_v4BwCxeJz_mRlw0bqeXxxmDJpHSs2EBZlIxrIjSlEBg1Jk321Ba2MZrBLbODfB4Y5pbrnDXupPa5mL6uxWRAufhIMoa6tE3N2PWV_NGsfmJZ_MBGBYwsmHSqrPy6Ddv9BaOxR5X3g-OEv0sqvJAn6G_D8Bl3nuDEbCxbsuLr7sCu3QBZOWxNs2jCUpQfzrk8ZucycbOQPDKP94Nk4aIkv9bbRU6RJ1ueN98jKyiE_dynZq6xQ"/>
+<span class="absolute inset-0 bg-on-surface/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-surface-container-lowest text-[18px]">article</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-body-lg-bold text-body-lg-bold text-on-surface truncate">RC Book (Registration Certificate)</h3>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">Pending</span>
+</div>
+<div class="flex flex-wrap items-center gap-y-0.5 gap-x-space-md text-on-surface-variant font-label-sm text-label-sm mt-1">
+<span>Reg No: <strong class="text-on-surface font-mono">KA-06-XX-1234</strong></span>
+<span>Chassis: <strong class="font-mono">MAT61205...981</strong></span>
+<span>Fitness Valid: <strong class="text-tertiary">22 Aug 2026</strong></span>
+</div>
+<div class="flex items-center gap-1 mt-1 text-tertiary font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">document_scanner</span>
+<span>OCR extracted 100% matched with vehicle profile</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+<button class="h-10 px-space-md rounded-lg bg-surface-container-lowest shadow-sm text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md flex items-center gap-1.5" onclick="alert('Viewing RC book high-resolution scan...')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                View
+              </button>
+</div>
+</div>
+<!-- Document 3: Insurance Policy -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="shrink-0 w-16 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined text-[22px]">policy</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-body-lg-bold text-body-lg-bold text-on-surface truncate">Commercial Goods Vehicle Insurance</h3>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm font-semibold">Not uploaded</span>
+</div>
+<p class="text-on-surface-variant font-label-sm text-label-sm mt-1">
+                  Comprehensive third-party commercial policy required prior to operational live-load dispatch.
+                </p>
+<div class="flex items-center gap-1 mt-1 text-error font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span>Driver notified via SMS &amp; WhatsApp on 10 Oct 9:15 AM</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+<button class="h-10 px-space-md rounded-lg bg-surface-container text-on-surface-variant cursor-not-allowed font-label-md text-label-md flex items-center gap-1.5 opacity-60" disabled="">
+<span class="material-symbols-outlined text-[16px]">visibility_off</span>
+                View
+              </button>
+</div>
+</div>
+</div>
+<!-- Document Upload Prompt Box -->
+<div class="mt-space-md p-space-sm rounded-lg bg-primary-fixed/30 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">notification_important</span>
+<span class="font-body-md text-body-md text-on-surface">Insurance doc missing. Fast-track with driver over voice call?</span>
+</div>
+<button class="h-8 px-space-sm rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md hover:bg-surface-container-lowest/80 transition-colors shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">call</span>
+            Call Ravi
+          </button>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (5 Cols): Decision Console & Audit Timeline -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Verification Decision Console -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg">
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Verification Decision</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Regulatory KYC evaluation &amp; partner onboarding</p>
+</div>
+</div>
+<!-- Guidance Banner -->
+<div class="p-space-md rounded-xl bg-surface-container-low mb-space-md">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">info</span>
+<div class="flex flex-col gap-1">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Tumakuru Hub Compliance Check</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed">
+                Approve only if DL commercial endorsement matches Class LMV/TRANS. Conditional approval allows local intra-city yard shifts without live customer cargo loads.
+              </p>
+</div>
+</div>
+</div>
+<!-- Form Element: Internal Notes -->
+<div class="flex flex-col gap-1.5 mb-space-lg">
+<label class="font-label-md text-label-md text-on-surface flex items-center justify-between" for="verification-notes">
+<span>Notes (optional)</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm font-normal">Internal audit record</span>
+</label>
+<textarea class="w-full p-space-sm rounded-xl bg-surface-container-low text-on-surface placeholder-on-surface-variant font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none shadow-sm transition-colors resize-none" id="verification-notes" placeholder="Add internal remarks or reason for rejection/approval..." rows="3"></textarea>
+</div>
+<!-- Dual Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-space-sm">
+<button class="flex-1 h-13 min-h-[52px] rounded-xl bg-tertiary text-on-tertiary font-body-lg-bold text-body-lg-bold shadow-sm hover:opacity-95 active:scale-[0.99] transition-all flex items-center justify-center gap-2" id="btn-approve" onclick="handleDecision('approve')">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+            Approve Driver
+          </button>
+<button class="h-13 min-h-[52px] px-space-lg rounded-xl bg-surface-container-lowest text-error font-body-lg-bold text-body-lg-bold shadow-sm hover:bg-error-container hover:text-on-error-container transition-all flex items-center justify-center gap-2" id="btn-reject" onclick="handleDecision('reject')">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+            Reject
+          </button>
+</div>
+<!-- Rejection presets shortcut -->
+<div class="mt-space-md pt-space-md flex flex-wrap items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant mr-1">Quick reasons:</span>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" onclick="setNote('Insurance policy expired / missing')" type="button">Missing Insurance</button>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" onclick="setNote('Blurry DL image / illegible registration')" type="button">Blurry Photo</button>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" onclick="setNote('RC registration number mismatch')" type="button">Name Mismatch</button>
+</div>
+</div>
+<!-- Activity Timeline Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex-1">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">timeline</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Activity Audit</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">System and user chronological events</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-secondary">tune</span>
+</div>
+<!-- Chronological Timeline List -->
+<div class="relative pl-6 space-y-space-md before:content-[''] before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-highest">
+<!-- Event 1: Docs Submitted -->
+<div class="relative flex flex-col">
+<div class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-primary-container ring-4 ring-surface-container-lowest"></div>
+<div class="flex items-baseline justify-between gap-space-xs">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Documents submitted</span>
+<span class="font-mono font-label-sm text-label-sm text-on-surface-variant shrink-0">10 Oct, 9:12 AM</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">
+              Driver finalized submission batch #9842 via driver app interface.
+            </p>
+</div>
+<!-- Event 2: OCR Extracted -->
+<div class="relative flex flex-col">
+<div class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-tertiary-container ring-4 ring-surface-container-lowest"></div>
+<div class="flex items-baseline justify-between gap-space-xs">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">RC OCR extracted KA-06-XX-1234</span>
+<span class="font-mono font-label-sm text-label-sm text-on-surface-variant shrink-0">10 Oct, 9:10 AM</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">
+              Automated optical character parsing matched with Karnataka Vahan registry.
+            </p>
+</div>
+<!-- Event 3: DL Uploaded -->
+<div class="relative flex flex-col">
+<div class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-surface-container-highest ring-4 ring-surface-container-lowest"></div>
+<div class="flex items-baseline justify-between gap-space-xs">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Driving licence uploaded</span>
+<span class="font-mono font-label-sm text-label-sm text-on-surface-variant shrink-0">10 Oct, 9:08 AM</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">
+              Front and back scans captured (3.2 MB total payload).
+            </p>
+</div>
+<!-- Event 4: Profile Registered -->
+<div class="relative flex flex-col">
+<div class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-surface-container-highest ring-4 ring-surface-container-lowest"></div>
+<div class="flex items-baseline justify-between gap-space-xs">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Profile registered via mobile app</span>
+<span class="font-mono font-label-sm text-label-sm text-on-surface-variant shrink-0">10 Oct, 8:45 AM</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">
+              OTP verified for +91 98765 43210 on Xiaomi Redmi 12 (Device ID: 8940-D).
+            </p>
+</div>
+</div>
+<!-- Timeline Footnote -->
+<div class="mt-space-lg pt-space-sm flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>IP: 49.37.112.82 (Airtel Tumakuru)</span>
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+            Audit intact
+          </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function setNote(text) {
+    const textarea = document.getElementById('verification-notes');
+    if (textarea) {
+      textarea.value = text;
+      textarea.focus();
+    }
+  }
+
+  function handleDecision(type) {
+    const notes = document.getElementById('verification-notes').value;
+    if (type === 'approve') {
+      if (confirm('Approve Ravi Kumar for intra-city dispatch operations?')) {
+        alert('Driver KYC Status updated to APPROVED. Notifications dispatched.');
+      }
+    } else if (type === 'reject') {
+      if (!notes) {
+        alert('Please enter a note or reason before rejecting.');
+        document.getElementById('verification-notes').focus();
+        return;
+      }
+      if (confirm('Are you sure you want to REJECT this driver registration?')) {
+        alert('Driver KYC rejected. Notification sent with reason: ' + notes);
+      }
+    }
+  }
+</script></main></div></body></html>

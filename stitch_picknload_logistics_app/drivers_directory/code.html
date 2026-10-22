@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed":"#7ffc97","surface-container":"#e7eefe","tertiary-container":"#4ac86a","surface-container-low":"#f0f3ff","secondary":"#575e70","surface-bright":"#f9f9ff","on-surface-variant":"#534434","inverse-primary":"#ffb95f","on-background":"#151c27","on-primary-container":"#613b00","error":"#ba1a1a","primary-container":"#f59e0b","surface-dim":"#d3daea","outline-variant":"#d8c3ad","on-primary":"#ffffff","error-container":"#ffdad6","on-secondary-container":"#5c6274","on-secondary":"#ffffff","surface-container-lowest":"#ffffff","surface":"#f9f9ff","outline":"#867461","on-tertiary-fixed-variant":"#005320","background":"#f9f9ff","primary-fixed-dim":"#ffb95f","surface-container-highest":"#dce2f3","on-secondary-fixed":"#141b2b","primary-fixed":"#ffddb8","on-error":"#ffffff","on-tertiary-container":"#004f1f","primary":"#855300","on-primary-fixed":"#2a1700","on-primary-fixed-variant":"#653e00","tertiary":"#006e2d","surface-container-high":"#e2e8f8","surface-variant":"#dce2f3","secondary-fixed-dim":"#c0c6db","on-tertiary":"#ffffff","on-surface":"#151c27","surface-tint":"#855300","on-secondary-fixed-variant":"#404758","inverse-on-surface":"#ebf1ff","on-error-container":"#93000a","on-tertiary-fixed":"#002109","secondary-fixed":"#dce2f7","tertiary-fixed-dim":"#62df7d","secondary-container":"#d9dff5","inverse-surface":"#2a313d"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-lg":"1.25rem","space-xl":"1.5rem","margin":"1.25rem","space-xs":"0.25rem","space-md":"1rem","gutter":"1rem","space-sm":"0.5rem"},fontFamily:{"headline-md":["Inter"],"body-md-medium":["Inter"],"body-lg":["Inter"],"headline-xl":["Inter"],"label-sm":["Inter"],"label-md":["Inter"],"body-md":["Inter"],"body-lg-bold":["Inter"],"headline-lg":["Inter"]},fontSize:{"headline-md":["18px",{lineHeight:"24px",fontWeight:"600"}],"body-md-medium":["14px",{lineHeight:"20px",fontWeight:"500"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-xl":["26px",{lineHeight:"32px",fontWeight:"700"}],"label-sm":["12px",{lineHeight:"16px",fontWeight:"500"}],"label-md":["13px",{lineHeight:"16px",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-lg-bold":["16px",{lineHeight:"24px",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"28px",fontWeight:"700"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container shadow-[0_1px_3px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-[20px]">local_shipping</span></div><span class="font-headline-md text-headline-md text-on-surface">PickNLoad</span></div><span class="px-space-xs py-0.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Admin</span></div><nav class="flex flex-col gap-space-xs px-space-sm mt-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-body-md-medium"><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-body-md text-body-md">Dashboard</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-body-md-medium" data-path="drivers" href="#"><span class="material-symbols-outlined text-[20px]">person_pin</span><span class="font-body-md text-body-md">Drivers</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="customers" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-body-md text-body-md">Customers</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="trips" href="#"><span class="material-symbols-outlined text-[20px]">route</span><span class="font-body-md text-body-md">Trips</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="verifications" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-body-md text-body-md">Verifications</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="reports" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-body-md text-body-md">Reports</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-body-md text-body-md">Settings</span></a></nav></div><div class="p-space-md bg-surface-container-low flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container"><span class="material-symbols-outlined text-[18px]">badge</span></div><div class="flex flex-col min-w-0"><span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Admin Ops</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">admin@picknload.com</span></div></div><a class="flex items-center justify-center gap-space-xs w-full py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-colors shadow-[0_1px_3px_rgba(0,0,0,0.04)]" data-path="admin-login" href="#"><span class="material-symbols-outlined text-[18px]">logout</span><span class="font-label-md text-label-md">Sign Out</span></a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md"><span class="text-on-surface-variant">Admin Portal</span><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="text-on-surface font-body-md-medium text-body-md-medium">Overview</span></div><div class="h-4 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container text-on-surface"><span class="material-symbols-outlined text-[16px] text-tertiary">hub</span><span class="font-label-sm text-label-sm font-semibold">Tumakuru Fleet Hub</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[18px]">search</span><input class="h-10 pl-9 pr-space-md bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface placeholder-on-surface-variant shadow-[0_1px_3px_rgba(0,0,0,0.04)] focus:outline-none" placeholder="Search driver, trip ID, RC..." type="text"/></div><button class="relative w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface shadow-[0_1px_3px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 px-space-xl bg-surface min-h-screen"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Stat Highlights & Metrics Strip -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md mb-space-lg">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Fleet Partners</span>
+<span class="font-headline-xl text-headline-xl text-on-surface mt-1">312</span>
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +14 this month
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[24px]">local_shipping</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active On Road</span>
+<span class="font-headline-xl text-headline-xl text-on-surface mt-1">284</span>
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">bolt</span> 91% duty rate
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[24px]">sensors</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">KYC Queue</span>
+<span class="font-headline-xl text-headline-xl text-on-surface mt-1">7</span>
+<span class="font-label-sm text-label-sm text-on-primary-container flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Avg wait: 2.4 hrs
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[24px]">pending_actions</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Fleet Quality Index</span>
+<span class="font-headline-xl text-headline-xl text-on-surface mt-1">4.82</span>
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> 99.2% compliance
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<!-- Operational Control Bar -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md mb-space-md flex flex-col gap-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface">Drivers</span>
+<span class="px-space-xs py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-md text-label-md">312 Total Partners</span>
+</div>
+<span class="text-outline-variant hidden sm:inline">•</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Tumakuru Zone Commercial Logistics Network</span>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="h-10 px-space-md rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors font-body-md-medium text-body-md-medium flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Export CSV</span>
+</button>
+<button class="h-10 px-space-md rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors font-body-md-medium text-body-md-medium flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Filter Fleet</span>
+</button>
+<button class="h-10 px-space-md rounded-lg bg-primary-container text-on-primary-container hover:opacity-95 transition-opacity font-body-md-medium text-body-md-medium flex items-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span>+ Add Driver Partner</span>
+</button>
+</div>
+</div>
+<!-- Sub Toolbar: Search & Tabbed States -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pt-space-xs">
+<!-- Search Field -->
+<div class="relative w-full md:w-96 flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-11 pl-10 pr-space-md rounded-lg bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Search by name, phone or vehicle number..." type="text"/>
+</div>
+<!-- Filter Tabs -->
+<div class="flex items-center gap-1 overflow-x-auto p-1 bg-surface-container-low rounded-lg">
+<button class="px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary-container font-body-md-medium text-body-md-medium flex items-center gap-1.5 shadow-sm whitespace-nowrap">
+<span>All</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm">312</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/60 transition-colors font-body-md-medium text-body-md-medium flex items-center gap-1.5 whitespace-nowrap">
+<span>Pending KYC</span>
+<span class="px-1.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm">7</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/60 transition-colors font-body-md-medium text-body-md-medium flex items-center gap-1.5 whitespace-nowrap">
+<span>Verified</span>
+<span class="px-1.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">298</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/60 transition-colors font-body-md-medium text-body-md-medium flex items-center gap-1.5 whitespace-nowrap">
+<span>Suspended</span>
+<span class="px-1.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">7</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Drivers Comprehensive Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-md text-label-md">
+<th class="py-3 px-space-md">Driver Partner</th>
+<th class="py-3 px-space-md">Contact</th>
+<th class="py-3 px-space-md">Vehicle Specification</th>
+<th class="py-3 px-space-md">Rating</th>
+<th class="py-3 px-space-md">Trips Completed</th>
+<th class="py-3 px-space-md">Verification</th>
+<th class="py-3 px-space-md">Operational Status</th>
+<th class="py-3 px-space-md text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 font-body-md text-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="group hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded-full object-cover shrink-0 shadow-sm" data-alt="Close up realistic portrait of an Indian male commercial driver named Ravi Kumar, early 30s, dressed in a collared brown uniform polo, neutral warm sunlight lighting, sharp focus, Tumakuru freight transport fleet profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQqXrlT83jBBqqDofgL_UsPL7tzUp0L6mZrTzyHi_BAL_DyfyogfpcJvO-9H3rVO6eU39FtCqn1h86ijaH19VJ1KkG2q4VvedC24CjPrBVsqZ6FE2hvtxHU1TPWqY06YZkcoAIfmg2CO0EBzC6TxrYqcrVFyoFxv79A_s5NxQiLOwZQhpxJSfP1zQ1I1T9zm1aKhj5AqtdLBkec_wuw16PuzWv8TPhPwWg37ChQ9pdLrAbfDIjFmo7-A"/>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Ravi Kumar</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: PNL-DRV-0891 • Joined Oct 2022</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">call</span>
+<span>+91 98765 43210</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Tata Ace Gold</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">KA-06-XX-1234 • 850kg Payload</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.7</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">1,248</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Verified</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 font-label-md text-label-md text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-surface-container-low transition-colors cursor-pointer bg-surface-bright">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded-full object-cover shrink-0 shadow-sm" data-alt="Professional bust portrait of Manjunath, 40-year-old seasoned Indian logistics vehicle operator, calm expression, blue shirt, outdoor daylight near transport warehouse." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWXzlCyKzA7hak_uQFqgmZpStZsYJE8gGMC-KIPJBfaxO63vYzlZZRYcyxCw1oZr30trwlCg-RHaSv-pE_zj3NRuKOts5DJQTiDutMM4vmLx1zTeSr-1OzbBiEXha8W6DUNselykXJmjWkGsKDKOI-I_hLZWZ2hsuxEbybSrCtij1gsyG2UR1V9FTO0jFyUTvQT4mBTfdf3AJZkJ7Awpt7nJ_TZULgstmQzznpKivhM_7l7kWBeCuEaA"/>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Manjunath S.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: PNL-DRV-1142 • Joined Jan 2023</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">call</span>
+<span>+91 94481 20984</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Bolero Maxi Truck</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">KA-06-TR-8812 • 1.3 Ton</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">842</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Verified</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 font-label-md text-label-md text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed-variant font-headline-md text-headline-md shrink-0">
+                  CG
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Chethan Gowda</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: PNL-DRV-2401 • Joined Yesterday</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">call</span>
+<span>+91 99002 54311</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Tata Ace</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">KA-06-AA-4401 • 750kg Payload</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant italic">New Partner</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-body-md text-body-md text-on-surface-variant">0</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+<span>Pending</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 font-label-md text-label-md text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="group hover:bg-surface-container-low transition-colors cursor-pointer bg-surface-bright">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded-full object-cover shrink-0 shadow-sm" data-alt="Authentic headshot photo of an Indian logistics driver named Anand Kumar, 35 years old, warm smile, crisp neutral backdrop, wearing yellow branded vest." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXeBfWXsaSYJP7uCb6wKPb_9hxnOj4TCS3vZiMa2Bcz8cWoiI5oW6tHfuJDgTfZEHGBXmOIDM1OZbioCFw4NwThu8VlVBdlun7av3lzbo2TDzI_JYlHd4jxszL9nawmoHYLbZfSVs8FJCiNVBp5ey_SB3LWc-843TK4qbcX-MS8GgCZ7nOGtOIwzOPxOIyjwM4xglHSJjJhZ4uKEfwwhFYNqktKyCMB1bXoZ5leUjDGseyu7XisbahUQ"/>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Anand Kumar</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: PNL-DRV-1582 • Joined Jun 2023</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">call</span>
+<span>+91 97412 88203</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Mahindra Supro</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">KA-06-B-9021 • 1 Ton Max</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.8</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">512</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Verified</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 font-label-md text-label-md text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="group hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-headline-md text-headline-md shrink-0">
+                  BP
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Basavaraj Patil</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: PNL-DRV-1704 • Joined Aug 2023</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">call</span>
+<span>+91 98860 11429</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Piaggio Ape Xtra</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">KA-06-C-3110 • 500kg 3-Wheeler</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.6</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">340</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Verified</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 font-label-md text-label-md text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="group hover:bg-surface-container-low transition-colors cursor-pointer bg-surface-bright">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface font-headline-md text-headline-md shrink-0">
+                  SI
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Syed Imran</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: PNL-DRV-2394 • Joined 3 days ago</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">call</span>
+<span>+91 96113 77482</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Tata Ace Zip</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">KA-06-E-1984 • Mini Truck</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant italic">New Partner</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-body-md text-body-md text-on-surface">2</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+<span>Pending</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 font-label-md text-label-md text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 7 -->
+<tr class="group hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-on-error-container font-headline-md text-headline-md shrink-0">
+                  SN
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Suresh Naik</span>
+<span class="font-label-sm text-label-sm text-error truncate">RC Expired • Suspended</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">call</span>
+<span>+91 91480 33901</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Ashok Leyland Dost</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">KA-06-M-5520 • 1.5 Ton</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-error" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>3.8</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">94</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">cancel</span>
+<span>Rejected</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 font-label-md text-label-md text-error">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>Suspended</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 8 -->
+<tr class="group hover:bg-surface-container-low transition-colors cursor-pointer bg-surface-bright">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant font-headline-md text-headline-md shrink-0">
+                  PM
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Prakash Murthy</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: PNL-DRV-0922 • Joined Nov 2022</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">call</span>
+<span>+91 99805 66723</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Tata Ace Gold</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">KA-06-F-7144 • 850kg Payload</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.8</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">976</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Verified</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 font-label-md text-label-md text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Row Interaction Informative Hint -->
+<div class="bg-surface-container-low px-space-md py-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">touch_app</span>
+<span>Click any driver partner row to view verification dossier, driving license, RC details, and live GPS telemetry.</span>
+</div>
+<span class="hidden sm:inline">Press Esc to dismiss quick dossiers</span>
+</div>
+<!-- Pagination Footer -->
+<div class="p-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md bg-surface-container-lowest">
+<div class="font-body-md text-body-md text-on-surface-variant">
+        Showing <span class="font-body-md-medium text-body-md-medium text-on-surface">1</span> to <span class="font-body-md-medium text-body-md-medium text-on-surface">8</span> of <span class="font-body-md-medium text-body-md-medium text-on-surface">312</span> drivers
+      </div>
+<div class="flex items-center gap-1">
+<button class="h-9 px-space-sm rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container disabled:opacity-50 transition-colors font-body-md-medium text-body-md-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span>Previous</span>
+</button>
+<button class="w-9 h-9 rounded-lg bg-primary-container text-on-primary-container font-body-md-medium text-body-md-medium shadow-sm">
+          1
+        </button>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container-low text-on-surface transition-colors font-body-md-medium text-body-md-medium">
+          2
+        </button>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container-low text-on-surface transition-colors font-body-md-medium text-body-md-medium">
+          3
+        </button>
+<span class="w-8 text-center text-on-surface-variant">...</span>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container-low text-on-surface transition-colors font-body-md-medium text-body-md-medium">
+          39
+        </button>
+<button class="h-9 px-space-sm rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors font-body-md-medium text-body-md-medium flex items-center gap-1">
+<span>Next</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

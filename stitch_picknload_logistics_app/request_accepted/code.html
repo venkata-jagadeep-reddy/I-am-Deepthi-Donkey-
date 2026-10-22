@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed": "#ffddb8", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "surface-dim": "#d3daea", "surface-container-high": "#e2e8f8", "surface-variant": "#dce2f3", "error": "#ba1a1a", "on-tertiary-fixed": "#002109", "on-primary-fixed-variant": "#653e00", "on-secondary-container": "#5c6274", "primary-container": "#f59e0b", "on-surface-variant": "#534434", "on-background": "#151c27", "surface": "#f9f9ff", "primary-fixed-dim": "#ffb95f", "inverse-primary": "#ffb95f", "on-secondary-fixed-variant": "#404758", "inverse-on-surface": "#ebf1ff", "on-primary-fixed": "#2a1700", "secondary-fixed-dim": "#c0c6db", "secondary": "#575e70", "tertiary-fixed-dim": "#62df7d", "secondary-fixed": "#dce2f7", "on-primary-container": "#613b00", "tertiary": "#006e2d", "surface-container-low": "#f0f3ff", "surface-container-lowest": "#ffffff", "tertiary-container": "#4ac86a", "on-secondary-fixed": "#141b2b", "surface-container-highest": "#dce2f3", "on-tertiary-container": "#004f1f", "on-surface": "#151c27", "tertiary-fixed": "#7ffc97", "on-tertiary-fixed-variant": "#005320", "outline": "#867461", "background": "#f9f9ff", "primary": "#855300", "on-secondary": "#ffffff", "on-error-container": "#93000a", "outline-variant": "#d8c3ad", "surface-bright": "#f9f9ff", "secondary-container": "#d9dff5", "inverse-surface": "#2a313d", "surface-container": "#e7eefe", "surface-tint": "#855300", "on-error": "#ffffff", "error-container": "#ffdad6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-lg": "1.25rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-xl": "1.5rem", "gutter": "1rem", "margin": "1.25rem" }, fontFamily: { "body-lg": ["Inter"], "body-md-medium": ["Inter"], "headline-xl": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"], "body-lg-bold": ["Inter"], "headline-lg": ["Inter"] }, fontSize: { "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-md-medium": ["14px", { lineHeight: "20px", fontWeight: "500" }], "headline-xl": ["26px", { lineHeight: "32px", fontWeight: "700" }], "headline-md": ["18px", { lineHeight: "24px", fontWeight: "600" }], "label-md": ["13px", { lineHeight: "16px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }], "body-lg-bold": ["16px", { lineHeight: "24px", fontWeight: "600" }], "headline-lg": ["22px", { lineHeight: "28px", fontWeight: "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Navigate back" class="w-11 h-11 flex items-center justify-center rounded-xl text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-md text-headline-md text-on-surface tracking-tight select-none">Request Status</h1></div><div class="flex items-center gap-space-sm"><button aria-label="Emergency or trip support" class="w-11 h-11 flex items-center justify-center rounded-xl text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">support_agent</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface"><div class="flex flex-col w-full pb-safe">
+<div class="px-margin pt-space-md flex flex-col items-center text-center">
+<div class="relative flex items-center justify-center w-20 h-20 rounded-full bg-tertiary-container/20 mb-space-md">
+<div class="absolute inset-0 rounded-full bg-tertiary-container/30 animate-ping opacity-75"></div>
+<div class="w-14 h-14 rounded-full bg-tertiary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-on-tertiary text-[32px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight mb-space-xs">
+      Request accepted
+    </h2>
+<p class="font-body-md text-body-md text-secondary max-w-[280px]">
+      Waiting for the customer to choose a driver.
+    </p>
+</div>
+<div class="px-margin mt-space-md">
+<div class="w-full bg-surface-container-high/60 rounded-xl px-space-md py-space-sm flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary-container"></span>
+</span>
+<span class="font-label-md text-label-md text-on-surface">Waiting for customer confirmation</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-secondary bg-surface-container-lowest px-2 py-0.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">schedule</span>
+<span id="countdown-timer">02:52</span>
+</div>
+</div>
+</div>
+<div class="px-margin mt-space-md flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col">
+<div class="flex items-start justify-between pb-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block">Your Offered Fare</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold">₹450</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> Competitive
+            </span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed/40">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-on-primary-fixed-variant font-medium">2 drivers responded</span>
+</div>
+</div>
+<div class="py-space-md flex flex-col gap-3 bg-surface-container-low/40 rounded-xl px-space-md">
+<div class="flex items-start gap-3">
+<div class="flex flex-col items-center mt-1">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+<span class="w-0.5 h-8 bg-surface-dim my-0.5"></span>
+<span class="w-3 h-3 rounded-full bg-error"></span>
+</div>
+<div class="flex-1 flex flex-col gap-2 min-w-0">
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm text-secondary block">Pickup Point</span>
+<p class="font-body-md-medium text-body-md-medium text-on-surface truncate">Tumakuru Market Yard, Gate 2</p>
+</div>
+<div class="min-w-0 pt-0.5">
+<span class="font-label-sm text-label-sm text-secondary block">Delivery Point</span>
+<p class="font-body-md-medium text-body-md-medium text-on-surface truncate">Kunigal APMC Main Road</p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">route</span>
+<span class="font-label-md text-label-md text-secondary">Trip Distance:</span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface">38 km</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Est. ~1h 10m</span>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[20px]">local_shipping</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-md text-label-md text-on-surface block truncate">Tata Ace</span>
+<span class="font-label-sm text-label-sm text-secondary block truncate">Vegetables • 400 kg</span>
+</div>
+</div>
+<div class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface font-medium shrink-0">
+          Open Body
+        </div>
+</div>
+</div>
+<div class="w-full h-32 rounded-xl overflow-hidden relative shadow-sm" data-location="Tumakuru to Kunigal, Karnataka, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBp28Z7BLf79Wa3MmfCHI4ClnpPhKan6oX11Y4b7XjYP9RAV4b8JDdAuQ1GaddScW1yUxixcYFf0IGdDfDZHsDfRHCJF7TxtOA7-I4LPVn2R-WyuPYUh5Tc7jcm35mZ_l9S8VmyOfnHEdi5GXRom15xt-Mma9taGjz28aYqyxNIOYtlpu-mdn-34jggwG0OUiAMa-fEG9oAOZBhza6QmoJQ0qCeDY5paQ0rY8DuIup3Pj3RE4ksKxbpsA')">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent flex items-end p-space-md">
+<div class="flex items-center justify-between w-full text-inverse-on-surface">
+<div class="flex items-center gap-1.5 font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">navigation</span>
+<span>SH 47 Corridor</span>
+</div>
+<span class="font-label-sm text-label-sm bg-inverse-surface/60 px-2 py-0.5 rounded backdrop-blur-sm">Clear traffic</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[20px] shrink-0">info</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant flex-1">
+        Stay on this screen or keep app active. Once chosen, you will receive route navigation immediately.
+      </p>
+</div>
+</div>
+<div class="px-margin mt-space-lg mb-space-lg flex flex-col gap-space-sm">
+<button class="w-full h-[52px] rounded-xl bg-surface-container-lowest text-on-surface font-body-lg-bold text-body-lg-bold shadow-sm active:bg-surface-container transition-colors flex items-center justify-center gap-2" onclick="window.history.back()">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+<span>Back to Home</span>
+</button>
+</div>
+</div>
+<script>
+  (function initTimer() {
+    let timeLeft = 174;
+    const timerEl = document.getElementById('countdown-timer');
+    if (!timerEl) return;
+
+    const interval = setInterval(() => {
+      timeLeft--;
+      if (timeLeft <= 0) {
+        clearInterval(interval);
+        timerEl.innerText = '00:00';
+        return;
+      }
+      const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+      const seconds = String(timeLeft % 60).padStart(2, '0');
+      timerEl.innerText = `${minutes}:${seconds}`;
+    }, 1000);
+  })();
+</script></main></body></html>

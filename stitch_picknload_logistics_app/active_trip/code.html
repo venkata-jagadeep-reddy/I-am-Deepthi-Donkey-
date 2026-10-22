@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-container": "#4ac86a", "surface-container-high": "#e2e8f8", "on-primary-fixed": "#2a1700", "on-error-container": "#93000a", "inverse-on-surface": "#ebf1ff", "on-tertiary-container": "#004f1f", "surface": "#f9f9ff", "tertiary-fixed": "#7ffc97", "secondary": "#575e70", "surface-container-low": "#f0f3ff", "primary-container": "#f59e0b", "surface-bright": "#f9f9ff", "surface-dim": "#d3daea", "inverse-primary": "#ffb95f", "surface-tint": "#855300", "on-tertiary-fixed": "#002109", "outline": "#867461", "primary": "#855300", "secondary-container": "#d9dff5", "inverse-surface": "#2a313d", "outline-variant": "#d8c3ad", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "on-background": "#151c27", "surface-container-highest": "#dce2f3", "on-surface-variant": "#534434", "on-secondary-container": "#5c6274", "on-primary": "#ffffff", "on-primary-fixed-variant": "#653e00", "surface-container": "#e7eefe", "secondary-fixed": "#dce2f7", "primary-fixed": "#ffddb8", "on-primary-container": "#613b00", "on-error": "#ffffff", "secondary-fixed-dim": "#c0c6db", "on-tertiary": "#ffffff", "on-surface": "#151c27", "tertiary-fixed-dim": "#62df7d", "error": "#ba1a1a", "surface-variant": "#dce2f3", "primary-fixed-dim": "#ffb95f", "tertiary": "#006e2d", "on-secondary-fixed-variant": "#404758", "background": "#f9f9ff", "on-tertiary-fixed-variant": "#005320", "error-container": "#ffdad6", "on-secondary-fixed": "#141b2b" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "1.5rem", "space-sm": "0.5rem", "margin": "1.25rem", "space-lg": "1.25rem", "space-xs": "0.25rem", "gutter": "1rem", "space-md": "1rem" }, "fontFamily": { "body-md": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "body-md-medium": ["Inter"], "headline-lg": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"], "body-lg-bold": ["Inter"], "headline-xl": ["Inter"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-md": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "16px", "fontWeight": "600" }], "body-md-medium": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "headline-lg": ["22px", { "lineHeight": "28px", "fontWeight": "700" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-lg-bold": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-xl": ["26px", { "lineHeight": "32px", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;min-height:max(884px,100dvh);}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface-container-lowest font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go back" class="w-11 h-11 -ml-space-xs flex items-center justify-center text-on-surface rounded-full hover:bg-surface-container-low transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-md text-headline-md text-on-surface">Active Trip</h1></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex-1 flex flex-col relative w-full px-margin pt-16 bg-surface-container-lowest"><div class="flex flex-col w-full pb-safe">
+<!-- Interactive Map Section (Top 42%) -->
+<div class="relative w-full h-[360px] rounded-xl overflow-hidden bg-surface-container-low shadow-sm">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center" data-location="Tumakuru, Karnataka, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1_ittjlSCkCNnOKntISYXb6SUx9aqJtkGqNIDOFeSfwIQquK7fC1pKrJXLSMm9oe8EAMYoZ8iowXoBKrHHZszSEOKORqucbj8664XTLfZ0Mu4g8GlXWnScoXNavxN12lNngDP_slKIlknlvbnGYFIrx4WUDj-0AKuGpl18M48MrK6dF6AT9rv7WW0it8EiI26joNR8dRI26Or6infG_XMlOwKMGYrnUCafV_iSK4en0pEpcoaoNITaQ')"></div>
+<!-- Crisp Map Grid Overlay -->
+<div class="absolute inset-0 bg-surface-container-low/75 backdrop-blur-[2px]">
+<svg class="w-full h-full opacity-30" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="48" id="road-grid" patternUnits="userSpaceOnUse" width="48">
+<path d="M 48 0 L 0 0 0 48" fill="none" stroke="#575e70" stroke-dasharray="2,2" stroke-width="0.75"></path>
+</pattern>
+</defs>
+<rect fill="url(#road-grid)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<!-- Live Tracking Badge Pill -->
+<div class="absolute top-4 left-4 z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider font-semibold">Live Tracking</span>
+</div>
+<!-- Route Map Overlay SVG with Animated Vehicle -->
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<svg class="w-full h-full max-w-sm" fill="none" viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg">
+<!-- Route Background Shadow Line -->
+<path d="M 64 70 C 130 90, 150 180, 290 220" stroke="#dce2f3" stroke-linecap="round" stroke-width="6"></path>
+<!-- Active Dotted Route Path -->
+<path d="M 64 70 C 130 90, 150 180, 290 220" id="routePath" stroke="#f59e0b" stroke-dasharray="6 6" stroke-linecap="round" stroke-width="4"></path>
+<!-- Green Pickup Pin (Tumakuru Market) -->
+<g transform="translate(64, 70)">
+<circle fill="#4ac86a" fill-opacity="0.2" r="14"></circle>
+<circle fill="#006e2d" r="7"></circle>
+<circle fill="#ffffff" r="3"></circle>
+</g>
+<!-- Red Drop Pin (Kunigal) -->
+<g transform="translate(290, 220)">
+<circle fill="#ffdad6" fill-opacity="0.3" r="14"></circle>
+<circle fill="#ba1a1a" r="7"></circle>
+<circle fill="#ffffff" r="3"></circle>
+</g>
+</svg>
+<!-- Labels positioned over coordinates -->
+<div class="absolute top-[88px] left-6 bg-surface-container-lowest px-2.5 py-1 rounded-md shadow-sm flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Tumakuru Market</span>
+</div>
+<div class="absolute bottom-[44px] right-6 bg-surface-container-lowest px-2.5 py-1 rounded-md shadow-sm flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Kunigal</span>
+</div>
+<!-- Live Vehicle Marker Moving Towards Pickup -->
+<div class="absolute top-[104px] left-[134px] flex flex-col items-center transform -translate-x-1/2 -translate-y-1/2">
+<div class="relative flex items-center justify-center">
+<span class="animate-ping absolute h-10 w-10 rounded-full bg-primary-container opacity-40"></span>
+<div class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[20px] text-on-primary-container rotate-45">local_shipping</span>
+</div>
+</div>
+<div class="mt-1 bg-on-surface px-2 py-0.5 rounded shadow text-surface-container-lowest font-label-sm text-label-sm whitespace-nowrap">
+          500m away
+        </div>
+</div>
+</div>
+<!-- Map Action: Center View button -->
+<button aria-label="Recenter live location" class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-on-surface active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">my_location</span>
+</button>
+</div>
+<!-- Bottom Details & Journey Stepper Panel -->
+<div class="mt-4 flex flex-col gap-4">
+<!-- Driver Info Card -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close up portrait photograph of Ravi Kumar, a confident smiling Indian male commercial truck driver in his thirties wearing a collared shirt in warm natural outdoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhubkXBsZuuMZEePxMzasGD5J2WeEsQbY7nezA-FPHWOuJ80rVkUDGSQHUDCAMcBrKMzHMsV4UeKwmhdX_Wjmqaz3DopQlStCwhfUux3BEFFnhhD2-ZQx3CbF8xy1W2FTGwWFExFY6Qvn4wdWSkGpjhaRTL-tJrpNJe6EpDY06K5xvfyt40prtT7vOJi5bD09iR6WFjiL4AlRLPQjF7oSJlbCyVHDgQ3AW08RCPVr241rlXRoi2ZJomQ">
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-md text-headline-md text-on-surface truncate">Ravi Kumar</h2>
+<span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-md text-body-md text-secondary truncate">Tata Ace • KA-06-XX-1234</p>
+</div>
+</div>
+<!-- Arriving ETA Chip -->
+<div class="flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-label-sm text-label-sm font-semibold whitespace-nowrap">Arriving in 5 min</span>
+</div>
+</div>
+<!-- Action Buttons Row -->
+<div class="flex items-center gap-2 pt-1">
+<a class="flex-1 h-[50px] rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-center gap-2 text-on-surface font-headline-md text-headline-md active:bg-surface-container-low transition-colors" href="tel:919876543210">
+<span class="material-symbols-outlined text-[20px] text-primary">call</span>
+<span>Call Driver</span>
+</a>
+<button aria-label="Share trip tracking link" class="h-[50px] px-4 rounded-xl bg-surface-container-low flex items-center justify-center text-on-surface active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</div>
+</div>
+<!-- Vertical 6-Step Delivery Tracker -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Trip Progress</h3>
+<span class="font-label-sm text-label-sm text-secondary">Updated just now</span>
+</div>
+<div class="flex flex-col">
+<!-- Step 1: Driver accepted (DONE) -->
+<div class="flex items-start gap-3 relative pb-6">
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary z-10">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<div class="w-[2px] h-full bg-tertiary absolute top-7 left-[13px] z-0"></div>
+</div>
+<div class="flex-1 pt-0.5 flex items-center justify-between">
+<div>
+<p class="font-body-md-medium text-body-md-medium text-on-surface">Driver accepted</p>
+<p class="font-label-sm text-label-sm text-secondary">Assigned at 10:14 AM</p>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Completed</span>
+</div>
+</div>
+<!-- Step 2: Heading to pickup (CURRENT / PULSING) -->
+<div class="flex items-start gap-3 relative pb-6">
+<div class="flex flex-col items-center">
+<div class="relative w-7 h-7 flex items-center justify-center z-10">
+<span class="animate-ping absolute h-full w-full rounded-full bg-primary-container opacity-40"></span>
+<div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-on-primary-container"></span>
+</div>
+</div>
+<div class="w-[2px] h-full bg-surface-container-highest absolute top-7 left-[13px] z-0"></div>
+</div>
+<div class="flex-1 pt-0.5 flex items-center justify-between">
+<div>
+<p class="font-body-md-medium text-body-md-medium text-on-surface font-semibold">Heading to pickup</p>
+<p class="font-label-sm text-label-sm text-on-primary-container">Ravi is 1.2 km away from Tumakuru</p>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+              In Progress
+            </span>
+</div>
+</div>
+<!-- Step 3: Arrived at pickup (UPCOMING) -->
+<div class="flex items-start gap-3 relative pb-6">
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-secondary z-10">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div class="w-[2px] h-full bg-surface-container-highest absolute top-7 left-[13px] z-0"></div>
+</div>
+<div class="flex-1 pt-0.5">
+<p class="font-body-md text-body-md text-secondary">Arrived at pickup</p>
+<p class="font-label-sm text-label-sm text-secondary">Loading at Tumakuru Market</p>
+</div>
+</div>
+<!-- Step 4: Goods picked up (UPCOMING) -->
+<div class="flex items-start gap-3 relative pb-6">
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-secondary z-10">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div class="w-[2px] h-full bg-surface-container-highest absolute top-7 left-[13px] z-0"></div>
+</div>
+<div class="flex-1 pt-0.5">
+<p class="font-body-md text-body-md text-secondary">Goods picked up</p>
+<p class="font-label-sm text-label-sm text-secondary">OTP verification required</p>
+</div>
+</div>
+<!-- Step 5: In transit (UPCOMING) -->
+<div class="flex items-start gap-3 relative pb-6">
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-secondary z-10">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div class="w-[2px] h-full bg-surface-container-highest absolute top-7 left-[13px] z-0"></div>
+</div>
+<div class="flex-1 pt-0.5">
+<p class="font-body-md text-body-md text-secondary">In transit</p>
+<p class="font-label-sm text-label-sm text-secondary">Direct transit to Kunigal</p>
+</div>
+</div>
+<!-- Step 6: Delivered (UPCOMING) -->
+<div class="flex items-start gap-3 relative">
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-secondary z-10">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+</div>
+<div class="flex-1 pt-0.5">
+<p class="font-body-md text-body-md text-secondary">Delivered</p>
+<p class="font-label-sm text-label-sm text-secondary">Consignment handoff &amp; confirmation</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Goods & Trip Meta Banner -->
+<div class="bg-surface-container-low rounded-xl p-3.5 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</div>
+<div>
+<p class="font-body-md-medium text-body-md-medium text-on-surface">Hardware &amp; Building Supplies</p>
+<p class="font-label-sm text-label-sm text-secondary">Payload: ~650 kg • Fixed Rate</p>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold">₹ 1,120</span>
+</div>
+<!-- Footer Support Link & Trip Identifier -->
+<div class="flex items-center justify-center gap-2 py-3">
+<button class="font-label-md text-label-md text-primary font-semibold hover:underline flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">support_agent</span>
+<span>Help &amp; Support</span>
+</button>
+<span class="text-secondary">•</span>
+<span class="font-label-md text-label-md text-secondary tracking-wide">Trip ID #PNL-8902</span>
+</div>
+</div>
+</div></main></body></html>

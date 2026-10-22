@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<meta content="mobile_tab" name="shell-type">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-container": "#4ac86a", "surface-container-high": "#e2e8f8", "on-primary-fixed": "#2a1700", "on-error-container": "#93000a", "inverse-on-surface": "#ebf1ff", "on-tertiary-container": "#004f1f", "surface": "#f9f9ff", "tertiary-fixed": "#7ffc97", "secondary": "#575e70", "surface-container-low": "#f0f3ff", "primary-container": "#f59e0b", "surface-bright": "#f9f9ff", "surface-dim": "#d3daea", "inverse-primary": "#ffb95f", "surface-tint": "#855300", "on-tertiary-fixed": "#002109", "outline": "#867461", "primary": "#855300", "secondary-container": "#d9dff5", "inverse-surface": "#2a313d", "outline-variant": "#d8c3ad", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "on-background": "#151c27", "surface-container-highest": "#dce2f3", "on-surface-variant": "#534434", "on-secondary-container": "#5c6274", "on-primary": "#ffffff", "on-primary-fixed-variant": "#653e00", "surface-container": "#e7eefe", "secondary-fixed": "#dce2f7", "primary-fixed": "#ffddb8", "on-primary-container": "#613b00", "on-error": "#ffffff", "secondary-fixed-dim": "#c0c6db", "on-tertiary": "#ffffff", "on-surface": "#151c27", "tertiary-fixed-dim": "#62df7d", "error": "#ba1a1a", "surface-variant": "#dce2f3", "primary-fixed-dim": "#ffb95f", "tertiary": "#006e2d", "on-secondary-fixed-variant": "#404758", "background": "#f9f9ff", "on-tertiary-fixed-variant": "#005320", "error-container": "#ffdad6", "on-secondary-fixed": "#141b2b" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "1.5rem", "space-sm": "0.5rem", "margin": "1.25rem", "space-lg": "1.25rem", "space-xs": "0.25rem", "gutter": "1rem", "space-md": "1rem" }, "fontFamily": { "body-md": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "body-md-medium": ["Inter"], "headline-lg": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"], "body-lg-bold": ["Inter"], "headline-xl": ["Inter"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-md": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "16px", "fontWeight": "600" }], "body-md-medium": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "headline-lg": ["22px", { "lineHeight": "28px", "fontWeight": "700" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-lg-bold": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-xl": ["26px", { "lineHeight": "32px", "fontWeight": "700" }] } } } };</script>
+<style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;min-height:max(884px,100dvh);}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface-container-lowest font-body-md text-on-surface antialiased flex flex-col min-h-screen">
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+<div class="h-16 px-margin flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-[20px]">local_shipping</span>
+</div>
+<span class="font-headline-md text-headline-md tracking-tight text-on-surface">PickNLoad</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-secondary rounded-full hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+</button>
+<a aria-label="Profile" class="w-11 h-11 flex items-center justify-center" data-path="profile" href="#">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</div>
+</a>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col relative w-full px-margin pt-16 pb-28 bg-surface-container-lowest"><div class="flex flex-col w-full pb-6">
+<!-- Profile Summary Card -->
+<section class="w-full bg-surface-container-low rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md mb-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="relative shrink-0">
+<img class="w-16 h-16 rounded-full object-cover bg-surface-container-highest shadow-sm" data-alt="Close-up portrait of Keerthana, an authentic and smiling Indian businesswoman in her late 20s wearing modern neat attire, bright natural daylight, crisp sharp focus, warm amber highlights, high quality editorial corporate photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbhaRsekdrgxGP_ti3u1eGavaNjscnwM0Z5qyXCejDrpxo6wrsm6Lp0N39vIAOj2-Mfik0LtYXHAy6CPHVXxAWB8dOEn9xkrFTkBZGLtiyB1YO32o0DZjzzVjDAjK79Nhbdxs7FDa6GFPWBpxDkMFxYWTuZthFuoRwu85Q7BHRUrRULtYkaBN3_QeGRU33CdEj3hUSOOsqqoBuCKpeEUXm79lST-P3QmM7ypOC4uvEZgXsK8PPq0LipA">
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container shadow-sm" title="Verified Customer">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-space-xs">
+<h1 class="font-headline-lg text-headline-lg text-on-surface truncate">Keerthana R.</h1>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm shrink-0">
+            Verified
+          </span>
+</div>
+<p class="font-body-md text-body-md text-secondary truncate mt-0.5">+91 98765 43210</p>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm mt-1">
+<span class="material-symbols-outlined text-[14px] text-primary">location_on</span>
+<span class="truncate">Tumakuru, Karnataka</span>
+</div>
+</div>
+</div>
+<!-- Quick Stats Bento -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary-container/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px] text-on-primary-container">local_shipping</span>
+</div>
+<div class="min-w-0">
+<span class="block font-headline-md text-headline-md text-on-surface leading-tight">28</span>
+<span class="block font-label-sm text-label-sm text-secondary truncate">Trips completed</span>
+</div>
+</div>
+
+</div>
+</section>
+<!-- Section: Account -->
+<section class="flex flex-col gap-space-xs mb-space-lg">
+<h2 class="px-space-xs font-label-md text-label-md text-secondary tracking-wide uppercase">
+      Account
+    </h2>
+<div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Edit Profile Action -->
+<a class="w-full flex items-center justify-between p-space-md hover:bg-surface-container-low transition-colors min-h-[56px] text-left" href="#">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Edit profile</span>
+<span class="font-label-sm text-label-sm text-secondary truncate">Name, phone number, email</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0">chevron_right</span>
+</a>
+<!-- Saved Addresses Action -->
+<a class="w-full flex items-center justify-between p-space-md hover:bg-surface-container-low transition-colors min-h-[56px] text-left" href="#">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Saved addresses</span>
+<span class="font-label-sm text-label-sm text-secondary truncate">Home, APMC Yard, warehouse addresses</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0">chevron_right</span>
+</a>
+</div>
+</section>
+<!-- Section: Support & Preferences -->
+<section class="flex flex-col gap-space-xs mb-space-xl">
+<h2 class="px-space-xs font-label-md text-label-md text-secondary tracking-wide uppercase">
+      Support &amp; Preferences
+    </h2>
+<div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Help & Support Action -->
+<a class="w-full flex items-center justify-between p-space-md hover:bg-surface-container-low transition-colors min-h-[56px] text-left" href="#">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Help &amp; support</span>
+<span class="font-label-sm text-label-sm text-secondary truncate">24x7 customer support, dispute resolution</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0">chevron_right</span>
+</a>
+<!-- Settings Action -->
+<a class="w-full flex items-center justify-between p-space-md hover:bg-surface-container-low transition-colors min-h-[56px] text-left" href="#">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Settings</span>
+<span class="font-label-sm text-label-sm text-secondary truncate">Notifications, language, trip preferences</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0">chevron_right</span>
+</a>
+</div>
+</section>
+<!-- Log out Row -->
+<button class="w-full flex items-center justify-between p-space-md bg-error-container text-on-error-container rounded-xl min-h-[52px] active:scale-[0.99] transition-transform mb-space-xl" type="button">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-error text-on-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-body-lg-bold text-body-lg-bold text-error">Log out</span>
+<span class="font-label-sm text-label-sm text-on-error-container">Safely exit current session</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-error text-[20px] shrink-0">arrow_forward</span>
+</button>
+<!-- App Version & Footnote -->
+<footer class="flex flex-col items-center justify-center gap-1 text-center px-space-md">
+<div class="w-6 h-1 rounded-full bg-surface-container-high mb-1"></div>
+<p class="font-label-sm text-label-sm text-secondary">
+      PickNLoad v2.4.1 • Fast &amp; Reliable Logistics
+    </p>
+<p class="font-label-sm text-label-sm text-secondary/70">
+      Made with care for intra-city freight
+    </p>
+</footer>
+</div></main>
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary-container font-body-md-medium font-semibold">
+<div class="flex justify-around items-center h-16 px-space-md">
+<a class="flex flex-col items-center justify-center gap-space-xs min-w-[56px] min-h-[48px] text-secondary hover:text-on-surface transition-colors" data-path="customer-home" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-space-xs min-w-[56px] min-h-[48px] text-secondary hover:text-on-surface transition-colors" data-path="trips" href="#">
+<span class="material-symbols-outlined text-[24px]">local_shipping</span>
+<span class="font-label-sm text-label-sm">Trips</span>
+</a>
+<a aria-current="page" class="flex flex-col items-center justify-center gap-space-xs min-w-[56px] min-h-[48px] transition-colors text-primary-container font-body-md-medium font-semibold" data-path="profile" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</div>
+</nav>
+
+
+</body></html>

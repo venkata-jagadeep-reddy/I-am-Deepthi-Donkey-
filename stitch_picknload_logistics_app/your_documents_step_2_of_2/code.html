@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#855300", "surface-container": "#e7eefe", "on-tertiary-fixed": "#002109", "background": "#f9f9ff", "tertiary": "#006e2d", "on-error": "#ffffff", "on-surface": "#151c27", "tertiary-fixed-dim": "#62df7d", "outline-variant": "#d8c3ad", "on-secondary-fixed": "#141b2b", "primary-fixed-dim": "#ffb95f", "on-tertiary": "#ffffff", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#7ffc97", "tertiary-container": "#4ac86a", "secondary-fixed": "#dce2f7", "secondary-container": "#d9dff5", "primary-fixed": "#ffddb8", "error-container": "#ffdad6", "outline": "#867461", "on-primary-fixed": "#2a1700", "surface-dim": "#d3daea", "on-tertiary-container": "#004f1f", "surface": "#f9f9ff", "surface-tint": "#855300", "on-primary-container": "#613b00", "inverse-surface": "#2a313d", "error": "#ba1a1a", "on-secondary": "#ffffff", "secondary-fixed-dim": "#c0c6db", "on-error-container": "#93000a", "surface-container-high": "#e2e8f8", "on-primary": "#ffffff", "on-surface-variant": "#534434", "on-background": "#151c27", "surface-bright": "#f9f9ff", "on-tertiary-fixed-variant": "#005320", "inverse-on-surface": "#ebf1ff", "inverse-primary": "#ffb95f", "primary-container": "#f59e0b", "surface-container-low": "#f0f3ff", "surface-container-highest": "#dce2f3", "secondary": "#575e70", "on-secondary-fixed-variant": "#404758", "on-secondary-container": "#5c6274", "surface-variant": "#dce2f3", "on-primary-fixed-variant": "#653e00" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "1.25rem", "space-xs": "0.25rem", "space-xl": "1.5rem", "space-md": "1rem", "space-lg": "1.25rem", "gutter": "1rem", "space-sm": "0.5rem" }, fontFamily: { "headline-lg": ["Inter"], "label-md": ["Inter"], "body-md-medium": ["Inter"], "headline-xl": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "body-lg-bold": ["Inter"], "label-sm": ["Inter"], "headline-md": ["Inter"] }, fontSize: { "headline-lg": ["22px", { lineHeight: "28px", fontWeight: "700" }], "label-md": ["13px", { lineHeight: "16px", fontWeight: "600" }], "body-md-medium": ["14px", { lineHeight: "20px", fontWeight: "500" }], "headline-xl": ["26px", { lineHeight: "32px", fontWeight: "700" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-lg-bold": ["16px", { lineHeight: "24px", fontWeight: "600" }], "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }], "headline-md": ["18px", { lineHeight: "24px", fontWeight: "600" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go back" class="w-12 h-12 -ml-2 rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-md text-headline-md text-on-surface tracking-tight truncate max-w-[200px]">Driving License Verification</h1></div><div class="flex items-center"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full">
+<!-- Progress Section -->
+<div class="px-margin pt-space-md pb-space-sm bg-surface">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-md text-label-md text-on-surface">Step 2 of 2 • Verification</span>
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+        Security Screen
+      </span>
+</div>
+<!-- 2-step progress bar, both filled in solid amber -->
+<div class="w-full flex items-center gap-1.5 h-1.5">
+<div class="flex-1 h-full bg-primary-container rounded-full"></div>
+<div class="flex-1 h-full bg-primary-container rounded-full"></div>
+</div>
+</div>
+<!-- Content Block -->
+<div class="px-margin pt-space-md pb-space-xl flex flex-col gap-space-lg">
+<!-- Header Block -->
+<div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Upload your documents</h2>
+<p class="font-body-md text-body-md text-secondary mt-1">We verify every driver for customer safety and freight compliance.</p>
+</div>
+<!-- Micro Trust Highlight Banner -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex items-center gap-space-md shadow-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center shrink-0 text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<div class="min-w-0">
+<p class="font-body-md-medium text-body-md-medium text-on-surface truncate">Instant Optical Verification</p>
+<p class="font-label-sm text-label-sm text-secondary truncate">Clear photos ensure fast approval within 2 business hours.</p>
+</div>
+</div>
+<!-- Documents Stack -->
+<div class="flex flex-col gap-space-md">
+<!-- Card 1: Uploaded state (Driving licence) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200" id="card-license">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[22px]">id_card</span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-1">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface truncate">Driving licence</span>
+<span class="font-body-md text-body-md text-error font-semibold" title="Mandatory">*</span>
+</div>
+<p class="font-label-sm text-label-sm text-secondary mt-0.5">Government commercial badge</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm shrink-0">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            Uploaded
+          </span>
+</div>
+<!-- File Pill & Replace Action -->
+<div class="mt-space-md bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-full bg-tertiary-container/30 flex items-center justify-center text-on-tertiary-container shrink-0">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</div>
+<div class="min-w-0">
+<p class="font-body-md-medium text-body-md-medium text-on-surface truncate" id="license-filename">DL_Front_KA06.pdf</p>
+<p class="font-label-sm text-label-sm text-secondary">1.4 MB • Verified front side</p>
+</div>
+</div>
+<button class="px-2.5 py-1.5 rounded-lg text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors shrink-0" onclick="triggerFileInput('file-license')" type="button">
+            Replace
+          </button>
+<input accept="image/*,.pdf" class="hidden" id="file-license" onchange="handleFileChange(this, 'license-filename', 'status-license')" type="file">
+</div>
+</div>
+<!-- Card 2: Pending state (RC Book - Mandatory) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200" id="card-rc">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[22px]">assignment</span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-1">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface truncate">RC book (vehicle reg.)</span>
+<span class="font-body-md text-body-md text-error font-semibold" title="Mandatory">*</span>
+</div>
+<p class="font-label-sm text-label-sm text-secondary mt-0.5 truncate" id="rc-subtitle">Tap to upload clear photo or PDF</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm shrink-0" id="rc-badge">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+            Pending
+          </span>
+</div>
+<!-- Upload Action Row -->
+<div class="mt-space-md flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-secondary">Max size 8 MB • PDF, JPG, PNG</span>
+<button class="h-10 px-4 rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" onclick="triggerFileInput('file-rc')" type="button">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+            Upload
+          </button>
+<input accept="image/*,.pdf" class="hidden" id="file-rc" onchange="handleFileSelected(this, 'rc')" type="file">
+</div>
+</div>
+<!-- Card 3: Pending state (Vehicle insurance - Optional) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200" id="card-ins">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-1">
+<span class="font-body-lg-bold text-body-lg-bold text-on-surface truncate">Vehicle insurance</span>
+<span class="font-label-sm text-label-sm text-secondary">(optional)</span>
+</div>
+<p class="font-label-sm text-label-sm text-secondary mt-0.5 truncate" id="ins-subtitle">Tap to upload policy document</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm shrink-0" id="ins-badge">
+            Optional
+          </span>
+</div>
+<!-- Upload Action Row -->
+<div class="mt-space-md flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-secondary">Valid third-party or comprehensive</span>
+<button class="h-10 px-4 rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" onclick="triggerFileInput('file-ins')" type="button">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+            Upload
+          </button>
+<input accept="image/*,.pdf" class="hidden" id="file-ins" onchange="handleFileSelected(this, 'ins')" type="file">
+</div>
+</div>
+</div>
+<!-- Security & Privacy Assurance Footer -->
+<div class="flex items-start gap-space-sm p-space-sm bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">lock</span>
+<p class="font-label-sm text-label-sm text-secondary leading-snug">
+        Your documents are securely encrypted and reviewed only for driver onboarding and regulatory compliance.
+      </p>
+</div>
+<!-- Primary Call to Action -->
+<div class="pt-space-xs flex flex-col gap-space-sm">
+<button class="w-full h-[52px] rounded-xl bg-primary-container text-on-secondary-fixed font-headline-md text-headline-md font-semibold flex items-center justify-center gap-2 shadow-sm active:opacity-90 transition-all" id="submit-btn" onclick="handleSubmit()" type="button">
+<span>Submit for verification</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<p class="font-label-sm text-label-sm text-secondary text-center">
+        By submitting, you confirm details on submitted papers match your profile.
+      </p>
+</div>
+</div>
+<script>
+    function triggerFileInput(id) {
+      const input = document.getElementById(id);
+      if (input) input.click();
+    }
+
+    function handleFileChange(input, filenameElemId) {
+      if (input.files && input.files[0]) {
+        const file = input.files[0];
+        const el = document.getElementById(filenameElemId);
+        if (el) {
+          el.textContent = file.name;
+        }
+      }
+    }
+
+    function handleFileSelected(input, type) {
+      if (!input.files || !input.files[0]) return;
+      const file = input.files[0];
+
+      if (type === 'rc') {
+        const subtitle = document.getElementById('rc-subtitle');
+        const badge = document.getElementById('rc-badge');
+        if (subtitle) subtitle.textContent = file.name + ' • ' + (file.size / (1024 * 1024)).toFixed(1) + ' MB';
+        if (badge) {
+          badge.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm shrink-0';
+          badge.innerHTML = '<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: \'FILL\' 1;">check_circle</span> Uploaded';
+        }
+      } else if (type === 'ins') {
+        const subtitle = document.getElementById('ins-subtitle');
+        const badge = document.getElementById('ins-badge');
+        if (subtitle) subtitle.textContent = file.name + ' • ' + (file.size / (1024 * 1024)).toFixed(1) + ' MB';
+        if (badge) {
+          badge.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm shrink-0';
+          badge.innerHTML = '<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: \'FILL\' 1;">check_circle</span> Uploaded';
+        }
+      }
+    }
+
+    function handleSubmit() {
+      const btn = document.getElementById('submit-btn');
+      if (btn) {
+        btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span> Submitting...';
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.className = 'w-full h-[52px] rounded-xl bg-tertiary text-on-tertiary font-headline-md text-headline-md font-semibold flex items-center justify-center gap-2 shadow-sm';
+          btn.innerHTML = '<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: \'FILL\' 1;">check_circle</span> Verification In Progress';
+        }, 1200);
+      }
+    }
+  </script>
+</div></main></body></html>
